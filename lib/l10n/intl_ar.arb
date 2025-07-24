@@ -2,5 +2,6 @@
   "@@locale": "ar",
   "hello": "أهلاً وسهلاً",
   "welcome": "مرحباً بك في تطبيقنا",
-  "change_language": "تغيير اللغة"    
+  "change_language": "تغيير اللغة",
+  "MediLink" : "ميدي لينك"    
 }
