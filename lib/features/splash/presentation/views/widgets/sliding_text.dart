@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medi_link/constants/app_colors.dart';
-import 'package:medi_link/constants/font_styles.dart';
+import 'package:medi_link/core/constants/app_colors.dart';
+import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/core/utils/assets.dart';
 import 'package:medi_link/generated/l10n.dart';
 
@@ -23,7 +23,13 @@ class SlidingText extends StatelessWidget {
         children: [
           FadeTransition(
             opacity: logoFade,
-            child: Image.asset(Assets.assetsImagesLogoRB, fit: BoxFit.cover),
+            child: Center(
+              child: Image.asset(
+                Assets.assetsImagesLogoRB,
+                width: 280,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           FadeTransition(
             opacity: textFade,
@@ -31,7 +37,7 @@ class SlidingText extends StatelessWidget {
               S.of(context).MediLink,
               style: FontStyles.semiBold24.copyWith(
                 color: AppColors.primaryBlue,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w900,
                 fontSize: 35,
               ),
             ),

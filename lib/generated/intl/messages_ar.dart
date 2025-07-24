@@ -24,7 +24,19 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "MediLink": MessageLookupByLibrary.simpleMessage("ميدي لينك"),
     "change_language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
+    "dont_have_account": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "have_account": MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
     "hello": MessageLookupByLibrary.simpleMessage("أهلاً وسهلاً"),
+    "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "sign_in_with_facebook": MessageLookupByLibrary.simpleMessage(
+      "تسجيل الدخول باستخدام فيسبوك",
+    ),
+    "sign_in_with_google": MessageLookupByLibrary.simpleMessage(
+      "تسجيل الدخول باستخدام جوجل",
+    ),
+    "sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحباً بك في تطبيقنا"),
   };
 }

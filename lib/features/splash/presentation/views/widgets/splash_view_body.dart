@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medi_link/core/helper/routes_name.dart';
 import 'package:medi_link/features/splash/presentation/views/widgets/sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -34,6 +35,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
 
     _animationController.forward();
+    _navigateToHome();
+  }
+
+  Future<void> _navigateToHome() async {
+    await Future.delayed(const Duration(seconds: 2));
+    if (mounted) {
+      Navigator.pushNamed(context, RoutesName.login);
+    }
   }
 
   @override

@@ -3,5 +3,13 @@
   "hello": "Hello",
   "welcome": "Welcome to our app",
   "change_language": "Change Language",
-  "MediLink": "MediLink"
+  "MediLink": "MediLink",
+  "login": "Login",
+  "email": "Email",
+  "password": "Password",
+  "dont_have_account": "Don't have an account?",
+  "sign_up": "Sign Up",
+  "have_account": "Have an account?",
+  "sign_in_with_google": "Sign in with Google",
+  "sign_in_with_facebook": "Sign in with Facebook"
 }

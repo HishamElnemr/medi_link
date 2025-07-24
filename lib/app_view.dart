@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/helper/on_generate_route.dart';
 import 'package:medi_link/core/helper/routes_name.dart';
 import 'package:medi_link/generated/l10n.dart';
@@ -14,6 +15,7 @@ class AppView extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Cairo',
         scaffoldBackgroundColor: Colors.white,
+        primaryColor: AppColors.primaryBlue,
       ),
       locale: locale,
       localizationsDelegates: [

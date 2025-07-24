@@ -3,5 +3,13 @@
   "hello": "أهلاً وسهلاً",
   "welcome": "مرحباً بك في تطبيقنا",
   "change_language": "تغيير اللغة",
-  "MediLink" : "ميدي لينك"    
+  "MediLink" : "ميدي لينك",
+  "login": "تسجيل الدخول",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "dont_have_account": "ليس لديك حساب؟",
+  "sign_up": "إنشاء حساب",
+  "have_account": "هل لديك حساب؟",
+  "sign_in_with_google": "تسجيل الدخول باستخدام جوجل",
+  "sign_in_with_facebook": "تسجيل الدخول باستخدام فيسبوك"
 }
