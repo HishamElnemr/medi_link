@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:medi_link/core/helper/routes_name.dart';
-=======
->>>>>>> 6ff2a329c7cee14d5612f3d42022bab0568795ed
 import 'package:medi_link/features/splash/presentation/views/widgets/sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -38,7 +35,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
 
     _animationController.forward();
-<<<<<<< HEAD
     _navigateToHome();
   }
 
@@ -47,8 +43,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     if (mounted) {
       Navigator.pushNamed(context, RoutesName.login);
     }
-=======
->>>>>>> 6ff2a329c7cee14d5612f3d42022bab0568795ed
   }
 
   @override

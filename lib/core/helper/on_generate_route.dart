@@ -11,11 +11,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const HomeView());
     case RoutesName.splash:
       return MaterialPageRoute(builder: (_) => const SplashView());
-<<<<<<< HEAD
     case RoutesName.login:
       return MaterialPageRoute(builder: (_) => const LoginView());
-=======
->>>>>>> 6ff2a329c7cee14d5612f3d42022bab0568795ed
     default:
       return MaterialPageRoute(builder: (_) => const Scaffold());
   }
