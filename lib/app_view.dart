@@ -24,7 +24,7 @@ class AppView extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: RoutesName.home,
+      initialRoute: RoutesName.splash,
     );
   }
 }

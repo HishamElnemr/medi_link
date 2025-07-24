@@ -78,6 +78,11 @@ class S {
       args: [],
     );
   }
+
+  /// `MediLink`
+  String get MediLink {
+    return Intl.message('MediLink', name: 'MediLink', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
