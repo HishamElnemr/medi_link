@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
+import 'package:medi_link/core/constants/app_size.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/core/utils/assets.dart';
 import 'package:medi_link/generated/l10n.dart';
@@ -26,7 +27,7 @@ class SlidingText extends StatelessWidget {
             child: Center(
               child: Image.asset(
                 Assets.assetsImagesLogoRB,
-                width: 280,
+                width: AppSize.getScreenWidth(context)*.6,
                 fit: BoxFit.cover,
               ),
             ),
@@ -38,7 +39,7 @@ class SlidingText extends StatelessWidget {
               style: FontStyles.semiBold24.copyWith(
                 color: AppColors.primaryBlue,
                 fontWeight: FontWeight.w900,
-                fontSize: 35,
+                fontSize: 30,
               ),
             ),
           ),

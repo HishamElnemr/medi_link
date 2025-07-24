@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/utils/widgets/custom_text_form_field.dart';
+import 'package:medi_link/generated/l10n.dart';
 
 class PasswordField extends StatefulWidget {
   const PasswordField({super.key, required this.onSaved});
@@ -16,7 +17,7 @@ class _PasswordFieldState extends State<PasswordField> {
   Widget build(BuildContext context) {
     return CustomTextFormField(
       obscureText: isObscure,
-      hitText: 'كلمة المرور',
+      hitText: S.of(context).password,
       keyboardType: TextInputType.visiblePassword,
       suffixIcon: GestureDetector(
         onTap: () {

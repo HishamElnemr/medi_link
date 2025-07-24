@@ -59,14 +59,9 @@ class S {
     return Intl.message('Hello', name: 'hello', desc: '', args: []);
   }
 
-  /// `Welcome to our app`
+  /// `Welcome`
   String get welcome {
-    return Intl.message(
-      'Welcome to our app',
-      name: 'welcome',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Welcome', name: 'welcome', desc: '', args: []);
   }
 
   /// `Change Language`

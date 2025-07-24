@@ -39,6 +39,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Sign in with Google",
     ),
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
-    "welcome": MessageLookupByLibrary.simpleMessage("Welcome to our app"),
+    "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
   };
 }

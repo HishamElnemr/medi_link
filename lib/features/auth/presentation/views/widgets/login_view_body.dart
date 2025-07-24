@@ -1,15 +1,10 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:medi_link/core/constants/app_colors.dart';
-import 'package:medi_link/core/constants/font_styles.dart';
-import 'package:medi_link/core/utils/assets.dart';
+import 'package:medi_link/core/constants/app_size.dart';
 import 'package:medi_link/core/utils/widgets/custom_button.dart';
 import 'package:medi_link/core/utils/widgets/custom_text_form_field.dart';
 import 'package:medi_link/core/utils/widgets/password_field.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/dont_have_account_widget.dart';
-import 'package:medi_link/features/auth/presentation/views/widgets/or_divider.dart';
-import 'package:medi_link/features/auth/presentation/views/widgets/social_login_button.dart';
+import 'package:medi_link/generated/l10n.dart';
 
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
@@ -20,11 +15,11 @@ class LoginViewBody extends StatefulWidget {
 
 class _LoginViewBodyState extends State<LoginViewBody> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-    AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
+  AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
   late String email, password;
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: SingleChildScrollView(
         child: Form(
@@ -32,9 +27,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              const SizedBox(height: 24),
+              SizedBox(height: AppSize.getScreenHeight(context) * .09),
               CustomTextFormField(
-                hitText: 'البريد الالكتروني',
+                hitText: S.of(context).email,
                 keyboardType: TextInputType.emailAddress,
                 onSaved: (value) {
                   email = value!;
@@ -45,13 +40,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 onSaved: (value) {
                   password = value!;
                 },
-              ),
-              const SizedBox(height: 16),
-              Text(
-                'نسيت كلمة المرور؟',
-                style: FontStyles.light12.copyWith(
-                  color: AppColors.primaryBlue
-                ),
               ),
               const SizedBox(height: 33),
               CustomButton(
@@ -67,46 +55,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     setState(() {});
                   }
                 },
-                text: 'تسجيل الدخول',
+                text: S.of(context).login,
               ),
               const SizedBox(height: 33),
               const Align(
                 alignment: Alignment.center,
                 child: DontHaveAccountWidget(),
               ),
-              const SizedBox(height: 33),
-              const OrDivider(),
-              const SizedBox(height: 16),
-              SocialLoginButton(
-                iconPath: Assets.assetsImagesGoogleIcon,
-                text: 'تسجيل الدخول باستخدام جوجل',
-                onPressed: () {
-                  // context.read<SigninCubit>().signInWithGoogle();
-                },
-              ),
-              const SizedBox(height: 16),
-              SocialLoginButton(
-                iconPath: Assets.assetsImagesFacebookIcon,
-                text: 'تسجيل الدخول باستخدام فيسبوك',
-                onPressed: () {
-                  // context.read<SigninCubit>().signInWithFacebook();
-                },
-              ),
-              const SizedBox(height: 16),
-              Platform.isIOS
-                  ? Column(
-                      children: [
-                        SocialLoginButton(
-                          iconPath: 'assets/images/appl_icon.svg',
-                          text: 'تسجيل الدخول باستخدام ابل',
-                          onPressed: () {
-                            // context.read<SigninCubit>().signInWithApple();
-                          },
-                        ),
-                        const SizedBox(height: 16),
-                      ],
-                    )
-                  : const SizedBox(),
             ],
           ),
         ),
