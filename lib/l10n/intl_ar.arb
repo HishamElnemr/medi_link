@@ -11,5 +11,8 @@
   "sign_up": "إنشاء حساب",
   "have_account": "هل لديك حساب؟",
   "sign_in_with_google": "تسجيل الدخول باستخدام جوجل",
-  "sign_in_with_facebook": "تسجيل الدخول باستخدام فيسبوك"
+  "sign_in_with_facebook": "تسجيل الدخول باستخدام فيسبوك",
+  "user_name": "اسم المستخدم",
+  "full_name": "الاسم الكامل",
+  "create_new_account": "إنشاء حساب جديد"
 }

@@ -24,10 +24,14 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "MediLink": MessageLookupByLibrary.simpleMessage("MediLink"),
     "change_language": MessageLookupByLibrary.simpleMessage("Change Language"),
+    "create_new_account": MessageLookupByLibrary.simpleMessage(
+      "Create New Account",
+    ),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
     ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "full_name": MessageLookupByLibrary.simpleMessage("Full Name"),
     "have_account": MessageLookupByLibrary.simpleMessage("Have an account?"),
     "hello": MessageLookupByLibrary.simpleMessage("Hello"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
@@ -39,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Sign in with Google",
     ),
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
   };
 }

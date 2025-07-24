@@ -138,6 +138,26 @@ class S {
       args: [],
     );
   }
+
+  /// `User Name`
+  String get user_name {
+    return Intl.message('User Name', name: 'user_name', desc: '', args: []);
+  }
+
+  /// `Full Name`
+  String get full_name {
+    return Intl.message('Full Name', name: 'full_name', desc: '', args: []);
+  }
+
+  /// `Create New Account`
+  String get create_new_account {
+    return Intl.message(
+      'Create New Account',
+      name: 'create_new_account',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

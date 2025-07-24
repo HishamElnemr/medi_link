@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:medi_link/core/constants/app_size.dart';
+import 'package:medi_link/core/helper/build_snack_bar.dart';
 import 'package:medi_link/core/utils/widgets/custom_button.dart';
 import 'package:medi_link/core/utils/widgets/custom_text_form_field.dart';
 import 'package:medi_link/core/utils/widgets/password_field.dart';
-import 'package:medi_link/features/auth/presentation/views/widgets/dont_have_account_widget.dart';
+import 'package:medi_link/features/auth/presentation/views/widgets/have_an_account.dart';
 import 'package:medi_link/generated/l10n.dart';
 
-class LoginViewBody extends StatefulWidget {
-  const LoginViewBody({super.key});
+class SignupViewBody extends StatefulWidget {
+  const SignupViewBody({super.key});
 
   @override
-  State<LoginViewBody> createState() => _LoginViewBodyState();
+  State<SignupViewBody> createState() => _SignupViewBodyState();
 }
 
-class _LoginViewBodyState extends State<LoginViewBody> {
+class _SignupViewBodyState extends State<SignupViewBody> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
-  late String email, password;
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  late String email, password, userName;
+  late bool isTermsAccepted = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,10 +25,18 @@ class _LoginViewBodyState extends State<LoginViewBody> {
       child: SingleChildScrollView(
         child: Form(
           key: formKey,
+          autovalidateMode: autovalidateMode,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               const SizedBox(height: 30),
+              CustomTextFormField(
+                hitText: S.of(context).user_name,
+                keyboardType: TextInputType.name,
+                onSaved: (value) {
+                  userName = value!;
+                },
+              ),
+              const SizedBox(height: 16),
               CustomTextFormField(
                 hitText: S.of(context).email,
                 keyboardType: TextInputType.emailAddress,
@@ -41,27 +50,21 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   password = value!;
                 },
               ),
-              const SizedBox(height: 33),
+              const SizedBox(height: 30),
               CustomButton(
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
-                    // context.read<SigninCubit>().signInWithEmailAndPassword(
-                    //   email: email,
-                    //   password: password,
-                    // );
                   } else {
-                    autoValidateMode = AutovalidateMode.always;
-                    setState(() {});
+                    setState(() {
+                      autovalidateMode = AutovalidateMode.always;
+                    });
                   }
                 },
-                text: S.of(context).login,
+                text: S.of(context).create_new_account,
               ),
-              const SizedBox(height: 33),
-              const Align(
-                alignment: Alignment.center,
-                child: DontHaveAccountWidget(),
-              ),
+              const SizedBox(height: 16),
+              const HaveAnAccount(),
             ],
           ),
         ),

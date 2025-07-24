@@ -11,5 +11,8 @@
   "sign_up": "Sign Up",
   "have_account": "Have an account?",
   "sign_in_with_google": "Sign in with Google",
-  "sign_in_with_facebook": "Sign in with Facebook"
+  "sign_in_with_facebook": "Sign in with Facebook",
+  "user_name": "User Name",
+  "full_name": "Full Name",
+  "create_new_account": "Create New Account"
 }

@@ -24,8 +24,12 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "MediLink": MessageLookupByLibrary.simpleMessage("ميدلينك "),
     "change_language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
+    "create_new_account": MessageLookupByLibrary.simpleMessage(
+      "إنشاء حساب جديد",
+    ),
     "dont_have_account": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "full_name": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
     "have_account": MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
     "hello": MessageLookupByLibrary.simpleMessage("أهلاً وسهلاً"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -37,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تسجيل الدخول باستخدام جوجل",
     ),
     "sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحباً بك "),
   };
 }

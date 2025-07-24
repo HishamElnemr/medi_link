@@ -17,12 +17,9 @@ AppBar buildAppBar(
     elevation: 0,
     centerTitle: true,
     title: Text(
-      
       title,
       textAlign: TextAlign.center,
-      style: FontStyles.semiBold24.copyWith(color: AppColors.primaryBlue),
+      style: FontStyles.semiBold24.copyWith(color: AppColors.primaryBlue,fontWeight: FontWeight.bold),
     ),
-       
-
   );
 }
