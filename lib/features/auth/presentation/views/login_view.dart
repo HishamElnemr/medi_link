@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/utils/widgets/build_app_bar.dart';
+import 'package:medi_link/features/auth/presentation/views/widgets/login_view_body.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class LoginView extends StatelessWidget {
@@ -13,6 +14,7 @@ class LoginView extends StatelessWidget {
         title: S.of(context).login,
         isVisible: false,
       ),
+      body: const LoginViewBody(),
     );
   }
 }
