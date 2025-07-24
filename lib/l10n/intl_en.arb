@@ -3,6 +3,7 @@
   "hello": "Hello",
   "welcome": "Welcome to our app",
   "change_language": "Change Language",
+<<<<<<< HEAD
   "MediLink": "MediLink",
   "login": "Login",
   "email": "Email",
@@ -12,4 +13,7 @@
   "have_account": "Have an account?",
   "sign_in_with_google": "Sign in with Google",
   "sign_in_with_facebook": "Sign in with Facebook"
+=======
+  "MediLink": "MediLink"
+>>>>>>> 6ff2a329c7cee14d5612f3d42022bab0568795ed
 }
