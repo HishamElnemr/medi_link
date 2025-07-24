@@ -21,5 +21,9 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "change_language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
+    "hello": MessageLookupByLibrary.simpleMessage("أهلاً وسهلاً"),
+    "welcome": MessageLookupByLibrary.simpleMessage("مرحباً بك في تطبيقنا"),
+  };
 }
