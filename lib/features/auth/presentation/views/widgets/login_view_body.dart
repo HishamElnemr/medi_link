@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medi_link/core/constants/app_size.dart';
 import 'package:medi_link/core/utils/widgets/custom_button.dart';
 import 'package:medi_link/core/utils/widgets/custom_text_form_field.dart';
 import 'package:medi_link/core/utils/widgets/password_field.dart';

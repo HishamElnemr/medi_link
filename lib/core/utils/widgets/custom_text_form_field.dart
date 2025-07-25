@@ -10,31 +10,33 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.onSaved,
     this.obscureText = false,
+    this.isRequired = true,
+    this.maxLines = 1,
   });
   final String hitText;
   final TextInputType keyboardType;
   final Widget? suffixIcon;
   final void Function(String?)? onSaved;
   final bool obscureText;
+  final bool isRequired;
+  final int maxLines;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: obscureText,
       onSaved: onSaved,
       validator: (value) {
-        if (value == null || value.isEmpty) {
+        if ((value == null || value.isEmpty) && isRequired) {
           return 'هذا الحقل مطلوب';
         }
         return null;
       },
       keyboardType: keyboardType,
-
+      maxLines: maxLines,
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         hintText: hitText,
-        hintStyle: FontStyles.medium15.copyWith(
-          color: AppColors.softBlue3,
-        ),
+        hintStyle: FontStyles.medium15.copyWith(color: AppColors.softBlue3),
         filled: true,
         fillColor: AppColors.softBlue2,
         border: buildBorder(),
@@ -47,10 +49,7 @@ class CustomTextFormField extends StatelessWidget {
   OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(13),
-      borderSide: const BorderSide(
-        color: AppColors.softBlue1,
-        width: 1,
-      ),
+      borderSide: const BorderSide(color: AppColors.softBlue1, width: 1),
     );
   }
 }

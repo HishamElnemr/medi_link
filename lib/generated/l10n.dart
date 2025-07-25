@@ -144,9 +144,14 @@ class S {
     return Intl.message('User Name', name: 'user_name', desc: '', args: []);
   }
 
-  /// `Full Name`
-  String get full_name {
-    return Intl.message('Full Name', name: 'full_name', desc: '', args: []);
+  /// `First Name`
+  String get first_name {
+    return Intl.message('First Name', name: 'first_name', desc: '', args: []);
+  }
+
+  /// `Last Name`
+  String get last_name {
+    return Intl.message('Last Name', name: 'last_name', desc: '', args: []);
   }
 
   /// `Create New Account`
@@ -157,6 +162,211 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Sign in as`
+  String get sign_as {
+    return Intl.message('Sign in as', name: 'sign_as', desc: '', args: []);
+  }
+
+  /// `Patient`
+  String get patient {
+    return Intl.message('Patient', name: 'patient', desc: '', args: []);
+  }
+
+  /// `Doctor`
+  String get doctor {
+    return Intl.message('Doctor', name: 'doctor', desc: '', args: []);
+  }
+
+  /// `Specialization`
+  String get specialization {
+    return Intl.message(
+      'Specialization',
+      name: 'specialization',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Age`
+  String get age {
+    return Intl.message('Age', name: 'age', desc: '', args: []);
+  }
+
+  /// `Medicine Taken`
+  String get medicine_taken {
+    return Intl.message(
+      'Medicine Taken',
+      name: 'medicine_taken',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chronic Diseases`
+  String get chronic_diseases {
+    return Intl.message(
+      'Chronic Diseases',
+      name: 'chronic_diseases',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Internal Medicine`
+  String get internal_medicine {
+    return Intl.message(
+      'Internal Medicine',
+      name: 'internal_medicine',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Surgery`
+  String get surgery {
+    return Intl.message('Surgery', name: 'surgery', desc: '', args: []);
+  }
+
+  /// `Pediatrics`
+  String get pediatrics {
+    return Intl.message('Pediatrics', name: 'pediatrics', desc: '', args: []);
+  }
+
+  /// `Gynecology & Obstetrics`
+  String get gynecology {
+    return Intl.message(
+      'Gynecology & Obstetrics',
+      name: 'gynecology',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Orthopedics`
+  String get orthopedics {
+    return Intl.message('Orthopedics', name: 'orthopedics', desc: '', args: []);
+  }
+
+  /// `Dermatology`
+  String get dermatology {
+    return Intl.message('Dermatology', name: 'dermatology', desc: '', args: []);
+  }
+
+  /// `Ophthalmology`
+  String get ophthalmology {
+    return Intl.message(
+      'Ophthalmology',
+      name: 'ophthalmology',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cardiology`
+  String get cardiology {
+    return Intl.message('Cardiology', name: 'cardiology', desc: '', args: []);
+  }
+
+  /// `Neurology`
+  String get neurology {
+    return Intl.message('Neurology', name: 'neurology', desc: '', args: []);
+  }
+
+  /// `Psychiatry`
+  String get psychiatry {
+    return Intl.message('Psychiatry', name: 'psychiatry', desc: '', args: []);
+  }
+
+  /// `Dentistry`
+  String get dentistry {
+    return Intl.message('Dentistry', name: 'dentistry', desc: '', args: []);
+  }
+
+  /// `Ear, Nose, and Throat (ENT)`
+  String get ent {
+    return Intl.message(
+      'Ear, Nose, and Throat (ENT)',
+      name: 'ent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Urology`
+  String get urology {
+    return Intl.message('Urology', name: 'urology', desc: '', args: []);
+  }
+
+  /// `Nephrology`
+  String get nephrology {
+    return Intl.message('Nephrology', name: 'nephrology', desc: '', args: []);
+  }
+
+  /// `Oncology`
+  String get oncology {
+    return Intl.message('Oncology', name: 'oncology', desc: '', args: []);
+  }
+
+  /// `Radiology`
+  String get radiology {
+    return Intl.message('Radiology', name: 'radiology', desc: '', args: []);
+  }
+
+  /// `Anesthesia`
+  String get anesthesia {
+    return Intl.message('Anesthesia', name: 'anesthesia', desc: '', args: []);
+  }
+
+  /// `Intensive Care (ICU)`
+  String get icu {
+    return Intl.message(
+      'Intensive Care (ICU)',
+      name: 'icu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Emergency`
+  String get emergency {
+    return Intl.message('Emergency', name: 'emergency', desc: '', args: []);
+  }
+
+  /// `Endocrinology`
+  String get endocrinology {
+    return Intl.message(
+      'Endocrinology',
+      name: 'endocrinology',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rheumatology`
+  String get rheumatology {
+    return Intl.message(
+      'Rheumatology',
+      name: 'rheumatology',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gastroenterology`
+  String get gastroenterology {
+    return Intl.message(
+      'Gastroenterology',
+      name: 'gastroenterology',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pulmonology`
+  String get pulmonology {
+    return Intl.message('Pulmonology', name: 'pulmonology', desc: '', args: []);
   }
 }
 

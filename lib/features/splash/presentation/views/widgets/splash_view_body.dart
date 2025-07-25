@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medi_link/core/helper/routes_name.dart';
+import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/features/splash/presentation/views/widgets/sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {

@@ -3,7 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
-import 'package:medi_link/core/helper/routes_name.dart';
+import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class DontHaveAccountWidget extends StatelessWidget {

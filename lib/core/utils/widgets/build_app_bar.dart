@@ -10,7 +10,13 @@ AppBar buildAppBar(
   return AppBar(
     leading: Visibility(
       visible: isVisible,
-      child: const Icon(Icons.arrow_back_ios_new, color: AppColors.primaryBlue),
+      child: IconButton(
+        icon: const Icon(Icons.arrow_back_ios_new),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        color: AppColors.primaryBlue,
+      ),
     ),
     actions: const [Padding(padding: EdgeInsets.symmetric(horizontal: 16))],
     backgroundColor: Colors.transparent,
@@ -19,7 +25,10 @@ AppBar buildAppBar(
     title: Text(
       title,
       textAlign: TextAlign.center,
-      style: FontStyles.semiBold24.copyWith(color: AppColors.primaryBlue,fontWeight: FontWeight.bold),
+      style: FontStyles.semiBold24.copyWith(
+        color: AppColors.primaryBlue,
+        fontWeight: FontWeight.bold,
+      ),
     ),
   );
 }
