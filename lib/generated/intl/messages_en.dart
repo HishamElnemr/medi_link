@@ -23,6 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "MediLink": MessageLookupByLibrary.simpleMessage("MediLink"),
+    "account_created_successfully": MessageLookupByLibrary.simpleMessage(
+      "Account created successfully",
+    ),
     "age": MessageLookupByLibrary.simpleMessage("Age"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("Anesthesia"),
     "cardiology": MessageLookupByLibrary.simpleMessage("Cardiology"),
@@ -57,6 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Internal Medicine",
     ),
     "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
+    "length_should_be_more_than_8": MessageLookupByLibrary.simpleMessage(
+      "Length should be more than 8",
+    ),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "medicine_taken": MessageLookupByLibrary.simpleMessage("Medicine Taken"),
     "nephrology": MessageLookupByLibrary.simpleMessage("Nephrology"),
@@ -81,6 +87,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "specialization": MessageLookupByLibrary.simpleMessage("Specialization"),
     "surgery": MessageLookupByLibrary.simpleMessage("Surgery"),
+    "this_field_is_required": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
     "urology": MessageLookupByLibrary.simpleMessage("Urology"),
     "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),

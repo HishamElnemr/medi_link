@@ -164,6 +164,36 @@ class S {
     );
   }
 
+  /// `Account created successfully`
+  String get account_created_successfully {
+    return Intl.message(
+      'Account created successfully',
+      name: 'account_created_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get this_field_is_required {
+    return Intl.message(
+      'This field is required',
+      name: 'this_field_is_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Length should be more than 8`
+  String get length_should_be_more_than_8 {
+    return Intl.message(
+      'Length should be more than 8',
+      name: 'length_should_be_more_than_8',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sign in as`
   String get sign_as {
     return Intl.message('Sign in as', name: 'sign_as', desc: '', args: []);

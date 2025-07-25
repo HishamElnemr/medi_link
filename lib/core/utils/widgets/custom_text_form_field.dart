@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
+import 'package:medi_link/generated/l10n.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
@@ -12,6 +13,7 @@ class CustomTextFormField extends StatelessWidget {
     this.obscureText = false,
     this.isRequired = true,
     this.maxLines = 1,
+    this.validator,
   });
   final String hitText;
   final TextInputType keyboardType;
@@ -20,17 +22,21 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final bool isRequired;
   final int maxLines;
+  final String? Function(String?)? validator;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: obscureText,
       onSaved: onSaved,
-      validator: (value) {
-        if ((value == null || value.isEmpty) && isRequired) {
-          return 'هذا الحقل مطلوب';
-        }
-        return null;
-      },
+      validator:
+          validator ??
+          (value) {
+            if ((value == null || value.isEmpty) && isRequired) {
+              return S.of(context).this_field_is_required;
+            }
+            return null;
+          },
       keyboardType: keyboardType,
       maxLines: maxLines,
       decoration: InputDecoration(

@@ -16,6 +16,14 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
+      validator: (value) {
+        if ((value == null || value.isEmpty)) {
+          return S.of(context).this_field_is_required;
+        } else if (value.length < 8) {
+          return S.of(context).length_should_be_more_than_8;
+        }
+        return null;
+      },
       obscureText: isObscure,
       hitText: S.of(context).password,
       keyboardType: TextInputType.visiblePassword,
@@ -25,16 +33,12 @@ class _PasswordFieldState extends State<PasswordField> {
             isObscure = !isObscure;
           });
         },
-        child:
-            isObscure
-                ?  const Icon(
-                  Icons.visibility_outlined,
-                  color: AppColors.darkGrey,
-                )
-                : const Icon(
-                  Icons.visibility_off_outlined,
-                  color: AppColors.darkGrey,
-                ),
+        child: isObscure
+            ? const Icon(Icons.visibility_outlined, color: AppColors.darkGrey)
+            : const Icon(
+                Icons.visibility_off_outlined,
+                color: AppColors.darkGrey,
+              ),
       ),
       onSaved: widget.onSaved,
     );

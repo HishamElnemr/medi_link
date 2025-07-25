@@ -23,6 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "MediLink": MessageLookupByLibrary.simpleMessage("ميدلينك "),
+    "account_created_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم انشاء الحساب بنجاح",
+    ),
     "age": MessageLookupByLibrary.simpleMessage("العمر"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("تخدير"),
     "cardiology": MessageLookupByLibrary.simpleMessage("قلب"),
@@ -47,6 +50,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "icu": MessageLookupByLibrary.simpleMessage("عناية مركزة"),
     "internal_medicine": MessageLookupByLibrary.simpleMessage("باطنة"),
     "last_name": MessageLookupByLibrary.simpleMessage("الاسم الأخير"),
+    "length_should_be_more_than_8": MessageLookupByLibrary.simpleMessage(
+      "الطول يجب ان يكون اكثر من 8",
+    ),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "medicine_taken": MessageLookupByLibrary.simpleMessage("الأدوية المتناولة"),
     "nephrology": MessageLookupByLibrary.simpleMessage("كلى"),
@@ -71,6 +77,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "specialization": MessageLookupByLibrary.simpleMessage("التخصص"),
     "surgery": MessageLookupByLibrary.simpleMessage("جراحة"),
+    "this_field_is_required": MessageLookupByLibrary.simpleMessage(
+      "هذا الحقل مطلوب",
+    ),
     "urology": MessageLookupByLibrary.simpleMessage("مسالك بولية"),
     "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحباً بك "),

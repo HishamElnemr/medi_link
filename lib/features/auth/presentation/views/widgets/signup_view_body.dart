@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medi_link/core/helper/build_snack_bar.dart';
 import 'package:medi_link/core/utils/widgets/custom_button.dart';
 import 'package:medi_link/core/utils/widgets/custom_text_form_field.dart';
 import 'package:medi_link/core/utils/widgets/password_field.dart';
@@ -158,7 +159,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
   void onSubmit() {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
-      // continue with signup
+      buildSnackBar(context, S.of(context).account_created_successfully);
     } else {
       setState(() {
         autovalidateMode = AutovalidateMode.always;
