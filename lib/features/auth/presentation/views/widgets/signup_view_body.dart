@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/helper/build_snack_bar.dart';
 import 'package:medi_link/core/utils/widgets/custom_button.dart';
 import 'package:medi_link/core/utils/widgets/custom_text_form_field.dart';
 import 'package:medi_link/core/utils/widgets/password_field.dart';
+import 'package:medi_link/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/have_an_account.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/radio_button.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/speciality_dropdown%20.dart';
@@ -20,11 +22,12 @@ class _SignupViewBodyState extends State<SignupViewBody> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   late String email,
       password,
-      userName,
+      firstName,
+      lastName,
       specialization,
       chronicDiseases,
       medicineTaken;
-  late int doctorAge, patientAge;
+  late String doctorAge, patientAge;
   late bool isTermsAccepted = false;
   String selectedType = 'Patient';
   String? selectedSpeciality;
@@ -79,13 +82,13 @@ class _SignupViewBodyState extends State<SignupViewBody> {
         CustomTextFormField(
           hitText: S.of(context).first_name,
           keyboardType: TextInputType.name,
-          onSaved: (value) => userName = value!,
+          onSaved: (value) => firstName = value!,
         ),
         const SizedBox(height: 16),
         CustomTextFormField(
           hitText: S.of(context).last_name,
           keyboardType: TextInputType.name,
-          onSaved: (value) => userName = value!,
+          onSaved: (value) => lastName = value!,
         ),
       ],
     );
@@ -122,7 +125,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
         CustomTextFormField(
           hitText: S.of(context).age,
           keyboardType: TextInputType.number,
-          onSaved: (value) => doctorAge = int.parse(value!),
+          onSaved: (value) => doctorAge = value!,
         ),
       ],
     );
@@ -134,7 +137,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
         CustomTextFormField(
           hitText: S.of(context).age,
           keyboardType: TextInputType.number,
-          onSaved: (value) => patientAge = int.parse(value!),
+          onSaved: (value) => patientAge = value!,
         ),
         const SizedBox(height: 16),
         CustomTextFormField(
@@ -159,7 +162,11 @@ class _SignupViewBodyState extends State<SignupViewBody> {
   void onSubmit() {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
-      buildSnackBar(context, S.of(context).account_created_successfully);
+      context.read<SignupCubit>().createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+        name: '$firstName $lastName',
+      );
     } else {
       setState(() {
         autovalidateMode = AutovalidateMode.always;
