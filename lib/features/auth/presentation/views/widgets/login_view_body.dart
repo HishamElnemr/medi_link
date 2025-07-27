@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/utils/widgets/custom_button.dart';
 import 'package:medi_link/core/utils/widgets/custom_text_form_field.dart';
 import 'package:medi_link/core/utils/widgets/password_field.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/dont_have_account_widget.dart';
 import 'package:medi_link/generated/l10n.dart';
+
+import '../../cubits/login_cubit/login_cubit.dart';
 
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
@@ -45,10 +48,11 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
-                    // context.read<SigninCubit>().signInWithEmailAndPassword(
-                    //   email: email,
-                    //   password: password,
-                    // );
+                    context.read<LoginCubit>().loginUserWithEmailAndPassword(
+                      email: email,
+                      password: password,
+                      context: context,
+                    );
                   } else {
                     autoValidateMode = AutovalidateMode.always;
                     setState(() {});

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/routes/routes_name.dart';
+import 'package:medi_link/core/services/firebase_auth_services.dart';
 import 'package:medi_link/features/splash/presentation/views/widgets/sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -40,8 +41,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   Future<void> _navigateToHome() async {
     await Future.delayed(const Duration(seconds: 4));
+
     if (mounted) {
-      Navigator.pushNamed(context, RoutesName.login);
+      bool isLoggedIn = FirebaseAuthServices().isLoggedIn();
+      if (isLoggedIn) {
+        Navigator.pushReplacementNamed(context, RoutesName.home);
+      } else {
+        Navigator.pushReplacementNamed(context, RoutesName.login);
+      }
     }
   }
 

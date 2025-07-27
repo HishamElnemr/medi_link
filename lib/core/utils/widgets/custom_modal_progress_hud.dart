@@ -12,16 +12,14 @@ class CustomModalProgressHUD extends StatelessWidget {
   final Widget child;
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ModalProgressHUD(
-        inAsyncCall: isLoading,
-        progressIndicator: const CircularProgressIndicator(
-          color: AppColors.primaryBlue,
-        ),
-        color: AppColors.softBlue5,
-        opacity: 0.5,
-        child: child,
+    return ModalProgressHUD(
+      inAsyncCall: isLoading,
+      progressIndicator: const CircularProgressIndicator(
+        color: AppColors.primaryBlue,
       ),
+      color: AppColors.softBlue5,
+      opacity: 0.5,
+      child: child,
     );
   }
 }

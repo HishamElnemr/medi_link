@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/app_view.dart';
 import 'package:medi_link/core/services/getit_services.dart';
+import 'package:medi_link/core/services/shared_preferences_singleton.dart';
 import 'package:medi_link/language_cubit.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {
     WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  Prefs.init();
   setup();
   runApp(const MediLink());
 }

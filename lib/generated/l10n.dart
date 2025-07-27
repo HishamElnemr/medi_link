@@ -194,6 +194,76 @@ class S {
     );
   }
 
+  /// `Password should be more than 8 characters`
+  String get week_password {
+    return Intl.message(
+      'Password should be more than 8 characters',
+      name: 'week_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email used before`
+  String get email_used_before {
+    return Intl.message(
+      'Email used before',
+      name: 'email_used_before',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check your internet connection`
+  String get check_your_internet_connection {
+    return Intl.message(
+      'Check your internet connection',
+      name: 'check_your_internet_connection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong, please try again`
+  String get something_went_wrong {
+    return Intl.message(
+      'Something went wrong, please try again',
+      name: 'something_went_wrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email or password incorrect`
+  String get email_or_password_incorrect {
+    return Intl.message(
+      'Email or password incorrect',
+      name: 'email_or_password_incorrect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account disabled`
+  String get account_disabled {
+    return Intl.message(
+      'Account disabled',
+      name: 'account_disabled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too many requests, please try again later`
+  String get too_many_requests {
+    return Intl.message(
+      'Too many requests, please try again later',
+      name: 'too_many_requests',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sign in as`
   String get sign_as {
     return Intl.message('Sign in as', name: 'sign_as', desc: '', args: []);

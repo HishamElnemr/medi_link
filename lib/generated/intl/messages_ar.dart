@@ -26,10 +26,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "account_created_successfully": MessageLookupByLibrary.simpleMessage(
       "تم انشاء الحساب بنجاح",
     ),
+    "account_disabled": MessageLookupByLibrary.simpleMessage("الحساب معطل"),
     "age": MessageLookupByLibrary.simpleMessage("العمر"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("تخدير"),
     "cardiology": MessageLookupByLibrary.simpleMessage("قلب"),
     "change_language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
+    "check_your_internet_connection": MessageLookupByLibrary.simpleMessage(
+      "تحقق من اتصال الانترنت",
+    ),
     "chronic_diseases": MessageLookupByLibrary.simpleMessage("الامراض المزمنة"),
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "إنشاء حساب جديد",
@@ -39,6 +43,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "doctor": MessageLookupByLibrary.simpleMessage("طبيب"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "email_or_password_incorrect": MessageLookupByLibrary.simpleMessage(
+      "البريد الالكتروني او كلمة المرور غير صحيحة",
+    ),
+    "email_used_before": MessageLookupByLibrary.simpleMessage(
+      "البريد الالكتروني مستخدم من قبل",
+    ),
     "emergency": MessageLookupByLibrary.simpleMessage("طوارئ"),
     "endocrinology": MessageLookupByLibrary.simpleMessage("غدد صماء"),
     "ent": MessageLookupByLibrary.simpleMessage("أنف وأذن"),
@@ -51,7 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "internal_medicine": MessageLookupByLibrary.simpleMessage("باطنة"),
     "last_name": MessageLookupByLibrary.simpleMessage("الاسم الأخير"),
     "length_should_be_more_than_8": MessageLookupByLibrary.simpleMessage(
-      "الطول يجب ان يكون اكثر من 8",
+      "كلمة المرور يجب ان تكون اكثر من 8 حروف",
     ),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "medicine_taken": MessageLookupByLibrary.simpleMessage("الأدوية المتناولة"),
@@ -75,13 +85,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "تسجيل الدخول باستخدام جوجل",
     ),
     "sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "something_went_wrong": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ ما يُرجى المحاولة مرة أخرى",
+    ),
     "specialization": MessageLookupByLibrary.simpleMessage("التخصص"),
     "surgery": MessageLookupByLibrary.simpleMessage("جراحة"),
     "this_field_is_required": MessageLookupByLibrary.simpleMessage(
       "هذا الحقل مطلوب",
     ),
+    "too_many_requests": MessageLookupByLibrary.simpleMessage(
+      "تم تجاوز عدد المحاولات المسموح، يرجى المحاولة لاحقاً ",
+    ),
     "urology": MessageLookupByLibrary.simpleMessage("مسالك بولية"),
     "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
+    "week_password": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور يجب ان تكون اكثر من 8 حروف",
+    ),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحباً بك "),
   };
 }

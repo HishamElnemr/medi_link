@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:medi_link/core/helper/build_snack_bar.dart';
 import 'package:medi_link/core/utils/widgets/custom_button.dart';
 import 'package:medi_link/core/utils/widgets/custom_text_form_field.dart';
 import 'package:medi_link/core/utils/widgets/password_field.dart';
@@ -166,6 +165,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
         email: email,
         password: password,
         name: '$firstName $lastName',
+        context: context,
       );
     } else {
       setState(() {

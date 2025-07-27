@@ -1,7 +1,9 @@
 import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:medi_link/core/errors/exceptions.dart';
+import 'package:medi_link/generated/l10n.dart';
 
 class FirebaseAuthServices {
   Future deleteUser() async {
@@ -11,6 +13,7 @@ class FirebaseAuthServices {
   Future<User> createUserWithEmailAndPassword({
     required String email,
     required String password,
+    required BuildContext context,
   }) async {
     try {
       final credential = await FirebaseAuth.instance
@@ -21,54 +24,70 @@ class FirebaseAuthServices {
         'FirebaseAuthException from firebaseAuthServices.createUserWithEmailAndPassword: ${e.toString()} and code: ${e.code}',
       );
       if (e.code == 'weak-password') {
-        throw CustomException(message: 'كلمة المرور ضعيفة جداً');
+        throw CustomException(message: S.of(context).week_password);
       } else if (e.code == 'email-already-in-use') {
-        throw CustomException(message: 'البريد الالكتروني مستخدم من قبل');
+        throw CustomException(message: S.of(context).email_used_before);
       } else if (e.code == 'network-request-failed') {
-        throw CustomException(message: 'يرجى التحقق من اتصالك بالانترنت');
+        throw CustomException(
+          message: S.of(context).check_your_internet_connection,
+        );
       } else {
-        throw CustomException(message: 'حدث خطأ ما يرجى المحاولة لاحقاً');
+        throw CustomException(message: S.of(context).something_went_wrong);
       }
     } catch (e) {
       log(
         'Exception from firebaseAuthServices.createUserWithEmailAndPassword: ${e.toString()}',
       );
-      throw CustomException(message: 'حدث خطأ ما يرجى المحاولة لاحقاً');
+      throw CustomException(message: S.of(context).something_went_wrong);
     }
   }
 
   Future<User> signInWithEmailAndPassword({
     required String email,
     required String password,
+    required BuildContext context,
   }) async {
     try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
+
+      if (credential.user == null) {
+        throw CustomException(message: S.of(context).something_went_wrong);
+      }
       return credential.user!;
     } on FirebaseAuthException catch (e) {
-      log(
-        'FirebaseAuthException from firebaseAuthServices.signInWithEmailAndPassword: ${e.toString()} and code: ${e.code}',
-      );
-      if (e.code == 'user-not-found') {
+      log('FirebaseAuthException: ${e.code} – ${e.message}');
+
+      if (e.code == 'user-not-found' ||
+          e.code == 'wrong-password' ||
+          e.code == 'invalid-credential' ||
+          e.code == 'invalid-email') {
         throw CustomException(
-          message: 'الرقم السري أو البريد الالكتروني غير صحيح',
+          message: S.of(context).email_or_password_incorrect,
         );
-      } else if (e.code == 'wrong-password') {
-        throw CustomException(
-          message: 'الرقم السري أو البريد الالكتروني غير صحيح',
-        );
-      } else if (e.code == 'network-request-failed') {
-        throw CustomException(message: 'يرجى التحقق من اتصالك بالانترنت');
-      } else {
-        throw CustomException(message: 'حدث خطأ ما يرجى المحاولة لاحقاً');
       }
-    } catch (e) {
-      log(
-        'Exception from firebaseAuthServices.signInWithEmailAndPassword: ${e.toString()}',
-      );
-      throw CustomException(message: 'حدث خطأ ما يرجى المحاولة لاحقاً');
+      if (e.code == 'user-disabled') {
+        throw CustomException(message: S.of(context).account_disabled);
+      }
+      if (e.code == 'too-many-requests') {
+        throw CustomException(message: S.of(context).too_many_requests);
+      }
+      if (e.code == 'network-request-failed') {
+        throw CustomException(
+          message: S.of(context).check_your_internet_connection,
+        );
+      }
+
+      throw CustomException(message: S.of(context).something_went_wrong);
+    } on CustomException {
+      rethrow;
+    } catch (e, st) {
+      log('Exception from signInWithEmailAndPassword: $e\n$st');
+      throw CustomException(message: S.of(context).something_went_wrong);
     }
   }
+
+  bool isLoggedIn() => FirebaseAuth.instance.currentUser != null;
 }

@@ -26,10 +26,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "account_created_successfully": MessageLookupByLibrary.simpleMessage(
       "Account created successfully",
     ),
+    "account_disabled": MessageLookupByLibrary.simpleMessage(
+      "Account disabled",
+    ),
     "age": MessageLookupByLibrary.simpleMessage("Age"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("Anesthesia"),
     "cardiology": MessageLookupByLibrary.simpleMessage("Cardiology"),
     "change_language": MessageLookupByLibrary.simpleMessage("Change Language"),
+    "check_your_internet_connection": MessageLookupByLibrary.simpleMessage(
+      "Check your internet connection",
+    ),
     "chronic_diseases": MessageLookupByLibrary.simpleMessage(
       "Chronic Diseases",
     ),
@@ -43,6 +49,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Don\'t have an account?",
     ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "email_or_password_incorrect": MessageLookupByLibrary.simpleMessage(
+      "Email or password incorrect",
+    ),
+    "email_used_before": MessageLookupByLibrary.simpleMessage(
+      "Email used before",
+    ),
     "emergency": MessageLookupByLibrary.simpleMessage("Emergency"),
     "endocrinology": MessageLookupByLibrary.simpleMessage("Endocrinology"),
     "ent": MessageLookupByLibrary.simpleMessage("Ear, Nose, and Throat (ENT)"),
@@ -85,13 +97,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "Sign in with Google",
     ),
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "something_went_wrong": MessageLookupByLibrary.simpleMessage(
+      "Something went wrong, please try again",
+    ),
     "specialization": MessageLookupByLibrary.simpleMessage("Specialization"),
     "surgery": MessageLookupByLibrary.simpleMessage("Surgery"),
     "this_field_is_required": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
+    "too_many_requests": MessageLookupByLibrary.simpleMessage(
+      "Too many requests, please try again later",
+    ),
     "urology": MessageLookupByLibrary.simpleMessage("Urology"),
     "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
+    "week_password": MessageLookupByLibrary.simpleMessage(
+      "Password should be more than 8 characters",
+    ),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
   };
 }
