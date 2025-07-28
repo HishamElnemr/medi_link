@@ -26,7 +26,7 @@ class DoctorHomeView extends StatelessWidget {
           FirebaseAuth.instance.signOut();
           Navigator.pushReplacementNamed(context, RoutesName.login);
         },
-        child: Center(child: Text(S.of(context).welcome)),
+        child: Center(child: Text(S.of(context).welcome + ' Doctor')),
       ),
     );
   }

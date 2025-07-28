@@ -10,7 +10,6 @@ class PatientEntity extends UserEntity {
     required super.firstName,
     required super.lastName,
     required super.email,
-    required super.password,
     required super.age,
     required super.gender,
   });

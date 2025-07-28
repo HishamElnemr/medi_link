@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
-import 'package:medi_link/generated/l10n.dart';
 
-class RadioButton extends StatelessWidget {
-  const RadioButton({super.key, required this.value, required this.onChanged});
+class CustomRadioGroup extends StatelessWidget {
+  const CustomRadioGroup({
+    super.key,
+    required this.label,
+    required this.options,
+    required this.groupValue,
+    required this.onChanged,
+  });
 
-  final String value;
+  final String label;
+  final List<RadioOption> options;
+  final String groupValue;
   final void Function(String?) onChanged;
 
   @override
@@ -18,46 +25,51 @@ class RadioButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(
-            '${S.of(context).sign_as}: ',
+            '$label: ',
             style: FontStyles.medium15.copyWith(color: AppColors.primaryBlue),
           ),
-          const SizedBox(width: 10),
-          _buildRadioOption(context, 'Doctor', S.of(context).doctor),
-          const SizedBox(width: 20),
-          _buildRadioOption(context, 'Patient', S.of(context).patient),
+          ..._buildOptions(),
         ],
       ),
     );
   }
 
-  Widget _buildRadioOption(
-    BuildContext context,
-    String optionValue,
-    String label,
-  ) {
-    return Row(
-      children: [
-        Radio<String>(
-          value: optionValue,
-          groupValue: value,
-          activeColor: AppColors.primaryBlue,
-          visualDensity: VisualDensity.compact,
-          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          onChanged: onChanged,
-        ),
-        Text(
-          label,
-          style: FontStyles.medium15.copyWith(
-            color: value == optionValue
-                ? AppColors.primaryBlue
-                : AppColors.darkGrey,
-            fontSize: 13,
+  List<Widget> _buildOptions() {
+    return options
+        .map(
+          (option) => Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Radio<String>(
+                value: option.value,
+                groupValue: groupValue,
+                activeColor: AppColors.primaryBlue,
+                visualDensity: VisualDensity.compact,
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                onChanged: onChanged,
+              ),
+              Text(
+                option.label,
+                style: FontStyles.medium15.copyWith(
+                  color: groupValue == option.value
+                      ? AppColors.primaryBlue
+                      : AppColors.darkGrey,
+                  fontSize: 13,
+                ),
+              ),
+            ],
           ),
-        ),
-      ],
-    );
+        )
+        .toList();
   }
+}
+
+class RadioOption {
+  final String value;
+  final String label;
+
+  const RadioOption({required this.value, required this.label});
 }

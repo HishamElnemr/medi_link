@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:medi_link/core/routes/routes_name.dart';
+import 'package:medi_link/core/services/shared_preferences_singleton.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/core/widgets/custom_text_form_field.dart';
 import 'package:medi_link/core/widgets/password_field.dart';
@@ -30,10 +32,12 @@ class _SignupViewBodyState extends State<SignupViewBody> {
       lastName,
       specialization,
       chronicDiseases,
+      address,
       medicineTaken;
-  late int doctorAge, patientAge;
+  late int age, phoneNumber;
   late bool isTermsAccepted = false;
   String selectedType = 'Patient';
+  String selectedGender = 'Male';
   String? selectedSpeciality;
 
   @override
@@ -47,18 +51,52 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           child: Column(
             children: [
               const SizedBox(height: 30),
-              RadioButton(
-                value: selectedType,
+              CustomRadioGroup(
                 onChanged: (value) {
                   setState(() {
                     selectedType = value!;
+                    Prefs.setBool('isDoctor', selectedType == 'Doctor');
                   });
                 },
+                label: S.of(context).sign_as,
+                options: [
+                  RadioOption(label: S.of(context).patient, value: 'Patient'),
+                  RadioOption(label: S.of(context).doctor, value: 'Doctor'),
+                ],
+                groupValue: selectedType,
               ),
               const SizedBox(height: 16),
               buildNameFields(),
               const SizedBox(height: 16),
               buildCommonFields(),
+              const SizedBox(height: 16),
+              CustomRadioGroup(
+                onChanged: (value) {
+                  setState(() {
+                    selectedGender = value!;
+                  });
+                },
+                label: S.of(context).gender,
+                options: [
+                  RadioOption(label: S.of(context).male, value: 'Male'),
+                  RadioOption(label: S.of(context).female, value: 'Female'),
+                ],
+                groupValue: selectedGender,
+              ),
+              const SizedBox(height: 16),
+              CustomTextFormField(
+                hitText: S.of(context).age,
+                keyboardType: TextInputType.number,
+                validator: (p0) {
+                  if ((p0 == null || p0.isEmpty)) {
+                    return S.of(context).this_field_is_required;
+                  } else if (int.parse(p0) > 120 || int.parse(p0) < 0) {
+                    return S.of(context).invalid_age;
+                  }
+                  return null;
+                },
+                onSaved: (value) => age = int.parse(value!),
+              ),
               const SizedBox(height: 16),
               if (selectedType == 'Doctor') ...[
                 buildDoctorFields(),
@@ -124,12 +162,26 @@ class _SignupViewBodyState extends State<SignupViewBody> {
             selectedSpeciality = value;
           },
         ),
-
         const SizedBox(height: 16),
         CustomTextFormField(
-          hitText: S.of(context).age,
+          hitText: S.of(context).address,
+          keyboardType: TextInputType.text,
+          maxLines: 2,
+          onSaved: (value) => address = value!,
+        ),
+        const SizedBox(height: 16),
+        CustomTextFormField(
+          hitText: S.of(context).phone_number,
           keyboardType: TextInputType.number,
-          onSaved: (value) => doctorAge = int.parse(value!),
+          validator: (p0) {
+            if ((p0 == null || p0.isEmpty)) {
+              return S.of(context).this_field_is_required;
+            } else if (p0.length != 11) {
+              return S.of(context).invalid_phone_number;
+            }
+            return null;
+          },
+          onSaved: (value) => phoneNumber = int.parse(value!),
         ),
       ],
     );
@@ -138,12 +190,6 @@ class _SignupViewBodyState extends State<SignupViewBody> {
   Widget buildPatientFields() {
     return Column(
       children: [
-        CustomTextFormField(
-          hitText: S.of(context).age,
-          keyboardType: TextInputType.number,
-          onSaved: (value) => patientAge = int.parse(value!),
-        ),
-        const SizedBox(height: 16),
         CustomTextFormField(
           hitText: S.of(context).chronic_diseases,
           keyboardType: TextInputType.text,
@@ -184,14 +230,15 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               firstName: firstName,
               lastName: lastName,
               email: email,
-              password: password,
-              age: doctorAge,
-              gender: '',
+              age: age,
+              gender: selectedGender,
+              phoneNumber: phoneNumber,
+              address: address,
             ),
           );
           if (context.mounted) {
             Future.delayed(const Duration(milliseconds: 500), () {
-              Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, RoutesName.doctorHome);
               buildSnackBar(
                 context,
                 S.of(context).account_created_successfully,
@@ -206,16 +253,15 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               firstName: firstName,
               lastName: lastName,
               email: email,
-              password: password,
-              age: patientAge,
-              gender: '',
+              age: age,
+              gender: selectedGender,
               chronicDiseases: chronicDiseases,
               medicineTaken: medicineTaken,
             ),
           );
           if (context.mounted) {
             Future.delayed(const Duration(milliseconds: 500), () {
-              Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, RoutesName.patientHome);
               buildSnackBar(
                 context,
                 S.of(context).account_created_successfully,

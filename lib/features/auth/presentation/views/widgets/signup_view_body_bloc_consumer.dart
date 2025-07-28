@@ -4,7 +4,6 @@ import 'package:medi_link/core/helper/build_snack_bar.dart';
 import 'package:medi_link/core/widgets/custom_modal_progress_hud.dart';
 import 'package:medi_link/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/signup_view_body.dart';
-import 'package:medi_link/generated/l10n.dart';
 
 class SignupViewBodyBlocConsumer extends StatelessWidget {
   const SignupViewBodyBlocConsumer({super.key});

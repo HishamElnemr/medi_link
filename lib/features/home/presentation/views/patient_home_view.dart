@@ -5,8 +5,8 @@ import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/generated/l10n.dart';
 import 'package:medi_link/language_cubit.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class PatientHomeView extends StatelessWidget {
+  const PatientHomeView({super.key});
 
   @override
   Widget build(BuildContext context) {

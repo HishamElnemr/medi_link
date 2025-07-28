@@ -3,15 +3,18 @@ import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
 
 class DoctorModel extends UserModel {
   final String speciality;
+  final int phoneNumber;
+  final String address;
   DoctorModel({
     required this.speciality,
     required super.id,
     required super.firstName,
     required super.lastName,
     required super.email,
-    required super.password,
     required super.age,
     required super.gender,
+    required this.phoneNumber,
+    required this.address,
   });
 
   DoctorEntity toEntity() => DoctorEntity(
@@ -20,9 +23,10 @@ class DoctorModel extends UserModel {
     firstName: firstName,
     lastName: lastName,
     email: email,
-    password: password,
     age: age,
     gender: gender,
+    phoneNumber: phoneNumber,
+    address: address,
   );
 
   factory DoctorModel.fromEntity(DoctorEntity entity) => DoctorModel(
@@ -31,9 +35,10 @@ class DoctorModel extends UserModel {
     firstName: entity.firstName,
     lastName: entity.lastName,
     email: entity.email,
-    password: entity.password,
     age: entity.age,
     gender: entity.gender,
+    phoneNumber: entity.phoneNumber,
+    address: entity.address,
   );
 
   factory DoctorModel.fromJson(Map<String, dynamic> json) => DoctorModel(
@@ -42,9 +47,10 @@ class DoctorModel extends UserModel {
     firstName: json['firstName'],
     lastName: json['lastName'],
     email: json['email'],
-    password: json['password'],
     age: json['age'],
     gender: json['gender'],
+    phoneNumber: json['phoneNumber'],
+    address: json['address'],
   );
 
   Map<String, dynamic> toJson() => {
@@ -53,8 +59,9 @@ class DoctorModel extends UserModel {
     'firstName': firstName,
     'lastName': lastName,
     'email': email,
-    'password': password,
     'age': age,
     'gender': gender,
+    'phoneNumber': phoneNumber,
+    'address': address,
   };
 }

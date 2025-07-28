@@ -279,6 +279,21 @@ class S {
     return Intl.message('Doctor', name: 'doctor', desc: '', args: []);
   }
 
+  /// `Gender`
+  String get gender {
+    return Intl.message('Gender', name: 'gender', desc: '', args: []);
+  }
+
+  /// `Male`
+  String get male {
+    return Intl.message('Male', name: 'male', desc: '', args: []);
+  }
+
+  /// `Female`
+  String get female {
+    return Intl.message('Female', name: 'female', desc: '', args: []);
+  }
+
   /// `Specialization`
   String get specialization {
     return Intl.message(
@@ -292,6 +307,41 @@ class S {
   /// `Age`
   String get age {
     return Intl.message('Age', name: 'age', desc: '', args: []);
+  }
+
+  /// `Please enter valid age`
+  String get invalid_age {
+    return Intl.message(
+      'Please enter valid age',
+      name: 'invalid_age',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get address {
+    return Intl.message('Address', name: 'address', desc: '', args: []);
+  }
+
+  /// `Phone Number`
+  String get phone_number {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter valid phone number`
+  String get invalid_phone_number {
+    return Intl.message(
+      'Please enter valid phone number',
+      name: 'invalid_phone_number',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Medicine Taken`

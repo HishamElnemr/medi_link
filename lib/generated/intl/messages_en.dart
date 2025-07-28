@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "account_disabled": MessageLookupByLibrary.simpleMessage(
       "Account disabled",
     ),
+    "address": MessageLookupByLibrary.simpleMessage("Address"),
     "age": MessageLookupByLibrary.simpleMessage("Age"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("Anesthesia"),
     "cardiology": MessageLookupByLibrary.simpleMessage("Cardiology"),
@@ -58,10 +59,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "emergency": MessageLookupByLibrary.simpleMessage("Emergency"),
     "endocrinology": MessageLookupByLibrary.simpleMessage("Endocrinology"),
     "ent": MessageLookupByLibrary.simpleMessage("Ear, Nose, and Throat (ENT)"),
+    "female": MessageLookupByLibrary.simpleMessage("Female"),
     "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
     "gastroenterology": MessageLookupByLibrary.simpleMessage(
       "Gastroenterology",
     ),
+    "gender": MessageLookupByLibrary.simpleMessage("Gender"),
     "gynecology": MessageLookupByLibrary.simpleMessage(
       "Gynecology & Obstetrics",
     ),
@@ -71,11 +74,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "internal_medicine": MessageLookupByLibrary.simpleMessage(
       "Internal Medicine",
     ),
+    "invalid_age": MessageLookupByLibrary.simpleMessage(
+      "Please enter valid age",
+    ),
+    "invalid_phone_number": MessageLookupByLibrary.simpleMessage(
+      "Please enter valid phone number",
+    ),
     "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
     "length_should_be_more_than_8": MessageLookupByLibrary.simpleMessage(
       "Length should be more than 8",
     ),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "male": MessageLookupByLibrary.simpleMessage("Male"),
     "medicine_taken": MessageLookupByLibrary.simpleMessage("Medicine Taken"),
     "nephrology": MessageLookupByLibrary.simpleMessage("Nephrology"),
     "neurology": MessageLookupByLibrary.simpleMessage("Neurology"),
@@ -85,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "patient": MessageLookupByLibrary.simpleMessage("Patient"),
     "pediatrics": MessageLookupByLibrary.simpleMessage("Pediatrics"),
+    "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "psychiatry": MessageLookupByLibrary.simpleMessage("Psychiatry"),
     "pulmonology": MessageLookupByLibrary.simpleMessage("Pulmonology"),
     "radiology": MessageLookupByLibrary.simpleMessage("Radiology"),

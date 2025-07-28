@@ -11,7 +11,6 @@ class PatientModel extends UserModel {
     required super.firstName,
     required super.lastName,
     required super.email,
-    required super.password,
     required super.age,
     required super.gender,
   });
@@ -23,7 +22,6 @@ class PatientModel extends UserModel {
     firstName: json['firstName'],
     lastName: json['lastName'],
     email: json['email'],
-    password: json['password'],
     age: json['age'],
     gender: json['gender'],
   );
@@ -35,7 +33,6 @@ class PatientModel extends UserModel {
     'firstName': firstName,
     'lastName': lastName,
     'email': email,
-    'password': password,
     'age': age,
     'gender': gender,
   };
@@ -45,7 +42,6 @@ class PatientModel extends UserModel {
     firstName: firstName,
     lastName: lastName,
     email: email,
-    password: password,
     age: age,
     gender: gender,
     chronicDiseases: chronicDiseases,
@@ -59,7 +55,6 @@ class PatientModel extends UserModel {
     firstName: entity.firstName,
     lastName: entity.lastName,
     email: entity.email,
-    password: entity.password,
     age: entity.age,
     gender: entity.gender,
   );
