@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:medi_link/core/utils/widgets/custom_button.dart';
-import 'package:medi_link/core/utils/widgets/custom_text_form_field.dart';
-import 'package:medi_link/core/utils/widgets/password_field.dart';
+import 'package:medi_link/core/widgets/custom_button.dart';
+import 'package:medi_link/core/widgets/custom_text_form_field.dart';
+import 'package:medi_link/core/widgets/password_field.dart';
+import 'package:medi_link/features/auth/presentation/cubits/add_doctor_data_cubit/add_doctor_data_cubit.dart';
 import 'package:medi_link/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/have_an_account.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/radio_button.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/speciality_dropdown%20.dart';
 import 'package:medi_link/generated/l10n.dart';
+import '../../../../../core/helper/build_snack_bar.dart';
+import '../../../domain/entites/doctor_entity.dart';
 
 class SignupViewBody extends StatefulWidget {
   const SignupViewBody({super.key});
@@ -26,7 +29,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
       specialization,
       chronicDiseases,
       medicineTaken;
-  late String doctorAge, patientAge;
+  late int doctorAge, patientAge;
   late bool isTermsAccepted = false;
   String selectedType = 'Patient';
   String? selectedSpeciality;
@@ -124,7 +127,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
         CustomTextFormField(
           hitText: S.of(context).age,
           keyboardType: TextInputType.number,
-          onSaved: (value) => doctorAge = value!,
+          onSaved: (value) => doctorAge = int.parse(value!),
         ),
       ],
     );
@@ -136,7 +139,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
         CustomTextFormField(
           hitText: S.of(context).age,
           keyboardType: TextInputType.number,
-          onSaved: (value) => patientAge = value!,
+          onSaved: (value) => patientAge = int.parse(value!),
         ),
         const SizedBox(height: 16),
         CustomTextFormField(
@@ -158,15 +161,43 @@ class _SignupViewBodyState extends State<SignupViewBody> {
     );
   }
 
-  void onSubmit() {
+  void onSubmit() async {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
-      context.read<SignupCubit>().createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-        name: '$firstName $lastName',
-        context: context,
-      );
+
+      final userAuthEntity = await context
+          .read<SignupCubit>()
+          .createUserWithEmailAndPassword(
+            email: email,
+            password: password,
+            name: '$firstName $lastName',
+            context: context,
+          );
+      if (userAuthEntity != null) {
+        if (selectedType == 'Doctor') {
+          context.read<AddDoctorDataCubit>().addDoctorData(
+            DoctorEntity(
+              id: userAuthEntity.uId,
+              speciality: selectedSpeciality!,
+              firstName: firstName,
+              lastName: lastName,
+              email: email,
+              password: password,
+              age: doctorAge,
+              gender: '',
+            ),
+          );
+          if (context.mounted) {
+            Future.delayed(const Duration(milliseconds: 500), () {
+              Navigator.pop(context);
+              buildSnackBar(
+                context,
+                S.of(context).account_created_successfully,
+              );
+            });
+          }
+        }
+      }
     } else {
       setState(() {
         autovalidateMode = AutovalidateMode.always;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:medi_link/core/utils/widgets/custom_button.dart';
-import 'package:medi_link/core/utils/widgets/custom_text_form_field.dart';
-import 'package:medi_link/core/utils/widgets/password_field.dart';
+import 'package:medi_link/core/widgets/custom_button.dart';
+import 'package:medi_link/core/widgets/custom_text_form_field.dart';
+import 'package:medi_link/core/widgets/password_field.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/dont_have_account_widget.dart';
 import 'package:medi_link/generated/l10n.dart';
 

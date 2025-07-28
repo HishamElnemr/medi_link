@@ -51,4 +51,16 @@ class PatientModel extends UserModel {
     chronicDiseases: chronicDiseases,
     medicineTaken: medicineTaken,
   );
+
+  factory PatientModel.fromEntity(PatientEntity entity) => PatientModel(
+    chronicDiseases: entity.chronicDiseases,
+    medicineTaken: entity.medicineTaken,
+    id: entity.id,
+    firstName: entity.firstName,
+    lastName: entity.lastName,
+    email: entity.email,
+    password: entity.password,
+    age: entity.age,
+    gender: entity.gender,
+  );
 }

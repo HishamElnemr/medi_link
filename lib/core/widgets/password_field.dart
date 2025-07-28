@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
-import 'package:medi_link/core/utils/widgets/custom_text_form_field.dart';
+import 'package:medi_link/core/widgets/custom_text_form_field.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class PasswordField extends StatefulWidget {

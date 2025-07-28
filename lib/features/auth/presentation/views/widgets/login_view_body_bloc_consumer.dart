@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/helper/build_snack_bar.dart';
 import 'package:medi_link/core/routes/routes_name.dart';
-import 'package:medi_link/core/utils/widgets/custom_modal_progress_hud.dart';
+import 'package:medi_link/core/widgets/custom_modal_progress_hud.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/login_view_body.dart';
 import 'package:medi_link/generated/l10n.dart';
 

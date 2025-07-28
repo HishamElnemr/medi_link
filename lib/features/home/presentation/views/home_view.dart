@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/generated/l10n.dart';
 import 'package:medi_link/language_cubit.dart';
 
@@ -16,7 +18,12 @@ class HomeView extends StatelessWidget {
           }),
         ],
       ),
-      body: Center(child: Text(S.of(context).welcome)),
+      body: GestureDetector(
+        onTap: () {
+          FirebaseAuth.instance.signOut();
+          Navigator.pushReplacementNamed(context, RoutesName.login);
+        },
+        child: Center(child: Text(S.of(context).welcome))),
     );
   }
 }

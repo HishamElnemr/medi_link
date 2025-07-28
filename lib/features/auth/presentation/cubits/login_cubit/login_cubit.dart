@@ -14,6 +14,7 @@ class LoginCubit extends Cubit<LoginState> {
     required String password,
     required BuildContext context,
   }) async {
+    emit(LoginLoading());
     var result = await authRepo.signInWithEmailAndPassword(
       email: email,
       password: password, context: context,
