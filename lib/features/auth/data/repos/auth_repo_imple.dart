@@ -9,6 +9,7 @@ import 'package:medi_link/features/auth/domain/entites/user_auth_entity.dart';
 import 'package:medi_link/features/auth/domain/repos/auth_repo.dart';
 import 'package:medi_link/generated/l10n.dart';
 
+
 class AuthRepoImpl extends AuthRepo {
   final FirebaseAuthServices firebaseAuthServices;
 
@@ -61,7 +62,7 @@ class AuthRepoImpl extends AuthRepo {
         uId: result.uid,
       );
       return Right(userAuthEntity);
-        } on CustomException catch (e) {
+    } on CustomException catch (e) {
       return left(ServerFailure(e.message));
     } catch (e) {
       log('Exception in signInWithEmailAndPassword ${e.toString()}');
@@ -74,4 +75,5 @@ void deleteUser(User? user) {
   if (user != null) {
     user.delete();
   }
+
 }

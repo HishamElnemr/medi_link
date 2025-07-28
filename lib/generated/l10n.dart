@@ -344,6 +344,41 @@ class S {
     );
   }
 
+  /// `See All`
+  String get see_all {
+    return Intl.message('See All', name: 'see_all', desc: '', args: []);
+  }
+
+  /// `Specialities`
+  String get specialities {
+    return Intl.message(
+      'Specialities',
+      name: 'specialities',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for doctor`
+  String get search_for_doctor {
+    return Intl.message(
+      'Search for doctor',
+      name: 'search_for_doctor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Book Appointment`
+  String get book_appointment {
+    return Intl.message(
+      'Book Appointment',
+      name: 'book_appointment',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Medicine Taken`
   String get medicine_taken {
     return Intl.message(

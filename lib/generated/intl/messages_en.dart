@@ -32,6 +32,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "address": MessageLookupByLibrary.simpleMessage("Address"),
     "age": MessageLookupByLibrary.simpleMessage("Age"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("Anesthesia"),
+    "book_appointment": MessageLookupByLibrary.simpleMessage(
+      "Book Appointment",
+    ),
     "cardiology": MessageLookupByLibrary.simpleMessage("Cardiology"),
     "change_language": MessageLookupByLibrary.simpleMessage("Change Language"),
     "check_your_internet_connection": MessageLookupByLibrary.simpleMessage(
@@ -100,6 +103,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "pulmonology": MessageLookupByLibrary.simpleMessage("Pulmonology"),
     "radiology": MessageLookupByLibrary.simpleMessage("Radiology"),
     "rheumatology": MessageLookupByLibrary.simpleMessage("Rheumatology"),
+    "search_for_doctor": MessageLookupByLibrary.simpleMessage(
+      "Search for doctor",
+    ),
+    "see_all": MessageLookupByLibrary.simpleMessage("See All"),
     "sign_as": MessageLookupByLibrary.simpleMessage("Sign in as"),
     "sign_in_with_facebook": MessageLookupByLibrary.simpleMessage(
       "Sign in with Facebook",
@@ -111,6 +118,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "something_went_wrong": MessageLookupByLibrary.simpleMessage(
       "Something went wrong, please try again",
     ),
+    "specialities": MessageLookupByLibrary.simpleMessage("Specialities"),
     "specialization": MessageLookupByLibrary.simpleMessage("Specialization"),
     "surgery": MessageLookupByLibrary.simpleMessage("Surgery"),
     "this_field_is_required": MessageLookupByLibrary.simpleMessage(

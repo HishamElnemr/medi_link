@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "address": MessageLookupByLibrary.simpleMessage("العنوان"),
     "age": MessageLookupByLibrary.simpleMessage("العمر"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("تخدير"),
+    "book_appointment": MessageLookupByLibrary.simpleMessage("حجز موعد"),
     "cardiology": MessageLookupByLibrary.simpleMessage("قلب"),
     "change_language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
     "check_your_internet_connection": MessageLookupByLibrary.simpleMessage(
@@ -86,6 +87,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "pulmonology": MessageLookupByLibrary.simpleMessage("صدرية"),
     "radiology": MessageLookupByLibrary.simpleMessage("أشعة"),
     "rheumatology": MessageLookupByLibrary.simpleMessage("روماتيزم"),
+    "search_for_doctor": MessageLookupByLibrary.simpleMessage("ابحث عن طبيب"),
+    "see_all": MessageLookupByLibrary.simpleMessage("اظهار الكل"),
     "sign_as": MessageLookupByLibrary.simpleMessage("تسجيل الدخول ك"),
     "sign_in_with_facebook": MessageLookupByLibrary.simpleMessage(
       "تسجيل الدخول باستخدام فيسبوك",
@@ -97,6 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "something_went_wrong": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ ما يُرجى المحاولة مرة أخرى",
     ),
+    "specialities": MessageLookupByLibrary.simpleMessage("التخصصات"),
     "specialization": MessageLookupByLibrary.simpleMessage("التخصص"),
     "surgery": MessageLookupByLibrary.simpleMessage("جراحة"),
     "this_field_is_required": MessageLookupByLibrary.simpleMessage(
