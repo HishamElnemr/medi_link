@@ -9,11 +9,14 @@ class AddPatientDataCubit extends Cubit<AddPatientDataState> {
   AddPatientDataCubit(this.fireStoreRepo) : super(AddPatientDataInitial());
   final FireStoreRepo fireStoreRepo;
 
-  Future<void> addPatientData(PatientEntity patientEntity) async 
-  {
+  Future<void> addPatientData(PatientEntity patientEntity) async {
+    if (isClosed) return;
+
     emit(AddPatientDataLoading());
 
     final result = await fireStoreRepo.addPatientData(patientEntity);
+
+    if (isClosed) return;
 
     result.fold(
       (failure) {
@@ -28,5 +31,4 @@ class AddPatientDataCubit extends Cubit<AddPatientDataState> {
       },
     );
   }
-
 }

@@ -3,7 +3,7 @@ import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/core/routes/route_transitions.dart';
 import 'package:medi_link/features/auth/presentation/views/login_view.dart';
 import 'package:medi_link/features/auth/presentation/views/signup_view.dart';
-import 'package:medi_link/features/home/presentation/views/home_view.dart';
+import 'package:medi_link/features/home/presentation/views/patient_home_view.dart';
 import 'package:medi_link/features/splash/presentation/views/splash_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {

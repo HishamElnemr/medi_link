@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/core/widgets/custom_text_form_field.dart';
 import 'package:medi_link/core/widgets/password_field.dart';
+import 'package:medi_link/features/auth/domain/entites/patient_entity.dart';
 import 'package:medi_link/features/auth/presentation/cubits/add_doctor_data_cubit/add_doctor_data_cubit.dart';
+import 'package:medi_link/features/auth/presentation/cubits/add_patient_data_cubit/add_patient_data_cubit.dart';
 import 'package:medi_link/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/have_an_account.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/radio_button.dart';
@@ -185,6 +187,30 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               password: password,
               age: doctorAge,
               gender: '',
+            ),
+          );
+          if (context.mounted) {
+            Future.delayed(const Duration(milliseconds: 500), () {
+              Navigator.pop(context);
+              buildSnackBar(
+                context,
+                S.of(context).account_created_successfully,
+              );
+            });
+          }
+        }
+        if (selectedType == 'Patient') {
+          context.read<AddPatientDataCubit>().addPatientData(
+            PatientEntity(
+              id: userAuthEntity.uId,
+              firstName: firstName,
+              lastName: lastName,
+              email: email,
+              password: password,
+              age: patientAge,
+              gender: '',
+              chronicDiseases: chronicDiseases,
+              medicineTaken: medicineTaken,
             ),
           );
           if (context.mounted) {

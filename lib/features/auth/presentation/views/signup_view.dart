@@ -9,6 +9,7 @@ import 'package:medi_link/features/auth/presentation/views/widgets/signup_view_b
 import 'package:medi_link/generated/l10n.dart';
 
 import '../../data/repos/fire_store_repo_imple.dart';
+import '../cubits/add_patient_data_cubit/add_patient_data_cubit.dart';
 
 class SignupView extends StatelessWidget {
   const SignupView({super.key});
@@ -20,6 +21,9 @@ class SignupView extends StatelessWidget {
         BlocProvider(create: (context) => SignupCubit(getIt<AuthRepoImpl>())),
         BlocProvider(
           create: (context) => AddDoctorDataCubit(getIt<FireStoreRepoImpl>()),
+        ),
+        BlocProvider(
+          create: (context) => AddPatientDataCubit(getIt<FireStoreRepoImpl>()),
         ),
       ],
       child: Scaffold(
