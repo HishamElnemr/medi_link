@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "account_disabled": MessageLookupByLibrary.simpleMessage("الحساب معطل"),
     "address": MessageLookupByLibrary.simpleMessage("العنوان"),
     "age": MessageLookupByLibrary.simpleMessage("العمر"),
+    "all": MessageLookupByLibrary.simpleMessage("الكل"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("تخدير"),
     "book_appointment": MessageLookupByLibrary.simpleMessage("حجز موعد"),
     "cardiology": MessageLookupByLibrary.simpleMessage("قلب"),
@@ -71,7 +72,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "length_should_be_more_than_8": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور يجب ان تكون اكثر من 8 حروف",
     ),
+    "liver": MessageLookupByLibrary.simpleMessage("الكبد"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "login_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم تسجيل الدخول بنجاح",
+    ),
     "male": MessageLookupByLibrary.simpleMessage("ذكر"),
     "medicine_taken": MessageLookupByLibrary.simpleMessage("الأدوية المتناولة"),
     "nephrology": MessageLookupByLibrary.simpleMessage("كلى"),

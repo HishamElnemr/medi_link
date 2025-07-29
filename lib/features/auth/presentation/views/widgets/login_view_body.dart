@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/core/widgets/custom_text_form_field.dart';
 import 'package:medi_link/core/widgets/password_field.dart';
@@ -21,7 +20,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
   late String email, password;
-  String selectedType = 'Patient';
 
   @override
   Widget build(BuildContext context) {
@@ -34,19 +32,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               const SizedBox(height: 30),
-              CustomRadioGroup(
-                onChanged: (value) {
-                  setState(() {
-                    selectedType = value!;
-                  });
-                },
-                label: S.of(context).sign_as,
-                options: [
-                  RadioOption(label: S.of(context).patient, value: 'Patient'),
-                  RadioOption(label: S.of(context).doctor, value: 'Doctor'),
-                ],
-                groupValue: selectedType,
-              ),
+
               const SizedBox(height: 16),
               CustomTextFormField(
                 hitText: S.of(context).email,
@@ -71,11 +57,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       password: password,
                       context: context,
                     );
-                    if (selectedType == 'Patient') {
-                      Navigator.pushNamed(context, RoutesName.patientHome);
-                    } else {
-                      Navigator.pushNamed(context, RoutesName.doctorHome);
-                    }
                   } else {
                     autoValidateMode = AutovalidateMode.always;
                     setState(() {});

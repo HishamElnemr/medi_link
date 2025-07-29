@@ -31,27 +31,42 @@ class HomeAppBar extends StatelessWidget {
             ],
           ),
         ),
-        Spacer(),
+        const Spacer(),
         Container(
-          margin: const EdgeInsets.all(5),
+          width: 45,
+          height: 45,
+          padding: const EdgeInsets.all(5),
           decoration: const BoxDecoration(
             color: AppColors.softBlue1,
             shape: BoxShape.circle,
           ),
           child: IconButton(
             onPressed: () {},
-            icon: SvgPicture.asset(Assets.assetsImagesSearch),
+            icon: SvgPicture.asset(
+              Assets.assetsImagesSearch,
+              width: 20,
+              height: 20,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
+        const SizedBox(width: 5),
         Container(
-          margin: const EdgeInsets.all(5),
+          width: 45,
+          height: 45,
+          padding: const EdgeInsets.all(5),
           decoration: const BoxDecoration(
             color: AppColors.softBlue1,
             shape: BoxShape.circle,
           ),
           child: IconButton(
             onPressed: () {},
-            icon: SvgPicture.asset(Assets.assetsImagesSetting),
+            icon: SvgPicture.asset(
+              Assets.assetsImagesSetting,
+              width: 20,
+              height: 20,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ],

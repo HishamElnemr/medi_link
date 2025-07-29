@@ -56,6 +56,7 @@ class SpecialityDropdown extends StatelessWidget {
       'psychiatry': s.psychiatry,
       'dentistry': s.dentistry,
       'ent': s.ent,
+      'liver': s.liver,
       'urology': s.urology,
       'nephrology': s.nephrology,
       'oncology': s.oncology,

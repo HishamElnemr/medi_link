@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "address": MessageLookupByLibrary.simpleMessage("Address"),
     "age": MessageLookupByLibrary.simpleMessage("Age"),
+    "all": MessageLookupByLibrary.simpleMessage("All"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("Anesthesia"),
     "book_appointment": MessageLookupByLibrary.simpleMessage(
       "Book Appointment",
@@ -87,7 +88,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "length_should_be_more_than_8": MessageLookupByLibrary.simpleMessage(
       "Length should be more than 8",
     ),
+    "liver": MessageLookupByLibrary.simpleMessage("Liver"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "login_successfully": MessageLookupByLibrary.simpleMessage(
+      "Login successfully",
+    ),
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "medicine_taken": MessageLookupByLibrary.simpleMessage("Medicine Taken"),
     "nephrology": MessageLookupByLibrary.simpleMessage("Nephrology"),

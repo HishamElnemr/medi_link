@@ -174,6 +174,16 @@ class S {
     );
   }
 
+  /// `Login successfully`
+  String get login_successfully {
+    return Intl.message(
+      'Login successfully',
+      name: 'login_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `This field is required`
   String get this_field_is_required {
     return Intl.message(
@@ -347,6 +357,11 @@ class S {
   /// `See All`
   String get see_all {
     return Intl.message('See All', name: 'see_all', desc: '', args: []);
+  }
+
+  /// `All`
+  String get all {
+    return Intl.message('All', name: 'all', desc: '', args: []);
   }
 
   /// `Specialities`
@@ -552,6 +567,11 @@ class S {
   /// `Pulmonology`
   String get pulmonology {
     return Intl.message('Pulmonology', name: 'pulmonology', desc: '', args: []);
+  }
+
+  /// `Liver`
+  String get liver {
+    return Intl.message('Liver', name: 'liver', desc: '', args: []);
   }
 }
 

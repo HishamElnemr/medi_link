@@ -1,24 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:medi_link/core/utils/assets.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/specialty_card.dart';
+import 'package:medi_link/generated/l10n.dart';
 
-class MedicalSpecialtiesGrid extends StatelessWidget {
+class MedicalSpecialtiesGrid extends StatefulWidget {
   const MedicalSpecialtiesGrid({super.key});
+
+  @override
+  State<MedicalSpecialtiesGrid> createState() => _MedicalSpecialtiesGridState();
+}
+
+class _MedicalSpecialtiesGridState extends State<MedicalSpecialtiesGrid> {
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     final specialties = [
-      {'icon': Icons.favorite_outlined, 'title': 'Heart'},
-      {'icon': Icons.medical_services_outlined, 'title': 'Dental'},
-      {'icon': Icons.water_drop_outlined, 'title': 'Kidney'},
-      {'icon': Icons.restaurant_outlined, 'title': 'Stomach'},
-      {'icon': Icons.air_outlined, 'title': 'Lung'},
-      {'icon': Icons.psychology_outlined, 'title': 'Brain'},
-      {'icon': Icons.mood_outlined, 'title': 'Mental'},
-      {'icon': Icons.local_hospital_outlined, 'title': 'Liver'},
+      {
+        'icon': Assets.assetsImagesAll,
+        'title': S.of(context).all,
+      },
+      {
+        'icon': Assets.assetsImagesCadiologist,
+        'title': S.of(context).cardiology,
+      },
+      {'icon': Assets.assetsImagesDentists, 'title': S.of(context).dentistry},
+      {
+        'icon': Assets.assetsImagesNephrologists,
+        'title': S.of(context).nephrology,
+      },
+      {
+        'icon': Assets.assetsImagesGastroenterologists,
+        'title': S.of(context).internal_medicine,
+      },
+      {
+        'icon': Assets.assetsImagesPulmonologists,
+        'title': S.of(context).pulmonology,
+      },
+      {
+        'icon': Assets.assetsImagesPsychiatrists,
+        'title': S.of(context).psychiatry,
+      },
+      {'icon': Assets.assetsImagesHepatologists, 'title': S.of(context).liver},
     ];
 
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(8),
       child: GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
@@ -30,10 +57,19 @@ class MedicalSpecialtiesGrid extends StatelessWidget {
         ),
         itemCount: specialties.length,
         itemBuilder: (context, index) {
+          final isSelected = index == selectedIndex;
+
           return SpecialtyCard(
-            icon: specialties[index]['icon'] as IconData,
+            icon: specialties[index]['icon'] as String,
             title: specialties[index]['title'] as String,
-            onTap: () {},
+            backgroundColor: isSelected ? Theme.of(context).primaryColor : null,
+            iconColor: isSelected ? Colors.white : null,
+            textColor: isSelected ? Colors.white : null,
+            onTap: () {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
           );
         },
       ),

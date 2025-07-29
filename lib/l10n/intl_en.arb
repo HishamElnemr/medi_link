@@ -17,6 +17,7 @@
   "last_name": "Last Name",
   "create_new_account": "Create New Account",
   "account_created_successfully" : "Account created successfully",
+  "login_successfully": "Login successfully",
   "this_field_is_required": "This field is required",
   "length_should_be_more_than_8": "Length should be more than 8",
   "week_password": "Password should be more than 8 characters",
@@ -39,6 +40,7 @@
   "phone_number" : "Phone Number",
   "invalid_phone_number" : "Please enter valid phone number",
   "see_all" : "See All",
+  "all" : "All",
   "specialities" :"Specialities",
   "search_for_doctor" : "Search for doctor",
   "book_appointment" : "Book Appointment",
@@ -66,5 +68,6 @@
   "endocrinology": "Endocrinology",
   "rheumatology": "Rheumatology",
   "gastroenterology": "Gastroenterology",
-  "pulmonology": "Pulmonology"
+  "pulmonology": "Pulmonology",
+  "liver":"Liver"
 }
