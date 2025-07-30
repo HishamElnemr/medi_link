@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:medi_link/features/auth/presentation/cubits/login_cubit/login_state.dart';
 
 import '../../../domain/repos/auth_repo.dart';
-
+import '../../../domain/repos/fire_store_repo.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit({required this.authRepo}) : super(LoginInitial());
+  LoginCubit({required this.authRepo , required this.fireStoreRepo}) : super(LoginInitial());
   final AuthRepo authRepo;
-
+  final FireStoreRepo fireStoreRepo;
   Future<void> loginUserWithEmailAndPassword({
     required String email,
     required String password,
@@ -17,11 +17,14 @@ class LoginCubit extends Cubit<LoginState> {
     emit(LoginLoading());
     var result = await authRepo.signInWithEmailAndPassword(
       email: email,
-      password: password, context: context,
+      password: password,
+      context: context,
     );
-    result.fold(
-      (failure) => emit(LoginFailure(message: failure.message)),
-      (userAuthEntity) => emit(LoginSuccess(userAuthEntity: userAuthEntity)),
-    );
+    result.fold((failure) => emit(LoginFailure(message: failure.message)), (
+      userAuthEntity,
+    ) async{
+      await fireStoreRepo.getUserDataAndSaveRole(userAuthEntity.uId);
+      emit(LoginSuccess(userAuthEntity: userAuthEntity));
+    });
   }
 }

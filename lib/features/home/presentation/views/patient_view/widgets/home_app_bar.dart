@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
@@ -7,12 +8,13 @@ import 'package:medi_link/core/utils/assets.dart';
 import 'package:medi_link/core/utils/backend_endpoints.dart';
 import 'package:medi_link/generated/l10n.dart';
 
+import '../../../../../../core/routes/routes_name.dart';
+
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final name = Prefs.getString(BackendEndpoints.getUserName);
     return Row(
       children: [
         Text.rich(
@@ -25,7 +27,7 @@ class HomeAppBar extends StatelessWidget {
                 ),
               ),
               TextSpan(
-                text: ' $name',
+                text: 'name',
                 style: FontStyles.medium15.copyWith(color: AppColors.darkGrey),
               ),
             ],
@@ -41,7 +43,10 @@ class HomeAppBar extends StatelessWidget {
             shape: BoxShape.circle,
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+              Navigator.pushReplacementNamed(context, RoutesName.login);
+            },
             icon: SvgPicture.asset(
               Assets.assetsImagesSearch,
               width: 20,

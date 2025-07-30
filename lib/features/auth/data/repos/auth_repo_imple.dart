@@ -75,5 +75,5 @@ void deleteUser(User? user) {
   if (user != null) {
     user.delete();
   }
-
+ 
 }

@@ -64,4 +64,19 @@ class DoctorModel extends UserModel {
     'phoneNumber': phoneNumber,
     'address': address,
   };
+
+  Map<String, dynamic> toMap() 
+  {
+    return {
+      'speciality': speciality,
+      'id': id,
+      'firstName': firstName,
+      'lastName': lastName,
+      'email': email,
+      'age': age,
+      'gender': gender,
+      'phoneNumber': phoneNumber,
+      'address': address,
+    };
+  }
 }

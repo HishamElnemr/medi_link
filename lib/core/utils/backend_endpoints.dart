@@ -1,6 +1,7 @@
 class BackendEndpoints {
   static const doctorEndpoint = 'doctors';
   static const patientsEndpoint = 'patients';
-  static const getUserName = 'username';
-  static const isPatient = 'isPatient';
+  static const getUserRole = 'role';
+  static const kPatientData = 'patientData';
+  static const kDoctorData = 'doctorData';
 }

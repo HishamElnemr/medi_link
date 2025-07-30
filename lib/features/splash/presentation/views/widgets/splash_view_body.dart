@@ -4,6 +4,8 @@ import 'package:medi_link/core/services/firebase_auth_services.dart';
 import 'package:medi_link/core/services/shared_preferences_singleton.dart';
 import 'package:medi_link/features/splash/presentation/views/widgets/sliding_text.dart';
 
+import '../../../../../core/utils/backend_endpoints.dart';
+
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
@@ -42,13 +44,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   Future<void> _navigateToHome() async {
     await Future.delayed(const Duration(seconds: 4));
+    String? userRole = Prefs.getString(BackendEndpoints.getUserRole);
+    bool isLoggedIn = FirebaseAuthServices().isLoggedIn();
+    print('Is Logged In: $isLoggedIn');
+    print('User Role: $userRole');
+    print('Doctor Endpoint: ${BackendEndpoints.doctorEndpoint}');
+    print('Patient Endpoint: ${BackendEndpoints.patientsEndpoint}');
 
+    bool isDoctor = userRole == BackendEndpoints.doctorEndpoint;
     if (mounted) {
-      bool isLoggedIn = FirebaseAuthServices().isLoggedIn();
-      bool? isDoctor = await Prefs.getBool('isDoctor');
-
       if (isLoggedIn) {
-        if (isDoctor == true) {
+        if (isDoctor) {
           Navigator.pushReplacementNamed(context, RoutesName.doctorHome);
         } else {
           Navigator.pushReplacementNamed(context, RoutesName.patientHome);

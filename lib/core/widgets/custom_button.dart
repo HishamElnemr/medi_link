@@ -3,14 +3,24 @@ import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.onPressed, required this.text});
+  const CustomButton({
+    super.key,
+    required this.onPressed,
+    required this.text,
+    this.width,
+    this.height,
+    this.style,
+  });
   final void Function() onPressed;
   final String text;
+  final double? width;
+  final double? height;
+  final TextStyle? style;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
-      height: 54,
+      width: width ?? double.infinity,
+      height: height ?? 54,
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
@@ -21,7 +31,7 @@ class CustomButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: FontStyles.medium15.copyWith(color: AppColors.white),
+          style: style ?? FontStyles.medium15.copyWith(color: AppColors.white),
         ),
       ),
     );

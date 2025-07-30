@@ -271,8 +271,6 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           }
         }
       }
-      Prefs.setString(BackendEndpoints.getUserName, '$firstName');
-      Prefs.setBool(BackendEndpoints.isPatient, selectedType == 'Patient');
     } else {
       setState(() {
         autovalidateMode = AutovalidateMode.always;

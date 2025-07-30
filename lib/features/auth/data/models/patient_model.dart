@@ -58,4 +58,20 @@ class PatientModel extends UserModel {
     age: entity.age,
     gender: entity.gender,
   );
+
+  Map<String, dynamic> toMap() 
+  {
+    return {
+      'chronicDiseases': chronicDiseases,
+      'medicineTaken': medicineTaken,
+      'id': id,
+      'firstName': firstName,
+      'lastName': lastName,
+      'email': email,
+      'age': age,
+      'gender': gender,
+    };
+  }
+
+
 }

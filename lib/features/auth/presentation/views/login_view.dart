@@ -7,6 +7,8 @@ import 'package:medi_link/features/auth/presentation/cubits/login_cubit/login_cu
 import 'package:medi_link/features/auth/presentation/views/widgets/login_view_body_bloc_consumer.dart';
 import 'package:medi_link/generated/l10n.dart';
 
+import '../../data/repos/fire_store_repo_imple.dart';
+
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
@@ -19,11 +21,12 @@ class LoginView extends StatelessWidget {
         isVisible: false,
       ),
       body: BlocProvider(
-        create: (context) => LoginCubit(authRepo: getIt<AuthRepoImpl>()),
+        create: (context) => LoginCubit(
+          authRepo: getIt<AuthRepoImpl>(),
+          fireStoreRepo: getIt<FireStoreRepoImpl>(),
+        ),
         child: const LoginViewBodyBlocConsumer(),
       ),
     );
   }
 }
-
-
