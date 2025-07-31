@@ -3,22 +3,16 @@ import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/core/utils/assets.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
+import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/custom_icon.dart';
 
 class DoctorCard extends StatelessWidget {
-  final String doctorName;
-  final String specialty;
-  final double rating;
-  final int reviews;
   final void Function() onPressed;
   final VoidCallback? onFavPressed;
-
+  final DoctorEntity doctorEntity;
   const DoctorCard({
     super.key,
-    required this.doctorName,
-    required this.specialty,
-    required this.rating,
-    required this.reviews,
+    required this.doctorEntity,
     this.onFavPressed,
     required this.onPressed,
   });
@@ -56,18 +50,18 @@ class DoctorCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      doctorName,
+                      doctorEntity.firstName + ' ' + doctorEntity.lastName,
                       style: FontStyles.medium15.copyWith(
                         color: AppColors.primaryBlue,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const Text('45 سنة', style: FontStyles.light12),
+                    Text('${doctorEntity.age} سنة', style: FontStyles.light12),
                   ],
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  specialty,
+                  doctorEntity.speciality,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: FontStyles.regular14.copyWith(
@@ -103,4 +97,3 @@ class DoctorCard extends StatelessWidget {
     );
   }
 }
-

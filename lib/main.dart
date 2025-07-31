@@ -6,8 +6,11 @@ import 'package:medi_link/core/services/shared_preferences_singleton.dart';
 import 'package:medi_link/language_cubit.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+import 'features/auth/data/repos/fire_store_repo_imple.dart';
+import 'features/auth/presentation/cubits/get_all_doctors/get_all_doctors_cubit.dart';
+
 Future<void> main() async {
-    WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   Prefs.init();
   setup();
@@ -19,8 +22,13 @@ class MediLink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LanguageCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => LanguageCubit()),
+        BlocProvider(
+          create: (context) => GetAllDoctorsCubit(getIt<FireStoreRepoImpl>()),
+        ),
+      ],
       child: BlocBuilder<LanguageCubit, Locale>(
         builder: (context, locale) {
           return AppView(locale: locale);
