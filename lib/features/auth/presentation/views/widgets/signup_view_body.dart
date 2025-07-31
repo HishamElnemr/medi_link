@@ -14,7 +14,6 @@ import 'package:medi_link/features/auth/presentation/views/widgets/radio_button.
 import 'package:medi_link/features/auth/presentation/views/widgets/speciality_dropdown%20.dart';
 import 'package:medi_link/generated/l10n.dart';
 import '../../../../../core/helper/build_snack_bar.dart';
-import '../../../../../core/utils/backend_endpoints.dart';
 import '../../../domain/entites/doctor_entity.dart';
 
 class SignupViewBody extends StatefulWidget {

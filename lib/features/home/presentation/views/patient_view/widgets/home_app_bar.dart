@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
-import 'package:medi_link/core/services/shared_preferences_singleton.dart';
 import 'package:medi_link/core/utils/assets.dart';
-import 'package:medi_link/core/utils/backend_endpoints.dart';
 import 'package:medi_link/generated/l10n.dart';
-
+import '../../../../../../core/helper/get_patient_data.dart';
 import '../../../../../../core/routes/routes_name.dart';
 
 class HomeAppBar extends StatelessWidget {
@@ -24,11 +22,15 @@ class HomeAppBar extends StatelessWidget {
                 text: S.of(context).welcome,
                 style: FontStyles.light12.copyWith(
                   color: AppColors.primaryBlue,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
               TextSpan(
-                text: 'name',
-                style: FontStyles.medium15.copyWith(color: AppColors.darkGrey),
+                text: '${getPatientData().firstName}',
+                style: FontStyles.medium15.copyWith(
+                  color: AppColors.darkGrey,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),

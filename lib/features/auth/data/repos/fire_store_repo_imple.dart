@@ -19,16 +19,18 @@ class FireStoreRepoImpl implements FireStoreRepo {
   final _firestore = FirebaseFirestore.instance;
 
   FireStoreRepoImpl({required this.fireStoreServices});
+
   @override
   Future<Either<Failure, void>> addDoctorData(DoctorEntity doctorEntity) async {
     try {
       await fireStoreServices.addDoctorData(
         data: DoctorModel.fromEntity(doctorEntity).toJson(),
       );
-      saveDoctorData(doctorEntity);
+      await saveDoctorData(doctorEntity);
+      log('Doctor data saved successfully');
       return const Right(null);
     } on Exception catch (e) {
-      log(e.toString());
+      log('Error adding doctor data: $e');
       return left(ServerFailure(e.toString()));
     }
   }
@@ -41,10 +43,11 @@ class FireStoreRepoImpl implements FireStoreRepo {
       await fireStoreServices.addPatientData(
         data: PatientModel.fromEntity(patientEntity).toJson(),
       );
-      savePatientData(patientEntity);
+      await savePatientData(patientEntity);
+      log('Patient data saved successfully');
       return const Right(null);
     } on Exception catch (e) {
-      log(e.toString());
+      log('Error adding patient data: $e');
       return left(ServerFailure(e.toString()));
     }
   }
@@ -57,7 +60,7 @@ class FireStoreRepoImpl implements FireStoreRepo {
         result.map((e) => DoctorModel.fromJson(e).toEntity()).toList(),
       );
     } on Exception catch (e) {
-      log(e.toString());
+      log('Error getting all doctors: $e');
       return left(ServerFailure(e.toString()));
     }
   }
@@ -70,47 +73,82 @@ class FireStoreRepoImpl implements FireStoreRepo {
         result.map((e) => PatientModel.fromJson(e).toEntity()).toList(),
       );
     } on Exception catch (e) {
-      log(e.toString());
+      log('Error getting all patients: $e');
       return left(ServerFailure(e.toString()));
     }
   }
 
   @override
   Future<void> getUserDataAndSaveRole(String uid) async {
-    final doctorsQuery = await _firestore
-        .collection(BackendEndpoints.doctorEndpoint)
-        .where('id', isEqualTo: uid)
-        .get();
+    try {
+      log('Getting user data for UID: $uid');
 
-    if (doctorsQuery.docs.isNotEmpty) {
-      await Prefs.setString(
-        BackendEndpoints.getUserRole,
-        BackendEndpoints.doctorEndpoint,
-      );
-      return;
-    }
+      final doctorsQuery = await _firestore
+          .collection(BackendEndpoints.doctorEndpoint)
+          .where('id', isEqualTo: uid)
+          .get();
 
-    final patientsQuery = await _firestore
-        .collection(BackendEndpoints.patientsEndpoint)
-        .where('id', isEqualTo: uid)
-        .get();
+      if (doctorsQuery.docs.isNotEmpty) {
+        log('User found as doctor');
+        await Prefs.setString(
+          BackendEndpoints.getUserRole,
+          BackendEndpoints.doctorEndpoint,
+        );
 
-    if (patientsQuery.docs.isNotEmpty) {
-      await Prefs.setString(
-        BackendEndpoints.getUserRole,
-        BackendEndpoints.patientsEndpoint,
-      );
-      return;
+        var doctorData = doctorsQuery.docs.first.data();
+        log('Doctor data from Firestore: $doctorData');
+        var doctorModel = DoctorModel.fromJson(doctorData);
+        await saveDoctorData(doctorModel.toEntity());
+        log('Doctor data saved successfully');
+        return;
+      }
+
+      final patientsQuery = await _firestore
+          .collection(BackendEndpoints.patientsEndpoint)
+          .where('id', isEqualTo: uid)
+          .get();
+
+      if (patientsQuery.docs.isNotEmpty) {
+        log('User found as patient');
+        await Prefs.setString(
+          BackendEndpoints.getUserRole,
+          BackendEndpoints.patientsEndpoint,
+        );
+
+        var patientData = patientsQuery.docs.first.data();
+        log('Patient data from Firestore: $patientData');
+        var patientModel = PatientModel.fromJson(patientData);
+        await savePatientData(patientModel.toEntity());
+        log('Patient data saved successfully');
+        return;
+      }
+
+      log('User not found in any collection');
+    } catch (e) {
+      log('Error in getUserDataAndSaveRole: $e');
+      rethrow;
     }
   }
 }
 
 Future savePatientData(PatientEntity user) async {
-  var jsonData = jsonEncode(PatientModel.fromEntity(user).toMap());
-  await Prefs.setString(BackendEndpoints.kPatientData, jsonData);
+  try {
+    var jsonData = jsonEncode(PatientModel.fromEntity(user).toMap());
+    await Prefs.setString(BackendEndpoints.kPatientData, jsonData);
+    log('Patient data saved to SharedPreferences');
+  } catch (e) {
+    log('Error saving patient data: $e');
+    rethrow;
+  }
 }
 
 Future saveDoctorData(DoctorEntity user) async {
-  var jsonData = jsonEncode(DoctorModel.fromEntity(user).toMap());
-  await Prefs.setString(BackendEndpoints.kDoctorData, jsonData);
+  try {
+    var jsonData = jsonEncode(DoctorModel.fromEntity(user).toMap());
+    await Prefs.setString(BackendEndpoints.kDoctorData, jsonData);
+    log('Doctor data saved to SharedPreferences');
+  } catch (e) {
+    log('Error saving doctor data: $e');
+    rethrow;
+  }
 }
