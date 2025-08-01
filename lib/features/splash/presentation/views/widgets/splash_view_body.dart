@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/core/services/firebase_auth_services.dart';
 import 'package:medi_link/core/services/shared_preferences_singleton.dart';
+import 'package:medi_link/features/home/presentation/views/doctor_view.dart/doctor_home_view.dart';
 import 'package:medi_link/features/splash/presentation/views/widgets/sliding_text.dart';
 
 import '../../../../../core/utils/backend_endpoints.dart';
@@ -55,7 +56,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
     if (mounted) {
       if (isLoggedIn) {
         if (isDoctor) {
-          Navigator.pushReplacementNamed(context, RoutesName.doctorHome);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => DoctorHomeScreen()),
+          );
         } else {
           Navigator.pushReplacementNamed(context, RoutesName.patientHome);
         }

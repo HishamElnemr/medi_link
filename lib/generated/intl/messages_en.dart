@@ -138,5 +138,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Password should be more than 8 characters",
     ),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
+    "years": MessageLookupByLibrary.simpleMessage("Years"),
   };
 }

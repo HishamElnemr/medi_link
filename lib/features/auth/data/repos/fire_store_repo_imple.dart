@@ -96,6 +96,7 @@ class FireStoreRepoImpl implements FireStoreRepo {
         );
 
         var doctorData = doctorsQuery.docs.first.data();
+        log('Doctor data saved: $doctorData');
         log('Doctor data from Firestore: $doctorData');
         var doctorModel = DoctorModel.fromJson(doctorData);
         await saveDoctorData(doctorModel.toEntity());

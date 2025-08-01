@@ -4,4 +4,6 @@ class BackendEndpoints {
   static const getUserRole = 'role';
   static const kPatientData = 'patientData';
   static const kDoctorData = 'doctorData';
+    static const String bookingsEndpoint = 'bookings';
+
 }

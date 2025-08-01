@@ -35,6 +35,7 @@
   "female" : "Female",
   "specialization": "Specialization",
   "age" : "Age",
+  "years" : "Years",
   "invalid_age" : "Please enter valid age",
   "address" : "Address",
   "phone_number" : "Phone Number",

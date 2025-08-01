@@ -5,6 +5,7 @@ import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/core/services/shared_preferences_singleton.dart';
 import 'package:medi_link/core/widgets/custom_modal_progress_hud.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/login_view_body.dart';
+import 'package:medi_link/features/home/presentation/views/doctor_view.dart/doctor_home_view.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 import '../../../../../core/utils/backend_endpoints.dart';
@@ -24,7 +25,11 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
         if (state is LoginSuccess) {
           buildSnackBar(context, S.of(context).login_successfully);
           if (isDoctor) {
-            Navigator.pushReplacementNamed(context, RoutesName.doctorHome);
+            //Navigator.pushReplacementNamed(context, RoutesName.doctorHome);
+             Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => DoctorHomeScreen()),
+            );
           } else {
             Navigator.pushReplacementNamed(context, RoutesName.patientHome);
           }

@@ -6,6 +6,8 @@ import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/custom_icon.dart';
 
+import '../../../../../../generated/l10n.dart';
+
 class DoctorCard extends StatelessWidget {
   final void Function() onPressed;
   final VoidCallback? onFavPressed;
@@ -56,7 +58,7 @@ class DoctorCard extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text('${doctorEntity.age} سنة', style: FontStyles.light12),
+                    Text('${doctorEntity.age} ${S.of(context).years}', style: FontStyles.light12),
                   ],
                 ),
                 const SizedBox(height: 4),
@@ -71,9 +73,7 @@ class DoctorCard extends StatelessWidget {
               ],
             ),
           ),
-
           const SizedBox(height: 12),
-
           Row(
             children: [
               GestureDetector(

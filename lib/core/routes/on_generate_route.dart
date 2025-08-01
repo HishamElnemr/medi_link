@@ -21,8 +21,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case RoutesName.patientHome:
       return slideFromRightRoute( const PatientHomeView(), settings);
 
-    case RoutesName.doctorHome:
-      return slideFromRightRoute(const DoctorHomeView(), settings);
+    // case RoutesName.doctorHome:
+    //   return slideFromRightRoute(const DoctorHomeView(), settings);
+
+    
 
     default:
       return MaterialPageRoute(builder: (_) => const Scaffold());

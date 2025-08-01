@@ -120,5 +120,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "كلمة المرور يجب ان تكون اكثر من 8 حروف",
     ),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحباً بك "),
+    "years": MessageLookupByLibrary.simpleMessage("سنة"),
   };
 }

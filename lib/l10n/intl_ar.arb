@@ -35,6 +35,7 @@
   "female" : "انثى",
   "specialization": "التخصص",
   "age" : "العمر",
+  "years" : "سنة",
   "invalid_age" : "برجاء ادخال عمر صحيح",
   "address" : "العنوان",
   "phone_number" : "رقم الهاتف",

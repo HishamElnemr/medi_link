@@ -319,6 +319,11 @@ class S {
     return Intl.message('Age', name: 'age', desc: '', args: []);
   }
 
+  /// `Years`
+  String get years {
+    return Intl.message('Years', name: 'years', desc: '', args: []);
+  }
+
   /// `Please enter valid age`
   String get invalid_age {
     return Intl.message(
