@@ -47,14 +47,14 @@ class _SelectDateState extends State<SelectDate> {
         Text(
           S.of(context).select_date,
           style: FontStyles.medium15.copyWith(
-            color: AppColors.primaryBlue,
+            color: AppColors.darkGrey,
             fontWeight: FontWeight.bold,
           ),
         ),
         const Spacer(),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.blue2,
+            backgroundColor: AppColors.darkGrey,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
