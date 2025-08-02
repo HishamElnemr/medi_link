@@ -1,28 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
-import 'package:medi_link/core/utils/assets.dart';
-import 'package:medi_link/core/widgets/custom_button.dart';
-import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
-import 'package:medi_link/features/home/presentation/views/patient_view/widgets/custom_icon.dart';
 
 import '../../../../../../generated/l10n.dart';
 
-class DoctorCard extends StatelessWidget {
-  final void Function() onPressed;
-  final VoidCallback? onFavPressed;
-  final DoctorEntity doctorEntity;
-  const DoctorCard({
+class DoctorDetails extends StatelessWidget {
+  const DoctorDetails({
     super.key,
-    required this.doctorEntity,
-    this.onFavPressed,
-    required this.onPressed,
+    required this.doctorName,
+    required this.speciality,
+    required this.age,
   });
-
+  final String doctorName, speciality;
+  final int age;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: AppColors.softBlue2,
@@ -52,25 +46,21 @@ class DoctorCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      S.of(context).dr +
-                          ' ' +
-                          doctorEntity.firstName +
-                          ' ' +
-                          doctorEntity.lastName,
+                      S.of(context).dr + ' ' + doctorName,
                       style: FontStyles.medium15.copyWith(
                         color: AppColors.primaryBlue,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      '${doctorEntity.age} ${S.of(context).years}',
+                      '${age} ${S.of(context).years}',
                       style: FontStyles.light12,
                     ),
                   ],
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  doctorEntity.speciality,
+                  speciality,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: FontStyles.regular14.copyWith(
@@ -81,24 +71,6 @@ class DoctorCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          Row(
-            children: [
-              GestureDetector(
-                onTap: onFavPressed,
-                child: const CustomIcon(icon: Assets.assetsImagesFav),
-              ),
-              const SizedBox(width: 5),
-              const CustomIcon(icon: Assets.assetsImagesAbout),
-              const Spacer(),
-              CustomButton(
-                onPressed: onPressed,
-                text: 'حجز موعد',
-                width: 120,
-                height: 40,
-                style: FontStyles.medium15.copyWith(color: AppColors.white),
-              ),
-            ],
-          ),
         ],
       ),
     );

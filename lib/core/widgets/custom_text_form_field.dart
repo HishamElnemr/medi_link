@@ -14,7 +14,9 @@ class CustomTextFormField extends StatelessWidget {
     this.isRequired = true,
     this.maxLines = 1,
     this.validator,
+    this.controller,
   });
+  final TextEditingController? controller;
   final String hitText;
   final TextInputType keyboardType;
   final Widget? suffixIcon;
@@ -27,6 +29,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       obscureText: obscureText,
       onSaved: onSaved,
       validator:

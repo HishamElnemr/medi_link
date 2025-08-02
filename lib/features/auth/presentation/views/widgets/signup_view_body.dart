@@ -10,7 +10,7 @@ import 'package:medi_link/features/auth/presentation/cubits/add_doctor_data_cubi
 import 'package:medi_link/features/auth/presentation/cubits/add_patient_data_cubit/add_patient_data_cubit.dart';
 import 'package:medi_link/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/have_an_account.dart';
-import 'package:medi_link/features/auth/presentation/views/widgets/radio_button.dart';
+import 'package:medi_link/core/widgets/radio_button.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/speciality_dropdown%20.dart';
 import 'package:medi_link/features/home/presentation/views/doctor_view.dart/doctor_home_view.dart';
 import 'package:medi_link/generated/l10n.dart';
@@ -243,7 +243,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => DoctorHomeScreen(
+                  builder: (_) => const DoctorHomeScreen(
                   ),
                 ),
               );

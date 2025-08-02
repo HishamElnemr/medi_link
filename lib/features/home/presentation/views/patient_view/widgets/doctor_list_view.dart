@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medi_link/features/booking/presentation/views/booking_screen.dart';
+import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/doctor_card.dart';
 
 import '../../../../../auth/domain/entites/doctor_entity.dart';
@@ -20,14 +20,19 @@ class DoctorListView extends StatelessWidget {
         return DoctorCard(
           doctorEntity: doctor,
           onPressed: () {
-             Navigator.push(
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (_) => BookingScreen(
+            //       doctorId: doctor.id,
+            //       doctorName: '${doctor.firstName} ${doctor.lastName}',
+            //     ),
+            //   ),
+            // );
+            Navigator.pushNamed(
               context,
-              MaterialPageRoute(
-                builder: (_) => BookingScreen(
-                  doctorId: doctor.id,
-                  doctorName: '${doctor.firstName} ${doctor.lastName}',
-                ),
-              ),
+              RoutesName.booking,
+              arguments: doctor,
             );
             // ScaffoldMessenger.of(context).showSnackBar(
             //   SnackBar(

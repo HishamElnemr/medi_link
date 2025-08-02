@@ -7,7 +7,6 @@ class BookingModel {
   final String patientName;
   final String doctorName;
   final String date;
-  final String time;
   final String status;
 
   BookingModel({
@@ -17,7 +16,6 @@ class BookingModel {
     required this.patientName,
     required this.doctorName,
     required this.date,
-    required this.time,
     required this.status,
   });
 
@@ -28,7 +26,6 @@ class BookingModel {
     patientName: json['patientName'],
     doctorName: json['doctorName'],
     date: json['date'],
-    time: json['time'],
     status: json['status'],
   );
 
@@ -39,7 +36,6 @@ class BookingModel {
     'patientName': patientName,
     'doctorName': doctorName,
     'date': date,
-    'time': time,
     'status': status,
   };
 
@@ -50,7 +46,6 @@ class BookingModel {
     patientName: patientName,
     doctorName: doctorName,
     date: date,
-    time: time,
     status: status,
   );
 
@@ -61,7 +56,6 @@ class BookingModel {
     patientName: entity.patientName,
     doctorName: entity.doctorName,
     date: entity.date,
-    time: entity.time,
     status: entity.status,
   );
 }

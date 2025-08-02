@@ -36,6 +36,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "book_appointment": MessageLookupByLibrary.simpleMessage(
       "Book Appointment",
     ),
+    "book_now": MessageLookupByLibrary.simpleMessage("Book Now"),
+    "booking_failed": MessageLookupByLibrary.simpleMessage("Booking failed"),
+    "booking_successfully": MessageLookupByLibrary.simpleMessage(
+      "Booking successfully",
+    ),
     "cardiology": MessageLookupByLibrary.simpleMessage("Cardiology"),
     "change_language": MessageLookupByLibrary.simpleMessage("Change Language"),
     "check_your_internet_connection": MessageLookupByLibrary.simpleMessage(
@@ -43,6 +48,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "chronic_diseases": MessageLookupByLibrary.simpleMessage(
       "Chronic Diseases",
+    ),
+    "click_to_select_date": MessageLookupByLibrary.simpleMessage(
+      "Click to select date",
+    ),
+    "complete_the_appointment": MessageLookupByLibrary.simpleMessage(
+      "Complete the appointment",
     ),
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "Create New Account",
@@ -53,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
     ),
+    "dr": MessageLookupByLibrary.simpleMessage("Dr."),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_or_password_incorrect": MessageLookupByLibrary.simpleMessage(
       "Email or password incorrect",
@@ -65,6 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ent": MessageLookupByLibrary.simpleMessage("Ear, Nose, and Throat (ENT)"),
     "female": MessageLookupByLibrary.simpleMessage("Female"),
     "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
+    "full_name": MessageLookupByLibrary.simpleMessage("Full Name"),
     "gastroenterology": MessageLookupByLibrary.simpleMessage(
       "Gastroenterology",
     ),
@@ -95,13 +108,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "medicine_taken": MessageLookupByLibrary.simpleMessage("Medicine Taken"),
+    "myself": MessageLookupByLibrary.simpleMessage("Myself"),
     "nephrology": MessageLookupByLibrary.simpleMessage("Nephrology"),
     "neurology": MessageLookupByLibrary.simpleMessage("Neurology"),
     "oncology": MessageLookupByLibrary.simpleMessage("Oncology"),
     "ophthalmology": MessageLookupByLibrary.simpleMessage("Ophthalmology"),
     "orthopedics": MessageLookupByLibrary.simpleMessage("Orthopedics"),
+    "other_person": MessageLookupByLibrary.simpleMessage("Other person"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "patient": MessageLookupByLibrary.simpleMessage("Patient"),
+    "patient_details": MessageLookupByLibrary.simpleMessage("Patient Details"),
     "pediatrics": MessageLookupByLibrary.simpleMessage("Pediatrics"),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "psychiatry": MessageLookupByLibrary.simpleMessage("Psychiatry"),
@@ -112,6 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Search for doctor",
     ),
     "see_all": MessageLookupByLibrary.simpleMessage("See All"),
+    "select_date": MessageLookupByLibrary.simpleMessage("Select Date"),
     "sign_as": MessageLookupByLibrary.simpleMessage("Sign in as"),
     "sign_in_with_facebook": MessageLookupByLibrary.simpleMessage(
       "Sign in with Facebook",

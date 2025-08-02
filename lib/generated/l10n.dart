@@ -399,6 +399,91 @@ class S {
     );
   }
 
+  /// `Book Now`
+  String get book_now {
+    return Intl.message('Book Now', name: 'book_now', desc: '', args: []);
+  }
+
+  /// `Complete the appointment`
+  String get complete_the_appointment {
+    return Intl.message(
+      'Complete the appointment',
+      name: 'complete_the_appointment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dr.`
+  String get dr {
+    return Intl.message('Dr.', name: 'dr', desc: '', args: []);
+  }
+
+  /// `Patient Details`
+  String get patient_details {
+    return Intl.message(
+      'Patient Details',
+      name: 'patient_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Myself`
+  String get myself {
+    return Intl.message('Myself', name: 'myself', desc: '', args: []);
+  }
+
+  /// `Select Date`
+  String get select_date {
+    return Intl.message('Select Date', name: 'select_date', desc: '', args: []);
+  }
+
+  /// `Click to select date`
+  String get click_to_select_date {
+    return Intl.message(
+      'Click to select date',
+      name: 'click_to_select_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other person`
+  String get other_person {
+    return Intl.message(
+      'Other person',
+      name: 'other_person',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get full_name {
+    return Intl.message('Full Name', name: 'full_name', desc: '', args: []);
+  }
+
+  /// `Booking successfully`
+  String get booking_successfully {
+    return Intl.message(
+      'Booking successfully',
+      name: 'booking_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking failed`
+  String get booking_failed {
+    return Intl.message(
+      'Booking failed',
+      name: 'booking_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Medicine Taken`
   String get medicine_taken {
     return Intl.message(

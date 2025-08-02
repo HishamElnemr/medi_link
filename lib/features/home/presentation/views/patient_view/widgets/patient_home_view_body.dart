@@ -11,38 +11,40 @@ class PatientHomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          children: [
-            const HomeAppBar(),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  S.of(context).specialities,
-                  style: FontStyles.medium15.copyWith(
-                    color: AppColors.darkGrey,
-                    fontSize: 17,
+    return CustomScrollView(
+      slivers: [
+              const HomeAppBar(),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          sliver: SliverList(
+            delegate: SliverChildListDelegate([
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    S.of(context).specialities,
+                    style: FontStyles.medium15.copyWith(
+                      color: AppColors.darkGrey,
+                      fontSize: 17,
+                    ),
                   ),
-                ),
-                Text(
-                  S.of(context).see_all,
-                  style: FontStyles.light12.copyWith(
-                    color: AppColors.primaryBlue,
+                  Text(
+                    S.of(context).see_all,
+                    style: FontStyles.light12.copyWith(
+                      color: AppColors.primaryBlue,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            const MedicalSpecialtiesGrid(),
-            const SizedBox(height: 24),
-            const DoctorsList(),
-          ],
+                ],
+              ),
+              const SizedBox(height: 20),
+              const MedicalSpecialtiesGrid(),
+              const SizedBox(height: 24),
+              const DoctorsList(),
+            ]),
+          ),
         ),
-      ),
+      ],
     );
   }
 }

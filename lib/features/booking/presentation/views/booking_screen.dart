@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:medi_link/core/helper/get_patient_data.dart';
 import 'package:medi_link/core/services/fire_store_services.dart';
-import 'package:medi_link/core/services/shared_preferences_singleton.dart';
-import 'package:medi_link/core/utils/backend_endpoints.dart';
+import 'package:medi_link/core/services/getit_services.dart';
 import 'package:medi_link/features/booking/data/repos/booking_repo_impl.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
 import 'package:medi_link/features/booking/presentation/cubits/booking_cubit.dart';
@@ -59,7 +58,9 @@ class _BookingScreenState extends State<BookingScreen> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => BookingCubit(
-        bookingRepo: BookingRepoImpl(fireStoreServices: FireStoreServices()),
+        bookingRepo: BookingRepoImpl(
+          fireStoreServices: getIt<FireStoreServices>(),
+        ),
       ),
       child: Scaffold(
         appBar: AppBar(title: Text('Book with ${widget.doctorName}')),
@@ -125,7 +126,6 @@ class _BookingScreenState extends State<BookingScreen> {
                                     getPatientData().lastName,
                                 doctorName: widget.doctorName,
                                 date: selectedDate!.toIso8601String(),
-                                time: selectedTime!.format(context),
                                 status: 'pending',
                               );
                               context.read<BookingCubit>().addBooking(booking);
@@ -136,6 +136,7 @@ class _BookingScreenState extends State<BookingScreen> {
                     );
                   },
                 ),
+                
               ],
             ),
           ),

@@ -4,6 +4,6 @@ class RoutesName {
   static const String splash = '/SplashView';
   static const String login = '/LoginView';
   static const String signup = '/SignupView';
-  static const String booking = '/BookingScreen';
+  static const String booking = '/BookingView';
 
 }

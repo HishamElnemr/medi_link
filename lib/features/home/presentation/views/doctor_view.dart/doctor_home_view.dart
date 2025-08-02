@@ -12,7 +12,6 @@ import 'package:medi_link/core/utils/backend_endpoints.dart';
 import 'package:medi_link/features/booking/data/repos/booking_repo_impl.dart';
 import 'package:medi_link/features/booking/presentation/cubits/booking_cubit.dart';
 import 'dart:convert';
-
 import 'package:medi_link/features/booking/presentation/cubits/booking_state.dart';
 
 class DoctorHomeScreen extends StatelessWidget {
@@ -31,7 +30,7 @@ log('Doctor ID used: $doctorId');
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: AppColors.primaryBlue,
-          title: Text('My Bookings'),
+          title: const Text('My Bookings'),
           actions: [
             IconButton(
               icon: const Icon(Icons.logout),
@@ -107,7 +106,7 @@ log('Doctor ID used: $doctorId');
                                 ),
                               ),
                               Text(
-                                'Time: ${booking.time}',
+                                'Time: ',
                                 style: FontStyles.regular14.copyWith(
                                   color: AppColors.darkGrey,
                                 ),

@@ -58,7 +58,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
         if (isDoctor) {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (_) => DoctorHomeScreen()),
+            MaterialPageRoute(builder: (_) => const DoctorHomeScreen()),
           );
         } else {
           Navigator.pushReplacementNamed(context, RoutesName.patientHome);
