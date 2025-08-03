@@ -6,4 +6,6 @@ class BackendEndpoints {
   static const kDoctorData = 'doctorData';
     static const String bookingsEndpoint = 'bookings';
 
+  static String languageCode = 'languageCode';
+
 }

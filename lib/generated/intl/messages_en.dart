@@ -33,9 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "age": MessageLookupByLibrary.simpleMessage("Age"),
     "all": MessageLookupByLibrary.simpleMessage("All"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("Anesthesia"),
-    "book_appointment": MessageLookupByLibrary.simpleMessage(
-      "Book Appointment",
-    ),
+    "book_appointment": MessageLookupByLibrary.simpleMessage("Book Now"),
     "book_now": MessageLookupByLibrary.simpleMessage("Book Now"),
     "booking_failed": MessageLookupByLibrary.simpleMessage("Booking failed"),
     "booking_successfully": MessageLookupByLibrary.simpleMessage(

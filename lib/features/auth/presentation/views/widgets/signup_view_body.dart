@@ -12,7 +12,6 @@ import 'package:medi_link/features/auth/presentation/cubits/signup_cubit/signup_
 import 'package:medi_link/features/auth/presentation/views/widgets/have_an_account.dart';
 import 'package:medi_link/core/widgets/radio_button.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/speciality_dropdown%20.dart';
-import 'package:medi_link/features/home/presentation/views/doctor_view.dart/doctor_home_view.dart';
 import 'package:medi_link/generated/l10n.dart';
 import '../../../../../core/helper/build_snack_bar.dart';
 import '../../../domain/entites/doctor_entity.dart';
@@ -240,14 +239,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           );
           if (context.mounted) {
             Future.delayed(const Duration(milliseconds: 500), () {
-             // Navigator.pushReplacementNamed(context, RoutesName.doctorHome);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => const DoctorHomeScreen(
-                  ),
-                ),
-              );
+              Navigator.pushReplacementNamed(context, RoutesName.doctorHome);
               buildSnackBar(
                 context,
                 S.of(context).account_created_successfully,

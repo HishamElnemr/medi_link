@@ -389,10 +389,10 @@ class S {
     );
   }
 
-  /// `Book Appointment`
+  /// `Book Now`
   String get book_appointment {
     return Intl.message(
-      'Book Appointment',
+      'Book Now',
       name: 'book_appointment',
       desc: '',
       args: [],

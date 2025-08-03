@@ -1,8 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/core/services/firebase_auth_services.dart';
 import 'package:medi_link/core/services/shared_preferences_singleton.dart';
-import 'package:medi_link/features/home/presentation/views/doctor_view.dart/doctor_home_view.dart';
 import 'package:medi_link/features/splash/presentation/views/widgets/sliding_text.dart';
 
 import '../../../../../core/utils/backend_endpoints.dart';
@@ -47,19 +48,16 @@ class _SplashViewBodyState extends State<SplashViewBody>
     await Future.delayed(const Duration(seconds: 4));
     String? userRole = Prefs.getString(BackendEndpoints.getUserRole);
     bool isLoggedIn = FirebaseAuthServices().isLoggedIn();
-    print('Is Logged In: $isLoggedIn');
-    print('User Role: $userRole');
-    print('Doctor Endpoint: ${BackendEndpoints.doctorEndpoint}');
-    print('Patient Endpoint: ${BackendEndpoints.patientsEndpoint}');
+    log('Is Logged In: $isLoggedIn');
+    log('User Role: $userRole');
+    log('Doctor Endpoint: ${BackendEndpoints.doctorEndpoint}');
+    log('Patient Endpoint: ${BackendEndpoints.patientsEndpoint}');
 
     bool isDoctor = userRole == BackendEndpoints.doctorEndpoint;
     if (mounted) {
       if (isLoggedIn) {
         if (isDoctor) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => const DoctorHomeScreen()),
-          );
+          Navigator.pushReplacementNamed(context, RoutesName.doctorHome);
         } else {
           Navigator.pushReplacementNamed(context, RoutesName.patientHome);
         }

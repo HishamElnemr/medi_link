@@ -97,7 +97,8 @@ class DoctorCard extends StatelessWidget {
               const Spacer(),
               CustomButton(
                 onPressed: onPressed,
-                text: 'حجز موعد',
+                text: S.of(context).book_appointment,
+              
                 width: 120,
                 height: 40,
                 style: FontStyles.medium15.copyWith(color: AppColors.white),
