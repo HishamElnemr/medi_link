@@ -28,7 +28,9 @@ class BookingViewBodyBlocListener extends StatelessWidget {
             color: Colors.red,
           );
         } else {
-          const CircularProgressIndicator(color: AppColors.primaryBlue);
+          const Center(
+            child: CircularProgressIndicator(color: AppColors.primaryBlue),
+          );
         }
       },
       child: const BookingViewBody(),

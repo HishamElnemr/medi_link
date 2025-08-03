@@ -5,6 +5,7 @@ import 'package:medi_link/core/utils/assets.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/custom_icon.dart';
+import 'package:medi_link/core/utils/specialty_utils.dart';
 
 import '../../../../../../generated/l10n.dart';
 
@@ -12,6 +13,7 @@ class DoctorCard extends StatelessWidget {
   final void Function() onPressed;
   final VoidCallback? onFavPressed;
   final DoctorEntity doctorEntity;
+
   const DoctorCard({
     super.key,
     required this.doctorEntity,
@@ -68,9 +70,12 @@ class DoctorCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 8),
                 Text(
-                  doctorEntity.speciality,
+                  SpecialtyUtils.getLocalizedSpecialty(
+                    context,
+                    doctorEntity.speciality,
+                  ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: FontStyles.regular14.copyWith(

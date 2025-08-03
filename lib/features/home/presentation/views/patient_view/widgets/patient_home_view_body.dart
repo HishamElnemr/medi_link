@@ -41,6 +41,7 @@ class PatientHomeViewBody extends StatelessWidget {
               const MedicalSpecialtiesGrid(),
               const SizedBox(height: 24),
               const DoctorsList(),
+              const SizedBox(height: 24),
             ]),
           ),
         ),

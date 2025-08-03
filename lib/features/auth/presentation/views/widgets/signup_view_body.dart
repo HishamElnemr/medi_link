@@ -112,6 +112,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               const SizedBox(height: 16),
               const HaveAnAccount(),
               if (selectedType == 'Patient') ...[const SizedBox(height: 35)],
+              SizedBox(height: selectedType == 'Patient' ? 0 : 35),
             ],
           ),
         ),

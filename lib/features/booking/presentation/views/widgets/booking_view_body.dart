@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/core/helper/get_patient_data.dart';
+import 'package:medi_link/core/utils/specialty_utils.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/core/widgets/custom_text_form_field.dart';
 import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
@@ -57,7 +58,10 @@ class _BookingViewBodyState extends State<BookingViewBody> {
               children: [
                 DoctorDetails(
                   doctorName: doctor.firstName + ' ' + doctor.lastName,
-                  speciality: doctor.speciality,
+                  speciality: SpecialtyUtils.getLocalizedSpecialty(
+                    context,
+                    doctor.speciality,
+                  ),
                   age: doctor.age,
                 ),
                 const SizedBox(height: 13),
