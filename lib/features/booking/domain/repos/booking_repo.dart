@@ -7,4 +7,12 @@ abstract class BookingRepo {
   Future<Either<Failure, List<BookingEntity>>> getDoctorBookings(
     String doctorId,
   );
+  Future<Either<Failure, List<BookingEntity>>> getPatientBookings(
+    String patientId,
+  );
+    Future<Either<Failure, void>> updateBookingStatus(
+    String bookingId,
+    String newStatus,
+  );
+
 }

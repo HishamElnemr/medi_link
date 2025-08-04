@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "booking_successfully": MessageLookupByLibrary.simpleMessage(
       "Booking successfully",
     ),
+    "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
     "cardiology": MessageLookupByLibrary.simpleMessage("Cardiology"),
     "change_language": MessageLookupByLibrary.simpleMessage("Change Language"),
     "check_your_internet_connection": MessageLookupByLibrary.simpleMessage(
@@ -54,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "complete_the_appointment": MessageLookupByLibrary.simpleMessage(
       "Complete the appointment",
     ),
+    "completed": MessageLookupByLibrary.simpleMessage("Completed"),
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "Create New Account",
     ),
@@ -118,6 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "patient": MessageLookupByLibrary.simpleMessage("Patient"),
     "patient_details": MessageLookupByLibrary.simpleMessage("Patient Details"),
     "pediatrics": MessageLookupByLibrary.simpleMessage("Pediatrics"),
+    "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "psychiatry": MessageLookupByLibrary.simpleMessage("Psychiatry"),
     "pulmonology": MessageLookupByLibrary.simpleMessage("Pulmonology"),

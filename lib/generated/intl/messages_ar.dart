@@ -50,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "complete_the_appointment": MessageLookupByLibrary.simpleMessage(
       "اكمل الحجز",
     ),
+    "completed": MessageLookupByLibrary.simpleMessage("مكتمل"),
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "إنشاء حساب جديد",
     ),
@@ -104,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "patient": MessageLookupByLibrary.simpleMessage("مريض"),
     "patient_details": MessageLookupByLibrary.simpleMessage("تفاصيل الحجز"),
     "pediatrics": MessageLookupByLibrary.simpleMessage("أطفال"),
+    "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "psychiatry": MessageLookupByLibrary.simpleMessage("نفسية"),
     "pulmonology": MessageLookupByLibrary.simpleMessage("صدرية"),

@@ -65,18 +65,6 @@ class FireStoreRepoImpl implements FireStoreRepo {
     }
   }
 
-  @override
-  Future<Either<Failure, List<PatientEntity>>> getAllPatients() async {
-    try {
-      var result = await fireStoreServices.getAllPatients();
-      return Right(
-        result.map((e) => PatientModel.fromJson(e).toEntity()).toList(),
-      );
-    } on Exception catch (e) {
-      log('Error getting all patients: $e');
-      return left(ServerFailure(e.toString()));
-    }
-  }
 
   @override
   Future<void> getUserDataAndSaveRole(String uid) async {

@@ -6,6 +6,7 @@ import 'package:medi_link/features/booking/presentation/cubits/booking_cubit.dar
 import 'package:medi_link/features/booking/presentation/cubits/booking_state.dart';
 import 'package:medi_link/features/booking/presentation/views/widgets/booking_view_body.dart';
 import 'package:medi_link/generated/l10n.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class BookingViewBodyBlocListener extends StatelessWidget {
   const BookingViewBodyBlocListener({super.key});
@@ -28,13 +29,10 @@ class BookingViewBodyBlocListener extends StatelessWidget {
             color: Colors.red,
           );
         } else {
-          const Center(
-            child: CircularProgressIndicator(color: AppColors.primaryBlue),
-          );
+          const Skeletonizer(child: BookingViewBody());
         }
       },
       child: const BookingViewBody(),
     );
   }
 }
-

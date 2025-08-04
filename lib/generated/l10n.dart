@@ -414,6 +414,21 @@ class S {
     return Intl.message('Reject', name: 'reject', desc: '', args: []);
   }
 
+  /// `Pending`
+  String get pending {
+    return Intl.message('Pending', name: 'pending', desc: '', args: []);
+  }
+
+  /// `Cancelled`
+  String get cancelled {
+    return Intl.message('Cancelled', name: 'cancelled', desc: '', args: []);
+  }
+
+  /// `Completed`
+  String get completed {
+    return Intl.message('Completed', name: 'completed', desc: '', args: []);
+  }
+
   /// `Complete the appointment`
   String get complete_the_appointment {
     return Intl.message(

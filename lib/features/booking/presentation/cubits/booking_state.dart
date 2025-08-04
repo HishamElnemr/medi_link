@@ -21,3 +21,14 @@ class DoctorBookingsLoaded extends BookingState {
 
   DoctorBookingsLoaded(this.bookings);
 }
+
+class PatientBookingsLoaded extends BookingState {
+  final List<BookingEntity> bookings;
+
+  PatientBookingsLoaded(this.bookings);
+}
+class BookingStatusUpdated extends BookingState {
+  final String bookingId;
+  final String newStatus;
+  BookingStatusUpdated(this.bookingId, this.newStatus);
+}

@@ -39,4 +39,34 @@ class BookingRepoImpl implements BookingRepo {
       return left(ServerFailure(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, List<BookingEntity>>> getPatientBookings(
+    String patientId,
+  ) async {
+    try {
+      var result = await fireStoreServices.getPatientBookings(patientId);
+      return Right(
+        result.map((e) => BookingModel.fromJson(e).toEntity()).toList(),
+      );
+    } on Exception catch (e) {
+      log('Error getting patient bookings: $e');
+      return left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> updateBookingStatus(
+    String bookingId,
+    String newStatus,
+  ) async {
+    try {
+      await fireStoreServices.updateBookingStatus(bookingId, newStatus);
+      log('Booking status updated successfully');
+      return const Right(null);
+    } on Exception catch (e) {
+      log('Error updating booking status: $e');
+      return left(ServerFailure(e.toString()));
+    }
+  }
 }

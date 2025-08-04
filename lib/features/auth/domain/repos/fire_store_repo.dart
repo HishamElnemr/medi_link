@@ -9,9 +9,9 @@ abstract class FireStoreRepo {
   Future<Either<Failure, void>> addPatientData(PatientEntity patientEntity);
 
   Future<Either<Failure, List<DoctorEntity>>> getAllDoctors();
-  Future<Either<Failure, List<PatientEntity>>> getAllPatients();
 
   Future<void> getUserDataAndSaveRole(String uid);
+  //Future<Either<Failure, List<PatientEntity>>> getAllPatients();
   //Future<Either<Failure, void>> updateDoctorData(DoctorEntity doctorEntity);
   //Future<Either<Failure, void>> updatePatientData(PatientEntity patientEntity);
 }

@@ -18,13 +18,6 @@ class FireStoreServices {
     return snapshot.docs.map((doc) => doc.data()).toList();
   }
 
-  Future<List<Map<String, dynamic>>> getAllPatients() async {
-    final snapshot = await firestore
-        .collection(BackendEndpoints.patientsEndpoint)
-        .get();
-    return snapshot.docs.map((doc) => doc.data()).toList();
-  }
-
   Future<void> addBookingData({required Map<String, dynamic> data}) async {
     final docRef = await firestore
         .collection(BackendEndpoints.bookingsEndpoint)
@@ -38,5 +31,22 @@ class FireStoreServices {
         .where('doctorId', isEqualTo: doctorId)
         .get();
     return snapshot.docs.map((doc) => doc.data()).toList();
+  }
+
+  Future<List<Map<String, dynamic>>> getPatientBookings(
+    String patientId,
+  ) async {
+    final snapshot = await firestore
+        .collection(BackendEndpoints.bookingsEndpoint)
+        .where('patientId', isEqualTo: patientId)
+        .get();
+    return snapshot.docs.map((doc) => doc.data()).toList();
+  }
+
+  Future<void> updateBookingStatus(String bookingId, String newStatus) async {
+    await firestore
+        .collection(BackendEndpoints.bookingsEndpoint)
+        .doc(bookingId)
+        .update({'status': newStatus});
   }
 }

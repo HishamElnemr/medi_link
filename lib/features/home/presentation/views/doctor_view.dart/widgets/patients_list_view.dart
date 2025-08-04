@@ -13,9 +13,7 @@ class PatientsListView extends StatelessWidget {
       itemCount: patients.length,
       itemBuilder: (BuildContext context, int index) {
         return PatientCard(
-          patientName: patients[index].patientName,
-          patientAge: patients[index].patientAge,
-          onApprovePressed: () {},
+          booking: patients[index],
         );
       }, separatorBuilder: (BuildContext context, int index) { 
         return const SizedBox(
