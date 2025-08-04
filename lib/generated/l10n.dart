@@ -404,6 +404,16 @@ class S {
     return Intl.message('Book Now', name: 'book_now', desc: '', args: []);
   }
 
+  /// `Approve`
+  String get approve {
+    return Intl.message('Approve', name: 'approve', desc: '', args: []);
+  }
+
+  /// `Reject`
+  String get reject {
+    return Intl.message('Reject', name: 'reject', desc: '', args: []);
+  }
+
   /// `Complete the appointment`
   String get complete_the_appointment {
     return Intl.message(

@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "age": MessageLookupByLibrary.simpleMessage("Age"),
     "all": MessageLookupByLibrary.simpleMessage("All"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("Anesthesia"),
+    "approve": MessageLookupByLibrary.simpleMessage("Approve"),
     "book_appointment": MessageLookupByLibrary.simpleMessage("Book Now"),
     "book_now": MessageLookupByLibrary.simpleMessage("Book Now"),
     "booking_failed": MessageLookupByLibrary.simpleMessage("Booking failed"),
@@ -121,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "psychiatry": MessageLookupByLibrary.simpleMessage("Psychiatry"),
     "pulmonology": MessageLookupByLibrary.simpleMessage("Pulmonology"),
     "radiology": MessageLookupByLibrary.simpleMessage("Radiology"),
+    "reject": MessageLookupByLibrary.simpleMessage("Reject"),
     "rheumatology": MessageLookupByLibrary.simpleMessage("Rheumatology"),
     "search_for_doctor": MessageLookupByLibrary.simpleMessage(
       "Search for doctor",

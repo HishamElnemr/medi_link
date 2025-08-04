@@ -161,6 +161,7 @@ class _BookingViewBodyState extends State<BookingViewBody> {
               patientName: patientName,
               doctorName: doctor.firstName + ' ' + doctor.lastName,
               date: selectedDate!.toIso8601String(),
+              patientAge: isAnotherPatientSelected ? getPatientData().age : int.parse(ageController.text.trim()),
               status: 'pending',
             );
 

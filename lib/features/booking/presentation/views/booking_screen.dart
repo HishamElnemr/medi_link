@@ -66,7 +66,7 @@ class _BookingScreenState extends State<BookingScreen> {
         appBar: AppBar(title: Text('Book with ${widget.doctorName}')),
         body: BlocListener<BookingCubit, BookingState>(
           listener: (context, state) {
-            if (state is BookingSuccess) {
+            if (state is DoctorBookingsLoaded) {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('Booking successful!')),
               );
@@ -127,6 +127,7 @@ class _BookingScreenState extends State<BookingScreen> {
                                 doctorName: widget.doctorName,
                                 date: selectedDate!.toIso8601String(),
                                 status: 'pending',
+                                patientAge: getPatientData().age,
                               );
                               context.read<BookingCubit>().addBooking(booking);
                             },

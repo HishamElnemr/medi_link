@@ -40,7 +40,7 @@ class MediLink extends StatelessWidget {
       child: BlocBuilder<LanguageCubit, Locale>(
         builder: (context, locale) {
           return AppView(
-            locale: Locale(Prefs.getString(BackendEndpoints.languageCode)),
+            locale: Locale(Prefs.getString(BackendEndpoints.languageCode) ?? 'ar'),
           );
         },
       ),

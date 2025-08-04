@@ -52,6 +52,8 @@
   "other_person" : "شخص اخر",
   "book_appointment" : "حجز موعد",
   "book_now" : "احجز الان",
+  "approve": "قبول",
+  "reject": "رفض",
   "patient_details" : "تفاصيل الحجز",
   "complete_the_appointment" : "اكمل الحجز",
   "booking_successfully" : "تم حجز الموعد بنجاح",
