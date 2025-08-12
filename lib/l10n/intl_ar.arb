@@ -48,6 +48,7 @@
   "full_name" : "الاسم الكامل",
   "select_date" : "حدد تاريخ الحجز",
   "click_to_select_date" : "انقر لتحديد التاريخ",
+  "date" : "التاريخ",
   "myself" : "لنفسي",
   "other_person" : "شخص اخر",
   "book_appointment" : "حجز موعد",

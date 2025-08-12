@@ -6,6 +6,7 @@ import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/core/services/shared_preferences_singleton.dart';
 import 'package:medi_link/core/utils/backend_endpoints.dart';
+import 'package:medi_link/features/home/presentation/views/patient_view/widgets/app_bar_icon_button.dart';
 import 'package:medi_link/generated/l10n.dart';
 import 'package:medi_link/language_cubit.dart';
 import '../../../../../../core/helper/get_patient_data.dart';
@@ -50,67 +51,31 @@ class HomeAppBar extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          Container(
-            width: 45,
-            height: 45,
-            padding: const EdgeInsets.all(5),
-            decoration: const BoxDecoration(
-              color: AppColors.softBlue1,
-              shape: BoxShape.circle,
-            ),
-
-            // child: IconButton(
-            //   onPressed: () {
-            //     FirebaseAuth.instance.signOut();
-            //     Navigator.pushReplacementNamed(context, RoutesName.login);
-            //   },
-            //   icon: SvgPicture.asset(
-            //     Assets.assetsImagesSearch,
-            //     width: 20,
-            //     height: 20,
-            //     fit: BoxFit.cover,
-            //   ),
-            // ),
-            child: IconButton(
-              onPressed: () {
-                FirebaseAuth.instance.signOut();
-                Navigator.pushReplacementNamed(context, RoutesName.login);
-              },
-              icon: const Icon(Icons.logout, color: AppColors.primaryBlue),
-            ),
+          AppBarIconButton(
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+              Navigator.pushReplacementNamed(context, RoutesName.login);
+            },
+            icon: Icons.logout,
           ),
           const SizedBox(width: 5),
-          Container(
-            width: 45,
-            height: 45,
-            padding: const EdgeInsets.all(5),
-            decoration: const BoxDecoration(
-              color: AppColors.softBlue1,
-              shape: BoxShape.circle,
-            ),
-            // child: IconButton(
-            //   onPressed: () {},
-            //   icon: SvgPicture.asset(
-            //     Assets.assetsImagesSetting,
-            //     width: 20,
-            //     height: 20,
-            //     fit: BoxFit.cover,
-            //   ),
-            // ),
-            child: IconButton(
-              onPressed: () {
-                final languageCubit = context.read<LanguageCubit>();
-                languageCubit.toggleLanguage();
-                Prefs.setString(
-                  BackendEndpoints.languageCode,
-                  languageCubit.state.languageCode,
-                );
-              },
-              icon: const Icon(
-                Icons.translate_rounded,
-                color: AppColors.primaryBlue,
-              ),
-            ),
+          AppBarIconButton(
+            onPressed: () {
+              final languageCubit = context.read<LanguageCubit>();
+              languageCubit.toggleLanguage();
+              Prefs.setString(
+                BackendEndpoints.languageCode,
+                languageCubit.state.languageCode,
+              );
+            },
+            icon: Icons.translate_rounded,
+          ),
+          const SizedBox(width: 5),
+          AppBarIconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, RoutesName.patientBooking);
+            },
+            icon: Icons.calendar_month_outlined,
           ),
         ],
       ),

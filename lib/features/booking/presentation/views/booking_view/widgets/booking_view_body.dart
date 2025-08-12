@@ -10,9 +10,9 @@ import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/booking_details.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
 import 'package:medi_link/features/booking/presentation/cubits/booking_cubit.dart';
-import 'package:medi_link/features/booking/presentation/views/widgets/doctor_details.dart';
-import 'package:medi_link/features/booking/presentation/views/widgets/select_date.dart';
-import 'package:medi_link/features/booking/presentation/views/widgets/select_patient.dart';
+import 'package:medi_link/features/booking/presentation/views/booking_view/widgets/doctor_details.dart';
+import 'package:medi_link/features/booking/presentation/views/booking_view/widgets/select_date.dart';
+import 'package:medi_link/features/booking/presentation/views/booking_view/widgets/select_patient.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class BookingViewBody extends StatefulWidget {

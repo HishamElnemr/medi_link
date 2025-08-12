@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 
-import '../../../../../../generated/l10n.dart';
+import '../../../../../../../generated/l10n.dart';
 
 class DoctorDetails extends StatelessWidget {
   const DoctorDetails({

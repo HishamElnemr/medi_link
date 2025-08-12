@@ -59,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "Create New Account",
     ),
+    "date": MessageLookupByLibrary.simpleMessage("Date"),
     "dentistry": MessageLookupByLibrary.simpleMessage("Dentistry"),
     "dermatology": MessageLookupByLibrary.simpleMessage("Dermatology"),
     "doctor": MessageLookupByLibrary.simpleMessage("Doctor"),

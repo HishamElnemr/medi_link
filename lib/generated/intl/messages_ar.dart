@@ -54,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "إنشاء حساب جديد",
     ),
+    "date": MessageLookupByLibrary.simpleMessage("التاريخ"),
     "dentistry": MessageLookupByLibrary.simpleMessage("أسنان"),
     "dermatology": MessageLookupByLibrary.simpleMessage("جلدية"),
     "doctor": MessageLookupByLibrary.simpleMessage("طبيب"),

@@ -57,6 +57,7 @@
   "myself" : "Myself",
   "select_date" : "Select Date",
   "click_to_select_date" : "Click to select date",
+  "date" : "Date",
   "other_person" : "Other person",
   "full_name" : "Full Name",
   "booking_successfully" : "Booking successfully",

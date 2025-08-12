@@ -474,6 +474,11 @@ class S {
     );
   }
 
+  /// `Date`
+  String get date {
+    return Intl.message('Date', name: 'date', desc: '', args: []);
+  }
+
   /// `Other person`
   String get other_person {
     return Intl.message(

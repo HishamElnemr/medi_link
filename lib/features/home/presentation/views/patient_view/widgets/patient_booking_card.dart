@@ -26,7 +26,7 @@ class PatientBookingCard extends StatelessWidget {
             // معلومات الدكتور
             Row(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   backgroundColor: AppColors.primaryBlue,
                   child: Icon(Icons.medical_services, color: Colors.white),
                 ),
@@ -58,7 +58,7 @@ class PatientBookingCard extends StatelessWidget {
             // تاريخ الحجز
             Row(
               children: [
-                Icon(Icons.calendar_today, size: 16, color: AppColors.darkGrey),
+                const Icon(Icons.calendar_today, size: 16, color: AppColors.darkGrey),
                 const SizedBox(width: 8),
                 Text(
                   _formatDate(booking.date),
@@ -170,7 +170,7 @@ class PatientBookingCard extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.check_circle, color: Colors.blue, size: 20),
+              const Icon(Icons.check_circle, color: Colors.blue, size: 20),
               const SizedBox(width: 8),
               Text(
                 'تم إنهاء الحجز بنجاح',
@@ -191,7 +191,7 @@ class PatientBookingCard extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.cancel, color: Colors.red, size: 20),
+              const Icon(Icons.cancel, color: Colors.red, size: 20),
               const SizedBox(width: 8),
               Text(
                 'تم رفض الحجز من الدكتور',
@@ -212,7 +212,7 @@ class PatientBookingCard extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.block, color: Colors.grey, size: 20),
+              const Icon(Icons.block, color: Colors.grey, size: 20),
               const SizedBox(width: 8),
               Text(
                 'تم إلغاء الحجز',
@@ -232,19 +232,19 @@ class PatientBookingCard extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('تأكيد الإلغاء'),
-          content: Text('هل أنت متأكد من إلغاء هذا الحجز؟'),
+          title: const Text('تأكيد الإلغاء'),
+          content: const Text('هل أنت متأكد من إلغاء هذا الحجز؟'),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('لا'),
+              child: const Text('لا'),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
                 context.read<BookingCubit>().cancelBooking(booking.id);
               },
-              child: Text('نعم', style: TextStyle(color: Colors.red)),
+              child: const Text('نعم', style: TextStyle(color: Colors.red)),
             ),
           ],
         );

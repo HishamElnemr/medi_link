@@ -24,7 +24,6 @@ class PatientCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // اسم المريض
           AutoSizeText(
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
@@ -36,21 +35,18 @@ class PatientCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
 
-          // عمر المريض
           Text(
             '${booking.patientAge} ${S.of(context).years}',
             style: FontStyles.light12.copyWith(color: AppColors.darkGrey),
           ),
           const SizedBox(height: 8),
 
-          // تاريخ الحجز
           Text(
-            'التاريخ: ${_formatDate(booking.date)}',
+            '${S.of(context).date}: ${_formatDate(booking.date)}',
             style: FontStyles.light12.copyWith(color: AppColors.darkGrey),
           ),
           const SizedBox(height: 8),
 
-          // حالة الحجز
           Row(
             children: [
               Icon(
@@ -85,4 +81,3 @@ class PatientCard extends StatelessWidget {
     }
   }
 }
-
