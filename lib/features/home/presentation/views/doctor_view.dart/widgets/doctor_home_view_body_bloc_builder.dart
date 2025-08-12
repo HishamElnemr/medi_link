@@ -4,6 +4,7 @@ import 'package:medi_link/features/booking/presentation/cubits/booking_cubit.dar
 import 'package:medi_link/features/booking/presentation/cubits/booking_state.dart';
 import 'package:medi_link/features/home/presentation/views/doctor_view.dart/widgets/doctor_home_view_body.dart';
 import 'package:medi_link/core/utils/skeltonizer_loading_body.dart';
+import 'package:medi_link/generated/l10n.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class DoctorHomeViewBodyBlocBuilder extends StatelessWidget {
@@ -14,7 +15,9 @@ class DoctorHomeViewBodyBlocBuilder extends StatelessWidget {
     return BlocBuilder<BookingCubit, BookingState>(
       builder: (context, state) {
         if (state is DoctorBookingsLoaded) {
-          return DoctorHomeViewBody(patients: state.bookings);
+          return state.bookings.isEmpty
+              ? Center(child: Text(S.of(context).no_appointment))
+              : DoctorHomeViewBody(patients: state.bookings);
         } else if (state is BookingError) {
           return Center(child: Text(state.failure.message));
         } else {
@@ -24,4 +27,3 @@ class DoctorHomeViewBodyBlocBuilder extends StatelessWidget {
     );
   }
 }
-

@@ -98,7 +98,6 @@ class DoctorCard extends StatelessWidget {
               CustomButton(
                 onPressed: onPressed,
                 text: S.of(context).book_appointment,
-              
                 width: 120,
                 height: 40,
                 style: FontStyles.medium15.copyWith(color: AppColors.white),

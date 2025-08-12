@@ -3,7 +3,7 @@ import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/doctor_list_view_bloc_builder.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/medical_specialties_grid.dart';
-import 'package:medi_link/features/home/presentation/views/patient_view/widgets/home_app_bar.dart';
+import 'package:medi_link/features/home/presentation/views/patient_view/widgets/patient_home_app_bar.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class PatientHomeViewBody extends StatelessWidget {
@@ -13,7 +13,7 @@ class PatientHomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-              const HomeAppBar(),
+        const PatientHomeAppBar(),
         SliverPadding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           sliver: SliverList(

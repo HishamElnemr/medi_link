@@ -47,7 +47,7 @@ class StatusState extends StatelessWidget {
           onPressed: () {
             context.read<BookingCubit>().completeBooking(booking.id);
           },
-          text: 'إنهاء الحجز',
+          text: S.of(context).approved,
           height: 40,
           backgroundColor: Colors.blue,
           style: FontStyles.medium15.copyWith(color: AppColors.white),
@@ -61,7 +61,7 @@ class StatusState extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
           child: Text(
-            'تم إنهاء الحجز',
+            S.of(context).completed,
             style: FontStyles.medium15.copyWith(color: Colors.green),
           ),
         );
@@ -74,7 +74,7 @@ class StatusState extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
           child: Text(
-            'تم رفض الحجز',
+            S.of(context).rejected,
             style: FontStyles.medium15.copyWith(color: Colors.red),
           ),
         );

@@ -65,6 +65,7 @@ class BookingCubit extends Cubit<BookingState> {
 
   Future<void> rejectBooking(String bookingId) async {
     await updateBookingStatus(bookingId, 'rejected');
+
   }
 
   Future<void> cancelBooking(String bookingId) async {
@@ -74,4 +75,5 @@ class BookingCubit extends Cubit<BookingState> {
   Future<void> completeBooking(String bookingId) async {
     await updateBookingStatus(bookingId, 'completed');
   }
+  
 }
