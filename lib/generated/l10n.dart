@@ -429,6 +429,11 @@ class S {
     return Intl.message('Completed', name: 'completed', desc: '', args: []);
   }
 
+  /// `Bookings`
+  String get bookings {
+    return Intl.message('Bookings', name: 'bookings', desc: '', args: []);
+  }
+
   /// `Complete the appointment`
   String get complete_the_appointment {
     return Intl.message(

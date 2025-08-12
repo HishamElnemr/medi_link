@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "booking_successfully": MessageLookupByLibrary.simpleMessage(
       "Booking successfully",
     ),
+    "bookings": MessageLookupByLibrary.simpleMessage("Bookings"),
     "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
     "cardiology": MessageLookupByLibrary.simpleMessage("Cardiology"),
     "change_language": MessageLookupByLibrary.simpleMessage("Change Language"),

@@ -6,8 +6,10 @@ AppBar buildAppBar(
   BuildContext context, {
   required String title,
   bool isVisible = true,
+  Color? backgroundColor,
 }) {
   return AppBar(
+    
     leading: Visibility(
       visible: isVisible,
       child: IconButton(
@@ -19,7 +21,7 @@ AppBar buildAppBar(
       ),
     ),
     actions: const [Padding(padding: EdgeInsets.symmetric(horizontal: 16))],
-    backgroundColor: Colors.transparent,
+    backgroundColor: backgroundColor ??  Colors.transparent,
     elevation: 0,
     centerTitle: true,
     title: Text(

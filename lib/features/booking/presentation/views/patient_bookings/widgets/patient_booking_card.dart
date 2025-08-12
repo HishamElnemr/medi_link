@@ -58,7 +58,11 @@ class PatientBookingCard extends StatelessWidget {
             // تاريخ الحجز
             Row(
               children: [
-                const Icon(Icons.calendar_today, size: 16, color: AppColors.darkGrey),
+                const Icon(
+                  Icons.calendar_today,
+                  size: 16,
+                  color: AppColors.darkGrey,
+                ),
                 const SizedBox(width: 8),
                 Text(
                   _formatDate(booking.date),
@@ -228,21 +232,26 @@ class PatientBookingCard extends StatelessWidget {
   }
 
   void _showCancelDialog(BuildContext context) {
+    // احفظ reference للـ BookingCubit قبل فتح الـ dialog
+    final bookingCubit = context.read<BookingCubit>();
+
     showDialog(
       context: context,
-      builder: (BuildContext context) {
+      builder: (dialogContext) {
+        // استخدم اسم مختلف للـ context
         return AlertDialog(
           title: const Text('تأكيد الإلغاء'),
           content: const Text('هل أنت متأكد من إلغاء هذا الحجز؟'),
           actions: [
             TextButton(
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () => Navigator.of(dialogContext).pop(),
               child: const Text('لا'),
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
-                context.read<BookingCubit>().cancelBooking(booking.id);
+                // استخدم الـ reference المحفوظ بدلاً من context.read
+                bookingCubit.cancelBooking(booking.id);
+                Navigator.of(dialogContext).pop();
               },
               child: const Text('نعم', style: TextStyle(color: Colors.red)),
             ),

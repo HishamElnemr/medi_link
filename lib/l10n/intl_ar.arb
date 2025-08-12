@@ -58,6 +58,7 @@
   "pending": "قيد الانتظار",
   "completed": "مكتمل",
   "canceled": "ملغي",
+  "bookings": "الحجوزات",
   "patient_details" : "تفاصيل الحجز",
   "complete_the_appointment" : "اكمل الحجز",
   "booking_successfully" : "تم حجز الموعد بنجاح",

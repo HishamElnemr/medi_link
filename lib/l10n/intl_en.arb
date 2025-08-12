@@ -51,6 +51,7 @@
   "pending": "Pending",
   "cancelled": "Cancelled",
   "completed": "Completed", 
+  "bookings" : "Bookings",
   "complete_the_appointment" : "Complete the appointment",
   "dr" : "Dr.",
   "patient_details" : "Patient Details",

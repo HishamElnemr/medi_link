@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "booking_successfully": MessageLookupByLibrary.simpleMessage(
       "تم حجز الموعد بنجاح",
     ),
+    "bookings": MessageLookupByLibrary.simpleMessage("الحجوزات"),
     "cardiology": MessageLookupByLibrary.simpleMessage("قلب"),
     "change_language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
     "check_your_internet_connection": MessageLookupByLibrary.simpleMessage(

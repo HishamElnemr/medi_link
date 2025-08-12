@@ -1,5 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/helper/get_doctor_data.dart';
+import 'package:medi_link/core/helper/get_patient_data.dart';
+import 'package:medi_link/core/services/shared_preferences_singleton.dart';
+import 'package:medi_link/core/utils/backend_endpoints.dart';
 import 'package:medi_link/features/booking/data/repos/booking_repo_impl.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
 import 'package:medi_link/features/booking/presentation/cubits/booking_state.dart';
@@ -38,15 +41,22 @@ class BookingCubit extends Cubit<BookingState> {
 
   Future<void> updateBookingStatus(String bookingId, String newStatus) async {
     final result = await bookingRepo.updateBookingStatus(bookingId, newStatus);
-    result.fold(
-      (failure) => emit(BookingError(failure)),
-      (_) async {
+    result.fold((failure) => emit(BookingError(failure)), (_) async {
+      if (Prefs.getString(BackendEndpoints.getUserRole) ==
+          BackendEndpoints.doctorEndpoint) {
         final doctorData = await getDoctorData();
 
         if (doctorData.id != null) {
-          await getDoctorBookings(doctorData.id!);();
-        }}
-    );
+          await getDoctorBookings(doctorData.id!);
+          ();
+        }
+      } else {
+        final patientData = await getPatientData();
+        if (patientData.id != null) {
+          await getPatientBookings(patientData.id!);
+        }
+      }
+    });
   }
 
   Future<void> approveBooking(String bookingId) async {
