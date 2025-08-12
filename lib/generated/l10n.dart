@@ -424,6 +424,66 @@ class S {
     return Intl.message('Cancelled', name: 'cancelled', desc: '', args: []);
   }
 
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Rejected`
+  String get rejected {
+    return Intl.message('Rejected', name: 'rejected', desc: '', args: []);
+  }
+
+  /// `Approved`
+  String get approved {
+    return Intl.message('Approved', name: 'approved', desc: '', args: []);
+  }
+
+  /// `No Appointments`
+  String get no_appointment {
+    return Intl.message(
+      'No Appointments',
+      name: 'no_appointment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message('Confirm', name: 'confirm', desc: '', args: []);
+  }
+
+  /// `Confirm Cancellation`
+  String get confirm_cancellation {
+    return Intl.message(
+      'Confirm Cancellation',
+      name: 'confirm_cancellation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure?`
+  String get are_you_sure {
+    return Intl.message(
+      'Are you sure?',
+      name: 'are_you_sure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message('Yes', name: 'yes', desc: '', args: []);
+  }
+
+  /// `No`
+  String get no {
+    return Intl.message('No', name: 'no', desc: '', args: []);
+  }
+
   /// `Completed`
   String get completed {
     return Intl.message('Completed', name: 'completed', desc: '', args: []);

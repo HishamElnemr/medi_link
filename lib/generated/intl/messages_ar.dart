@@ -32,6 +32,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "all": MessageLookupByLibrary.simpleMessage("الكل"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("تخدير"),
     "approve": MessageLookupByLibrary.simpleMessage("قبول"),
+    "approved": MessageLookupByLibrary.simpleMessage("تم قبول الحجز"),
+    "are_you_sure": MessageLookupByLibrary.simpleMessage("هل انت متاكد"),
     "book_appointment": MessageLookupByLibrary.simpleMessage("حجز موعد"),
     "book_now": MessageLookupByLibrary.simpleMessage("احجز الان"),
     "booking_failed": MessageLookupByLibrary.simpleMessage("فشل حجز الموعد"),
@@ -52,6 +54,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "اكمل الحجز",
     ),
     "completed": MessageLookupByLibrary.simpleMessage("مكتمل"),
+    "confirm": MessageLookupByLibrary.simpleMessage("تاكيد"),
+    "confirm_cancellation": MessageLookupByLibrary.simpleMessage(
+      "تاكيد الغاء الحجز",
+    ),
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "إنشاء حساب جديد",
     ),
@@ -99,6 +105,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "myself": MessageLookupByLibrary.simpleMessage("لنفسي"),
     "nephrology": MessageLookupByLibrary.simpleMessage("كلى"),
     "neurology": MessageLookupByLibrary.simpleMessage("مخ وأعصاب"),
+    "no": MessageLookupByLibrary.simpleMessage("لا"),
+    "no_appointment": MessageLookupByLibrary.simpleMessage("لا يوجد حجوزات"),
     "oncology": MessageLookupByLibrary.simpleMessage("أورام"),
     "ophthalmology": MessageLookupByLibrary.simpleMessage("عيون"),
     "orthopedics": MessageLookupByLibrary.simpleMessage("عظام"),
@@ -113,6 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pulmonology": MessageLookupByLibrary.simpleMessage("صدرية"),
     "radiology": MessageLookupByLibrary.simpleMessage("أشعة"),
     "reject": MessageLookupByLibrary.simpleMessage("رفض"),
+    "rejected": MessageLookupByLibrary.simpleMessage("تم رفض الحجز"),
     "rheumatology": MessageLookupByLibrary.simpleMessage("روماتيزم"),
     "search_for_doctor": MessageLookupByLibrary.simpleMessage("ابحث عن طبيب"),
     "see_all": MessageLookupByLibrary.simpleMessage("اظهار الكل"),
@@ -144,5 +153,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحباً بك "),
     "years": MessageLookupByLibrary.simpleMessage("سنة"),
+    "yes": MessageLookupByLibrary.simpleMessage("نعم"),
   };
 }

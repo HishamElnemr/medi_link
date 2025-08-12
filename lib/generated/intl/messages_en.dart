@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "all": MessageLookupByLibrary.simpleMessage("All"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("Anesthesia"),
     "approve": MessageLookupByLibrary.simpleMessage("Approve"),
+    "approved": MessageLookupByLibrary.simpleMessage("Approved"),
+    "are_you_sure": MessageLookupByLibrary.simpleMessage("Are you sure?"),
     "book_appointment": MessageLookupByLibrary.simpleMessage("Book Now"),
     "book_now": MessageLookupByLibrary.simpleMessage("Book Now"),
     "booking_failed": MessageLookupByLibrary.simpleMessage("Booking failed"),
@@ -41,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Booking successfully",
     ),
     "bookings": MessageLookupByLibrary.simpleMessage("Bookings"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
     "cardiology": MessageLookupByLibrary.simpleMessage("Cardiology"),
     "change_language": MessageLookupByLibrary.simpleMessage("Change Language"),
@@ -57,6 +60,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Complete the appointment",
     ),
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
+    "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+    "confirm_cancellation": MessageLookupByLibrary.simpleMessage(
+      "Confirm Cancellation",
+    ),
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "Create New Account",
     ),
@@ -114,6 +121,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "myself": MessageLookupByLibrary.simpleMessage("Myself"),
     "nephrology": MessageLookupByLibrary.simpleMessage("Nephrology"),
     "neurology": MessageLookupByLibrary.simpleMessage("Neurology"),
+    "no": MessageLookupByLibrary.simpleMessage("No"),
+    "no_appointment": MessageLookupByLibrary.simpleMessage("No Appointments"),
     "oncology": MessageLookupByLibrary.simpleMessage("Oncology"),
     "ophthalmology": MessageLookupByLibrary.simpleMessage("Ophthalmology"),
     "orthopedics": MessageLookupByLibrary.simpleMessage("Orthopedics"),
@@ -128,6 +137,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pulmonology": MessageLookupByLibrary.simpleMessage("Pulmonology"),
     "radiology": MessageLookupByLibrary.simpleMessage("Radiology"),
     "reject": MessageLookupByLibrary.simpleMessage("Reject"),
+    "rejected": MessageLookupByLibrary.simpleMessage("Rejected"),
     "rheumatology": MessageLookupByLibrary.simpleMessage("Rheumatology"),
     "search_for_doctor": MessageLookupByLibrary.simpleMessage(
       "Search for doctor",
@@ -161,5 +171,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
     "years": MessageLookupByLibrary.simpleMessage("Years"),
+    "yes": MessageLookupByLibrary.simpleMessage("Yes"),
   };
 }
