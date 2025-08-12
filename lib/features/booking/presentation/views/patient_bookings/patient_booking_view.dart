@@ -28,7 +28,7 @@ class PatientBookingView extends StatelessWidget {
           title: S.of(context).bookings,
           backgroundColor: AppColors.softBlue1,
         ),
-        body: PatientBookingViewBlocBuilder(),
+        body: const PatientBookingViewBlocBuilder(),
       ),
     );
   }

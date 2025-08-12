@@ -65,6 +65,19 @@ class FireStoreRepoImpl implements FireStoreRepo {
     }
   }
 
+  @override
+  Future<Either<Failure, List<DoctorEntity>>> getDoctorsBySpecialization({required String specialization}) async {
+    try {
+      var result = await fireStoreServices.getDoctorsBySpecialization(specialization: specialization);
+      return Right(
+        result.map((e) => DoctorModel.fromJson(e).toEntity()).toList(),
+      );
+    } on Exception catch (e) {
+      log('Error getting doctors by specialization: $e');
+      return left(ServerFailure(e.toString()));
+    }
+  }
+
 
   @override
   Future<void> getUserDataAndSaveRole(String uid) async {

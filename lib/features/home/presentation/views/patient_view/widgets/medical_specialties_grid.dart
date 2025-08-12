@@ -16,10 +16,7 @@ class _MedicalSpecialtiesGridState extends State<MedicalSpecialtiesGrid> {
   @override
   Widget build(BuildContext context) {
     final specialties = [
-      {
-        'icon': Assets.assetsImagesAll,
-        'title': S.of(context).all,
-      },
+      {'icon': Assets.assetsImagesAll, 'title': S.of(context).all},
       {
         'icon': Assets.assetsImagesCadiologist,
         'title': S.of(context).cardiology,
@@ -68,6 +65,7 @@ class _MedicalSpecialtiesGridState extends State<MedicalSpecialtiesGrid> {
             onTap: () {
               setState(() {
                 selectedIndex = index;
+               
               });
             },
           );

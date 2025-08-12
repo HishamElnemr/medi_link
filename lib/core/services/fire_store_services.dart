@@ -18,6 +18,14 @@ class FireStoreServices {
     return snapshot.docs.map((doc) => doc.data()).toList();
   }
 
+  Future<List<Map<String, dynamic>>> getDoctorsBySpecialization({required String specialization}) async {
+    final snapshot = await firestore
+        .collection(BackendEndpoints.doctorEndpoint)
+        .where('speciality', isEqualTo: specialization)
+        .get();
+    return snapshot.docs.map((doc) => doc.data()).toList();
+  }
+
   Future<void> addBookingData({required Map<String, dynamic> data}) async {
     final docRef = await firestore
         .collection(BackendEndpoints.bookingsEndpoint)

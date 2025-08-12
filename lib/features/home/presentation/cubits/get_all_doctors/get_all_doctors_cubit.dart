@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import '../../../domain/entites/doctor_entity.dart';
-import '../../../domain/repos/fire_store_repo.dart';
+import '../../../../auth/domain/entites/doctor_entity.dart';
+import '../../../../auth/domain/repos/fire_store_repo.dart';
 part 'get_all_doctors_state.dart';
 
 class GetAllDoctorsCubit extends Cubit<GetAllDoctorsState> {

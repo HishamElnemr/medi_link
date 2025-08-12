@@ -9,7 +9,7 @@ import 'package:medi_link/core/utils/backend_endpoints.dart';
 import 'package:medi_link/language_cubit.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'features/auth/data/repos/fire_store_repo_imple.dart';
-import 'features/auth/presentation/cubits/get_all_doctors/get_all_doctors_cubit.dart';
+import 'features/home/presentation/cubits/get_all_doctors/get_all_doctors_cubit.dart';
 
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(

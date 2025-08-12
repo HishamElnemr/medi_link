@@ -20,28 +20,11 @@ class DoctorListView extends StatelessWidget {
         return DoctorCard(
           doctorEntity: doctor,
           onPressed: () {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (_) => BookingScreen(
-            //       doctorId: doctor.id,
-            //       doctorName: '${doctor.firstName} ${doctor.lastName}',
-            //     ),
-            //   ),
-            // );
             Navigator.pushNamed(
               context,
               RoutesName.booking,
               arguments: doctor,
             );
-            // ScaffoldMessenger.of(context).showSnackBar(
-            //   SnackBar(
-            //     content: Text(
-            //       'تم حجز موعد مع ${doctor.firstName} ${doctor.lastName}',
-            //     ),
-            //     backgroundColor: Colors.green,
-            //   ),
-            // );
           },
         );
       },
