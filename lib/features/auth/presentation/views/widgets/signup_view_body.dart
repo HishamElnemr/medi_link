@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/core/services/shared_preferences_singleton.dart';
+import 'package:medi_link/core/utils/backend_endpoints.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/core/widgets/custom_text_form_field.dart';
 import 'package:medi_link/core/widgets/password_field.dart';
@@ -55,7 +56,6 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 onChanged: (value) {
                   setState(() {
                     selectedType = value!;
-                    Prefs.setBool('isDoctor', selectedType == 'Doctor');
                   });
                 },
                 label: S.of(context).sign_as,
@@ -124,13 +124,13 @@ class _SignupViewBodyState extends State<SignupViewBody> {
       children: [
         CustomTextFormField(
           hitText: S.of(context).first_name,
-          keyboardType: TextInputType.name,
+          keyboardType: TextInputType.text,
           onSaved: (value) => firstName = value!,
         ),
         const SizedBox(height: 16),
         CustomTextFormField(
           hitText: S.of(context).last_name,
-          keyboardType: TextInputType.name,
+          keyboardType: TextInputType.text,
           onSaved: (value) => lastName = value!,
         ),
       ],
@@ -224,6 +224,10 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           );
       if (userAuthEntity != null) {
         if (selectedType == 'Doctor') {
+          await Prefs.setString(
+            BackendEndpoints.getUserRole,
+            BackendEndpoints.doctorEndpoint,
+          );
           context.read<AddDoctorDataCubit>().addDoctorData(
             DoctorEntity(
               id: userAuthEntity.uId,
@@ -248,6 +252,10 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           }
         }
         if (selectedType == 'Patient') {
+          await Prefs.setString(
+            BackendEndpoints.getUserRole,
+            BackendEndpoints.patientsEndpoint,
+          );
           context.read<AddPatientDataCubit>().addPatientData(
             PatientEntity(
               id: userAuthEntity.uId,

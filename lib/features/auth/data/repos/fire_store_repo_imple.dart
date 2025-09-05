@@ -135,6 +135,7 @@ class FireStoreRepoImpl implements FireStoreRepo {
 
 Future savePatientData(PatientEntity user) async {
   try {
+    // jsonEncode => Prefs can store only strings,int,bool,... but not store maps so we encode it to convert maps to json
     var jsonData = jsonEncode(PatientModel.fromEntity(user).toMap());
     await Prefs.setString(BackendEndpoints.kPatientData, jsonData);
     log('Patient data saved to SharedPreferences');

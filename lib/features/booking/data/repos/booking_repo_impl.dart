@@ -36,7 +36,7 @@ class BookingRepoImpl implements BookingRepo {
       );
     } on Exception catch (e) {
       log('Error getting doctor bookings: $e');
-      return left(ServerFailure(e.toString()));
+      return left(ServerFailure('حدث خطأ ما يرجى المحاولة مرة أخرى'));
     }
   }
 
@@ -51,7 +51,7 @@ class BookingRepoImpl implements BookingRepo {
       );
     } on Exception catch (e) {
       log('Error getting patient bookings: $e');
-      return left(ServerFailure(e.toString()));
+      return left(ServerFailure('حدث خطأ ما يرجى المحاولة مرة أخرى'));
     }
   }
 
@@ -66,7 +66,7 @@ class BookingRepoImpl implements BookingRepo {
       return const Right(null);
     } on Exception catch (e) {
       log('Error updating booking status: $e');
-      return left(ServerFailure(e.toString()));
+      return left(ServerFailure('حدث خطأ ما يرجى المحاولة مرة أخرى'));
     }
   }
 }

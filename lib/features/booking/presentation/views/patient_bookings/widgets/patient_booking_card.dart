@@ -28,7 +28,7 @@ class PatientBookingCard extends StatelessWidget {
           AutoSizeText(
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            'د. ${booking.doctorName}'.toUpperCase(),
+            '${S.of(context).dr} ${booking.doctorName} '.toUpperCase(),
             style: FontStyles.medium15.copyWith(
               color: AppColors.primaryBlue,
               fontWeight: FontWeight.bold,
@@ -36,7 +36,9 @@ class PatientBookingCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
 
-          Text(
+          AutoSizeText(
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             '${S.of(context).patient}: ${booking.patientName}',
             style: FontStyles.light12.copyWith(color: AppColors.darkGrey),
           ),
@@ -72,6 +74,7 @@ class PatientBookingCard extends StatelessWidget {
       ),
     );
   }
+
   String _formatDate(String dateString) {
     try {
       final date = DateTime.parse(dateString);

@@ -144,6 +144,7 @@ class PatientActionButtons extends StatelessWidget {
               onPressed: () {
                 bookingCubit.cancelBooking(booking.id);
                 Navigator.of(dialogContext).pop();
+                context.read<BookingCubit>().getPatientBookings(booking.patientId);
               },
               child: Text(
                 S.of(context).yes,

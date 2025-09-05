@@ -6,7 +6,8 @@ import '../../../domain/repos/auth_repo.dart';
 import '../../../domain/repos/fire_store_repo.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit({required this.authRepo , required this.fireStoreRepo}) : super(LoginInitial());
+  LoginCubit({required this.authRepo, required this.fireStoreRepo})
+    : super(LoginInitial());
   final AuthRepo authRepo;
   final FireStoreRepo fireStoreRepo;
   Future<void> loginUserWithEmailAndPassword({
@@ -22,7 +23,7 @@ class LoginCubit extends Cubit<LoginState> {
     );
     result.fold((failure) => emit(LoginFailure(message: failure.message)), (
       userAuthEntity,
-    ) async{
+    ) async {
       await fireStoreRepo.getUserDataAndSaveRole(userAuthEntity.uId);
       emit(LoginSuccess(userAuthEntity: userAuthEntity));
     });

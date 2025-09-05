@@ -7,7 +7,7 @@ getPatientData() {
   var data = Prefs.getString(BackendEndpoints.kPatientData);
 
   if (data == null || data.isEmpty) {
-    throw Exception('No patient data found');
+    return null;
   }
 
   var patientData = PatientModel.fromJson(jsonDecode(data));

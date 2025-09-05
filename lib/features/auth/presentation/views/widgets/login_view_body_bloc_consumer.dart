@@ -25,7 +25,6 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
           buildSnackBar(context, S.of(context).login_successfully);
           if (isDoctor) {
             Navigator.pushReplacementNamed(context, RoutesName.doctorHome);
-           
           } else {
             Navigator.pushReplacementNamed(context, RoutesName.patientHome);
           }

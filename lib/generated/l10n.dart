@@ -369,6 +369,46 @@ class S {
     return Intl.message('All', name: 'all', desc: '', args: []);
   }
 
+  /// `Failed to add booking`
+  String get failed_to_add_booking {
+    return Intl.message(
+      'Failed to add booking',
+      name: 'failed_to_add_booking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to get doctor bookings`
+  String get failed_to_get_doctor_bookings {
+    return Intl.message(
+      'Failed to get doctor bookings',
+      name: 'failed_to_get_doctor_bookings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to get patient bookings`
+  String get failed_to_get_patient_bookings {
+    return Intl.message(
+      'Failed to get patient bookings',
+      name: 'failed_to_get_patient_bookings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to update booking status`
+  String get failed_to_update_booking_status {
+    return Intl.message(
+      'Failed to update booking status',
+      name: 'failed_to_update_booking_status',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Specialities`
   String get specialities {
     return Intl.message(
@@ -479,11 +519,6 @@ class S {
     return Intl.message('Yes', name: 'yes', desc: '', args: []);
   }
 
-  /// `No`
-  String get no {
-    return Intl.message('No', name: 'no', desc: '', args: []);
-  }
-
   /// `Completed`
   String get completed {
     return Intl.message('Completed', name: 'completed', desc: '', args: []);
@@ -507,6 +542,46 @@ class S {
   /// `Dr.`
   String get dr {
     return Intl.message('Dr.', name: 'dr', desc: '', args: []);
+  }
+
+  /// `Are you sure to reject this booking?`
+  String get are_you_sure_reject_booking {
+    return Intl.message(
+      'Are you sure to reject this booking?',
+      name: 'are_you_sure_reject_booking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes, Reject`
+  String get yes_reject {
+    return Intl.message('Yes, Reject', name: 'yes_reject', desc: '', args: []);
+  }
+
+  /// `Are you sure to cancel this booking?`
+  String get are_you_sure_cancel_booking {
+    return Intl.message(
+      'Are you sure to cancel this booking?',
+      name: 'are_you_sure_cancel_booking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes, Cancel`
+  String get yes_cancel {
+    return Intl.message('Yes, Cancel', name: 'yes_cancel', desc: '', args: []);
+  }
+
+  /// `Complete`
+  String get complete {
+    return Intl.message('Complete', name: 'complete', desc: '', args: []);
+  }
+
+  /// `No`
+  String get no {
+    return Intl.message('No', name: 'no', desc: '', args: []);
   }
 
   /// `Patient Details`

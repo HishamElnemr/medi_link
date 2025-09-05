@@ -30,24 +30,28 @@ class DoctorHomeAppBar extends StatelessWidget {
       ),
       title: Row(
         children: [
-          Text.rich(
-            TextSpan(
-              children: [
-                TextSpan(
-                  text: S.of(context).welcome + ' ',
-                  style: FontStyles.light12.copyWith(
-                    color: AppColors.primaryBlue,
-                    fontWeight: FontWeight.w400,
+          Expanded(
+            child: Text.rich(
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: S.of(context).welcome + ' ',
+                    style: FontStyles.light12.copyWith(
+                      color: AppColors.primaryBlue,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
-                ),
-                TextSpan(
-                  text: '${getDoctorData().firstName.toUpperCase()}',
-                  style: FontStyles.medium15.copyWith(
-                    color: AppColors.darkGrey,
-                    fontWeight: FontWeight.bold,
+                  TextSpan(
+                    text: '${getDoctorData().firstName.toUpperCase()}',
+                    style: FontStyles.medium15.copyWith(
+                      color: AppColors.darkGrey,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
             ),
           ),
           const Spacer(),

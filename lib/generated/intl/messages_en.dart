@@ -36,6 +36,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "approve": MessageLookupByLibrary.simpleMessage("Approve"),
     "approved": MessageLookupByLibrary.simpleMessage("Approved"),
     "are_you_sure": MessageLookupByLibrary.simpleMessage("Are you sure?"),
+    "are_you_sure_cancel_booking": MessageLookupByLibrary.simpleMessage(
+      "Are you sure to cancel this booking?",
+    ),
+    "are_you_sure_reject_booking": MessageLookupByLibrary.simpleMessage(
+      "Are you sure to reject this booking?",
+    ),
     "book_appointment": MessageLookupByLibrary.simpleMessage("Book Now"),
     "book_now": MessageLookupByLibrary.simpleMessage("Book Now"),
     "booking_failed": MessageLookupByLibrary.simpleMessage("Booking failed"),
@@ -56,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "click_to_select_date": MessageLookupByLibrary.simpleMessage(
       "Click to select date",
     ),
+    "complete": MessageLookupByLibrary.simpleMessage("Complete"),
     "complete_the_appointment": MessageLookupByLibrary.simpleMessage(
       "Complete the appointment",
     ),
@@ -85,6 +92,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "emergency": MessageLookupByLibrary.simpleMessage("Emergency"),
     "endocrinology": MessageLookupByLibrary.simpleMessage("Endocrinology"),
     "ent": MessageLookupByLibrary.simpleMessage("Ear, Nose, and Throat (ENT)"),
+    "failed_to_add_booking": MessageLookupByLibrary.simpleMessage(
+      "Failed to add booking",
+    ),
+    "failed_to_get_doctor_bookings": MessageLookupByLibrary.simpleMessage(
+      "Failed to get doctor bookings",
+    ),
+    "failed_to_get_patient_bookings": MessageLookupByLibrary.simpleMessage(
+      "Failed to get patient bookings",
+    ),
+    "failed_to_update_booking_status": MessageLookupByLibrary.simpleMessage(
+      "Failed to update booking status",
+    ),
     "female": MessageLookupByLibrary.simpleMessage("Female"),
     "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
     "full_name": MessageLookupByLibrary.simpleMessage("Full Name"),
@@ -172,5 +191,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
     "years": MessageLookupByLibrary.simpleMessage("Years"),
     "yes": MessageLookupByLibrary.simpleMessage("Yes"),
+    "yes_cancel": MessageLookupByLibrary.simpleMessage("Yes, Cancel"),
+    "yes_reject": MessageLookupByLibrary.simpleMessage("Yes, Reject"),
   };
 }

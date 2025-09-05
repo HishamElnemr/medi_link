@@ -31,11 +31,16 @@ class DoctorDetails extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    S.of(context).dr + ' ' + doctorName,
-                    style: FontStyles.medium15.copyWith(
-                      color: AppColors.primaryBlue,
-                      fontWeight: FontWeight.bold,
+                  Expanded(
+                    
+                    child: Text(
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      S.of(context).dr + ' ' + doctorName,
+                      style: FontStyles.medium15.copyWith(
+                        color: AppColors.primaryBlue,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   Text(

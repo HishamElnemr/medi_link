@@ -9,7 +9,6 @@ import 'package:medi_link/features/auth/domain/entites/user_auth_entity.dart';
 import 'package:medi_link/features/auth/domain/repos/auth_repo.dart';
 import 'package:medi_link/generated/l10n.dart';
 
-
 class AuthRepoImpl extends AuthRepo {
   final FirebaseAuthServices firebaseAuthServices;
 
@@ -75,5 +74,4 @@ void deleteUser(User? user) {
   if (user != null) {
     user.delete();
   }
- 
 }

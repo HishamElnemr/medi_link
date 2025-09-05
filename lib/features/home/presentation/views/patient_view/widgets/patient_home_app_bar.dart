@@ -12,16 +12,23 @@ import 'package:medi_link/language_cubit.dart';
 import '../../../../../../core/helper/get_patient_data.dart';
 import '../../../../../../core/routes/routes_name.dart';
 
-class PatientHomeAppBar extends StatelessWidget {
+class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const PatientHomeAppBar({super.key});
+
+  String _getPatientName(BuildContext context) {
+    try {
+      final patientData = getPatientData();
+      return patientData?.firstName.toUpperCase() ?? 'USER';
+    } catch (e) {
+      print('Error getting patient data: $e');
+      return 'USER';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
       automaticallyImplyLeading: false,
-      pinned: true,
-      floating: false,
-      expandedHeight: 60.0,
       backgroundColor: AppColors.softBlue2,
       elevation: 2.0,
       systemOverlayStyle: const SystemUiOverlayStyle(
@@ -30,43 +37,65 @@ class PatientHomeAppBar extends StatelessWidget {
       ),
       title: Row(
         children: [
-          Text.rich(
-            TextSpan(
-              children: [
-                TextSpan(
-                  text: S.of(context).welcome + ' ',
-                  style: FontStyles.light12.copyWith(
-                    color: AppColors.primaryBlue,
-                    fontWeight: FontWeight.w400,
+          Expanded(
+            child: Text.rich(
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: S.of(context).welcome + ' ',
+                    style: FontStyles.light12.copyWith(
+                      color: AppColors.primaryBlue,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
-                ),
-                TextSpan(
-                  text: '${getPatientData().firstName.toUpperCase()}',
-                  style: FontStyles.medium15.copyWith(
-                    color: AppColors.darkGrey,
-                    fontWeight: FontWeight.bold,
+                  TextSpan(
+                    text: _getPatientName(context),
+                    style: FontStyles.light12.copyWith(
+                      color: AppColors.darkGrey,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
             ),
           ),
           const Spacer(),
           AppBarIconButton(
-            onPressed: () {
-              FirebaseAuth.instance.signOut();
-              Navigator.pushReplacementNamed(context, RoutesName.login);
+            onPressed: () async {
+              try {
+                await FirebaseAuth.instance.signOut();
+                // مسح البيانات من SharedPreferences
+                await Prefs.clear();
+                if (context.mounted) {
+                  Navigator.pushReplacementNamed(context, RoutesName.login);
+                }
+              } catch (e) {
+                print('Error during logout: $e');
+                // يمكنك إضافة SnackBar لإظهار الخطأ
+                if (context.mounted) {
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text('Logout failed: $e')));
+                }
+              }
             },
             icon: Icons.logout,
           ),
           const SizedBox(width: 5),
           AppBarIconButton(
             onPressed: () {
-              final languageCubit = context.read<LanguageCubit>();
-              languageCubit.toggleLanguage();
-              Prefs.setString(
-                BackendEndpoints.languageCode,
-                languageCubit.state.languageCode,
-              );
+              try {
+                final languageCubit = context.read<LanguageCubit>();
+                languageCubit.toggleLanguage();
+                Prefs.setString(
+                  BackendEndpoints.languageCode,
+                  languageCubit.state.languageCode,
+                );
+              } catch (e) {
+                print('Error changing language: $e');
+              }
             },
             icon: Icons.translate_rounded,
           ),
@@ -81,4 +110,7 @@ class PatientHomeAppBar extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

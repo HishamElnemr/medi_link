@@ -33,6 +33,7 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         child: AutoSizeText(
+          overflow: TextOverflow.ellipsis,
           maxLines: 1,
           text,
           style: style ?? FontStyles.medium15.copyWith(color: AppColors.white),

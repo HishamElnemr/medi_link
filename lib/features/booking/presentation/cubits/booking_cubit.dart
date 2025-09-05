@@ -50,7 +50,8 @@ class BookingCubit extends Cubit<BookingState> {
           await getDoctorBookings(doctorData.id!);
           ();
         }
-      } else {
+      } else if (Prefs.getString(BackendEndpoints.getUserRole) ==
+          BackendEndpoints.patientsEndpoint) {
         final patientData = await getPatientData();
         if (patientData.id != null) {
           await getPatientBookings(patientData.id!);
@@ -65,7 +66,6 @@ class BookingCubit extends Cubit<BookingState> {
 
   Future<void> rejectBooking(String bookingId) async {
     await updateBookingStatus(bookingId, 'rejected');
-
   }
 
   Future<void> cancelBooking(String bookingId) async {
@@ -75,5 +75,4 @@ class BookingCubit extends Cubit<BookingState> {
   Future<void> completeBooking(String bookingId) async {
     await updateBookingStatus(bookingId, 'completed');
   }
-  
 }

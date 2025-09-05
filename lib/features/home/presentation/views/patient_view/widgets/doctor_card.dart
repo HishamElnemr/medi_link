@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
@@ -24,7 +25,7 @@ class DoctorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      margin: const EdgeInsets.symmetric( vertical: 8),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: AppColors.softBlue2,
@@ -53,15 +54,19 @@ class DoctorCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      S.of(context).dr +
-                          ' ' +
-                          doctorEntity.firstName +
-                          ' ' +
-                          doctorEntity.lastName,
-                      style: FontStyles.medium15.copyWith(
-                        color: AppColors.primaryBlue,
-                        fontWeight: FontWeight.bold,
+                    Expanded(
+                      child: AutoSizeText(
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        S.of(context).dr +
+                            ' ' +
+                            doctorEntity.firstName +
+                            ' ' +
+                            doctorEntity.lastName,
+                        style: FontStyles.medium15.copyWith(
+                          color: AppColors.primaryBlue,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     Text(

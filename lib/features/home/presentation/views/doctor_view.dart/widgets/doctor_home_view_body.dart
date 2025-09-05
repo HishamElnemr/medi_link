@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
+import 'package:medi_link/features/home/presentation/views/doctor_view.dart/widgets/doctor_home_app_bar.dart';
 import 'package:medi_link/features/home/presentation/views/doctor_view.dart/widgets/patients_list_view.dart';
-import 'package:medi_link/features/home/presentation/views/patient_view/widgets/patient_home_app_bar.dart';
+import 'package:medi_link/generated/l10n.dart';
 
 class DoctorHomeViewBody extends StatelessWidget {
   const DoctorHomeViewBody({super.key, required this.patients});
@@ -10,12 +11,17 @@ class DoctorHomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        const PatientHomeAppBar(),
+        const DoctorHomeAppBar(),
         SliverPadding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           sliver: SliverList(
             delegate: SliverChildListDelegate([
-              PatientsListView(patients: patients),
+              patients.isEmpty
+                  ? SizedBox(
+                      height: 200,
+                      child: Center(child: Text(S.of(context).no_appointment)),
+                    )
+                  : PatientsListView(patients: patients),
             ]),
           ),
         ),

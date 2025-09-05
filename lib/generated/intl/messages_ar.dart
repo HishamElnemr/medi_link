@@ -34,6 +34,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "approve": MessageLookupByLibrary.simpleMessage("قبول"),
     "approved": MessageLookupByLibrary.simpleMessage("تم قبول الحجز"),
     "are_you_sure": MessageLookupByLibrary.simpleMessage("هل انت متاكد"),
+    "are_you_sure_cancel_booking": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد من إلغاء هذا الحجز؟",
+    ),
+    "are_you_sure_reject_booking": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد من رفض هذا الحجز؟",
+    ),
     "book_appointment": MessageLookupByLibrary.simpleMessage("حجز موعد"),
     "book_now": MessageLookupByLibrary.simpleMessage("احجز الان"),
     "booking_failed": MessageLookupByLibrary.simpleMessage("فشل حجز الموعد"),
@@ -41,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم حجز الموعد بنجاح",
     ),
     "bookings": MessageLookupByLibrary.simpleMessage("الحجوزات"),
+    "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
+    "cancelled": MessageLookupByLibrary.simpleMessage("تم الغاء الحجز"),
     "cardiology": MessageLookupByLibrary.simpleMessage("قلب"),
     "change_language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
     "check_your_internet_connection": MessageLookupByLibrary.simpleMessage(
@@ -50,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "click_to_select_date": MessageLookupByLibrary.simpleMessage(
       "انقر لتحديد التاريخ",
     ),
+    "complete": MessageLookupByLibrary.simpleMessage("إنهاء"),
     "complete_the_appointment": MessageLookupByLibrary.simpleMessage(
       "اكمل الحجز",
     ),
@@ -77,6 +86,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "emergency": MessageLookupByLibrary.simpleMessage("طوارئ"),
     "endocrinology": MessageLookupByLibrary.simpleMessage("غدد صماء"),
     "ent": MessageLookupByLibrary.simpleMessage("أنف وأذن"),
+    "failed_to_add_booking": MessageLookupByLibrary.simpleMessage(
+      "فشل في إضافة الحجز",
+    ),
+    "failed_to_get_doctor_bookings": MessageLookupByLibrary.simpleMessage(
+      "فشل في جلب حجوزات الطبيب",
+    ),
+    "failed_to_get_patient_bookings": MessageLookupByLibrary.simpleMessage(
+      "فشل في جلب حجوزات المريض",
+    ),
+    "failed_to_update_booking_status": MessageLookupByLibrary.simpleMessage(
+      "فشل في تحديث حالة الحجز",
+    ),
     "female": MessageLookupByLibrary.simpleMessage("انثى"),
     "first_name": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
     "full_name": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
@@ -154,5 +175,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "welcome": MessageLookupByLibrary.simpleMessage("مرحباً بك "),
     "years": MessageLookupByLibrary.simpleMessage("سنة"),
     "yes": MessageLookupByLibrary.simpleMessage("نعم"),
+    "yes_cancel": MessageLookupByLibrary.simpleMessage("نعم، الغي"),
+    "yes_reject": MessageLookupByLibrary.simpleMessage("نعم، ارفض"),
   };
 }

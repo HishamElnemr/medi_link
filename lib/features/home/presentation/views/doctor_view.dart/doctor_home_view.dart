@@ -1,7 +1,9 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:medi_link/core/helper/get_doctor_data.dart';
 import 'package:medi_link/core/services/getit_services.dart';
+import 'package:medi_link/core/services/shared_preferences_singleton.dart';
+import 'package:medi_link/core/utils/backend_endpoints.dart';
 import 'package:medi_link/features/booking/data/repos/booking_repo_impl.dart';
 import 'package:medi_link/features/booking/presentation/cubits/booking_cubit.dart';
 import 'package:medi_link/features/home/presentation/views/doctor_view.dart/widgets/doctor_home_view_body_bloc_builder.dart';
@@ -11,7 +13,8 @@ class DoctorHomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final doctorId = getDoctorData().id;
+    final doctorData = Prefs.getString(BackendEndpoints.kDoctorData);
+    final doctorId = doctorData != null ? jsonDecode(doctorData)['id'] : '';
     return Scaffold(
       body: BlocProvider(
         create: (context) =>
