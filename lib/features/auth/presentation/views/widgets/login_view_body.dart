@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
-import 'package:medi_link/core/widgets/custom_text_form_field.dart';
-import 'package:medi_link/core/widgets/password_field.dart';
+import 'package:medi_link/features/auth/presentation/views/widgets/common_fields.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/dont_have_account_widget.dart';
+import 'package:medi_link/features/auth/presentation/views/widgets/login_submit.dart';
 import 'package:medi_link/generated/l10n.dart';
-
 import '../../cubits/login_cubit/login_cubit.dart';
 
 class LoginViewBody extends StatefulWidget {
@@ -27,40 +26,28 @@ class _LoginViewBodyState extends State<LoginViewBody> {
       child: SingleChildScrollView(
         child: Form(
           key: formKey,
+          autovalidateMode: autoValidateMode,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               const SizedBox(height: 30),
-
-              const SizedBox(height: 16),
-              CustomTextFormField(
-                hitText: S.of(context).email,
-                keyboardType: TextInputType.emailAddress,
-                onSaved: (value) {
-                  email = value!;
-                },
-              ),
-              const SizedBox(height: 16),
-              PasswordField(
-                onSaved: (value) {
-                  password = value!;
-                },
+              CommonFields(
+                onEmailSaved: (value) => email = value!,
+                onPasswordSaved: (value) => password = value!,
               ),
               const SizedBox(height: 33),
               CustomButton(
-                onPressed: () {
-                  if (formKey.currentState!.validate()) {
-                    formKey.currentState!.save();
-                    context.read<LoginCubit>().loginUserWithEmailAndPassword(
-                      email: email,
-                      password: password,
-                      context: context,
-                    );
-                  } else {
-                    autoValidateMode = AutovalidateMode.always;
-                    setState(() {});
-                  }
-                },
+                onPressed: () => onSubmit(
+                  context: context,
+                  formKey: formKey,
+                  email: email,
+                  password: password,
+                  onValidationFailed: () {
+                    setState(() {
+                      autoValidateMode = AutovalidateMode.always;
+                    });
+                  },
+                ),
                 text: S.of(context).login,
               ),
               const SizedBox(height: 33),
