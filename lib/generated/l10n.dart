@@ -224,6 +224,16 @@ class S {
     );
   }
 
+  /// `Invalid email`
+  String get email_is_not_valid {
+    return Intl.message(
+      'Invalid email',
+      name: 'email_is_not_valid',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Check your internet connection`
   String get check_your_internet_connection {
     return Intl.message(

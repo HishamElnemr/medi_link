@@ -77,6 +77,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "dont_have_account": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "dr": MessageLookupByLibrary.simpleMessage("د /"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "email_is_not_valid": MessageLookupByLibrary.simpleMessage(
+      "البريد الالكتروني غير صحيح",
+    ),
     "email_or_password_incorrect": MessageLookupByLibrary.simpleMessage(
       "البريد الالكتروني او كلمة المرور غير صحيحة",
     ),

@@ -21,6 +21,16 @@ class CommonFields extends StatelessWidget {
           hitText: S.of(context).email,
           keyboardType: TextInputType.emailAddress,
           onSaved: onEmailSaved,
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return S.of(context).this_field_is_required;
+            } else if (!RegExp(
+              r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+            ).hasMatch(value)) {
+              return S.of(context).email_is_not_valid;
+            }
+            return null;
+          },
         ),
         const SizedBox(height: 16),
         PasswordField(onSaved: onPasswordSaved),

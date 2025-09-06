@@ -22,6 +22,7 @@
   "length_should_be_more_than_8": "كلمة المرور يجب ان تكون اكثر من 8 حروف",
   "week_password": "كلمة المرور يجب ان تكون اكثر من 8 حروف",
   "email_used_before": "البريد الالكتروني مستخدم من قبل",
+  "email_is_not_valid": "البريد الالكتروني غير صحيح",
   "check_your_internet_connection": "تحقق من اتصال الانترنت",
   "something_went_wrong": "حدث خطأ ما يُرجى المحاولة مرة أخرى",
   "email_or_password_incorrect": "البريد الالكتروني او كلمة المرور غير صحيحة",
