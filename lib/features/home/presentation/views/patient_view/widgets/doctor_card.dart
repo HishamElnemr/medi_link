@@ -1,12 +1,11 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/core/utils/assets.dart';
+import 'package:medi_link/core/utils/specialty_utils.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/custom_icon.dart';
-import 'package:medi_link/core/utils/specialty_utils.dart';
 
 import '../../../../../../generated/l10n.dart';
 
@@ -25,7 +24,7 @@ class DoctorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric( vertical: 8),
+      margin: const EdgeInsets.symmetric(vertical: 8),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: AppColors.softBlue2,
@@ -55,7 +54,7 @@ class DoctorCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(
-                      child: AutoSizeText(
+                      child: Text(
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         S.of(context).dr +

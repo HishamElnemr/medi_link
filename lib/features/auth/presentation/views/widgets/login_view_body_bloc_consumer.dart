@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/helper/build_snack_bar.dart';
 import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/core/services/shared_preferences_singleton.dart';
-import 'package:medi_link/core/widgets/custom_modal_progress_hud.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/login_view_body.dart';
 import 'package:medi_link/generated/l10n.dart';
 
@@ -34,10 +33,9 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        return CustomModalProgressHUD(
-          isLoading: state is LoginLoading ? true : false,
-          child: const LoginViewBody(),
-        );
+        return state is LoginLoading
+            ? const CircularProgressIndicator()
+            : const LoginViewBody();
       },
     );
   }

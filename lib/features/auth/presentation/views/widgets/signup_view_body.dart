@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:medi_link/core/routes/routes_name.dart';
-import 'package:medi_link/core/services/shared_preferences_singleton.dart';
-import 'package:medi_link/core/utils/backend_endpoints.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/core/widgets/custom_text_form_field.dart';
-import 'package:medi_link/core/widgets/password_field.dart';
-import 'package:medi_link/features/auth/domain/entites/patient_entity.dart';
-import 'package:medi_link/features/auth/presentation/cubits/add_doctor_data_cubit/add_doctor_data_cubit.dart';
-import 'package:medi_link/features/auth/presentation/cubits/add_patient_data_cubit/add_patient_data_cubit.dart';
-import 'package:medi_link/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
-import 'package:medi_link/features/auth/presentation/views/widgets/have_an_account.dart';
 import 'package:medi_link/core/widgets/radio_button.dart';
-import 'package:medi_link/features/auth/presentation/views/widgets/speciality_dropdown%20.dart';
+import 'package:medi_link/features/auth/presentation/views/widgets/have_an_account.dart';
+import 'package:medi_link/features/auth/presentation/views/widgets/name_fields.dart';
+import 'package:medi_link/features/auth/presentation/views/widgets/common_fields.dart';
+import 'package:medi_link/features/auth/presentation/views/widgets/doctor_fields.dart';
+import 'package:medi_link/features/auth/presentation/views/widgets/patient_fields.dart';
+import 'package:medi_link/features/auth/presentation/views/widgets/signup_submit.dart';
 import 'package:medi_link/generated/l10n.dart';
-import '../../../../../core/helper/build_snack_bar.dart';
-import '../../../domain/entites/doctor_entity.dart';
 
 class SignupViewBody extends StatefulWidget {
   const SignupViewBody({super.key});
@@ -25,7 +18,7 @@ class SignupViewBody extends StatefulWidget {
 }
 
 class _SignupViewBodyState extends State<SignupViewBody> {
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> formKey = GlobalKey <FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   late String email,
       password,
@@ -36,7 +29,6 @@ class _SignupViewBodyState extends State<SignupViewBody> {
       address,
       medicineTaken;
   late int age, phoneNumber;
-  late bool isTermsAccepted = false;
   String selectedType = 'Patient';
   String selectedGender = 'Male';
   String? selectedSpeciality;
@@ -66,9 +58,15 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 groupValue: selectedType,
               ),
               const SizedBox(height: 16),
-              buildNameFields(),
+              NameFields(
+                onFirstNameSaved: (value) => firstName = value!,
+                onLastNameSaved: (value) => lastName = value!,
+              ),
               const SizedBox(height: 16),
-              buildCommonFields(),
+              CommonFields(
+                onEmailSaved: (value) => email = value!,
+                onPasswordSaved: (value) => password = value!,
+              ),
               const SizedBox(height: 16),
               CustomRadioGroup(
                 onChanged: (value) {
@@ -99,13 +97,42 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               ),
               const SizedBox(height: 16),
               if (selectedType == 'Doctor') ...[
-                buildDoctorFields(),
+                DoctorFields(
+                  onSpecialityChanged: (value) => selectedSpeciality = value,
+                  onSpecialitySaved: (value) => selectedSpeciality = value,
+                  onAddressSaved: (value) => address = value!,
+                  onPhoneNumberSaved: (value) =>
+                      phoneNumber = int.parse(value!),
+                ),
               ] else if (selectedType == 'Patient') ...[
-                buildPatientFields(),
+                PatientFields(
+                  onChronicDiseasesSaved: (value) => chronicDiseases = value!,
+                  onMedicineTakenSaved: (value) => medicineTaken = value!,
+                ),
               ],
               const SizedBox(height: 30),
               CustomButton(
-                onPressed: onSubmit,
+                onPressed: () => onSubmit(
+                  context: context,
+                  formKey: formKey,
+                  email: email,
+                  password: password,
+                  firstName: firstName,
+                  lastName: lastName,
+                  age: age,
+                  gender: selectedGender,
+                  selectedType: selectedType,
+                  speciality: selectedSpeciality,
+                  address: address,
+                  phoneNumber: phoneNumber,
+                  chronicDiseases: chronicDiseases,
+                  medicineTaken: medicineTaken,
+                  onValidationFailed: () {
+                    setState(() {
+                      autovalidateMode = AutovalidateMode.always;
+                    });
+                  },
+                ),
                 text: S.of(context).create_new_account,
               ),
               const SizedBox(height: 16),
@@ -117,172 +144,5 @@ class _SignupViewBodyState extends State<SignupViewBody> {
         ),
       ),
     );
-  }
-
-  Widget buildNameFields() {
-    return Column(
-      children: [
-        CustomTextFormField(
-          hitText: S.of(context).first_name,
-          keyboardType: TextInputType.text,
-          onSaved: (value) => firstName = value!,
-        ),
-        const SizedBox(height: 16),
-        CustomTextFormField(
-          hitText: S.of(context).last_name,
-          keyboardType: TextInputType.text,
-          onSaved: (value) => lastName = value!,
-        ),
-      ],
-    );
-  }
-
-  Widget buildCommonFields() {
-    return Column(
-      children: [
-        CustomTextFormField(
-          hitText: S.of(context).email,
-          keyboardType: TextInputType.emailAddress,
-          onSaved: (value) => email = value!,
-        ),
-        const SizedBox(height: 16),
-        PasswordField(onSaved: (value) => password = value!),
-      ],
-    );
-  }
-
-  Widget buildDoctorFields() {
-    return Column(
-      children: [
-        SpecialityDropdown(
-          selectedKey: selectedSpeciality,
-          onChanged: (value) {
-            selectedSpeciality = value;
-          },
-          onSaved: (value) {
-            selectedSpeciality = value;
-          },
-        ),
-        const SizedBox(height: 16),
-        CustomTextFormField(
-          hitText: S.of(context).address,
-          keyboardType: TextInputType.text,
-          maxLines: 2,
-          onSaved: (value) => address = value!,
-        ),
-        const SizedBox(height: 16),
-        CustomTextFormField(
-          hitText: S.of(context).phone_number,
-          keyboardType: TextInputType.number,
-          validator: (p0) {
-            if ((p0 == null || p0.isEmpty)) {
-              return S.of(context).this_field_is_required;
-            } else if (p0.length != 11) {
-              return S.of(context).invalid_phone_number;
-            }
-            return null;
-          },
-          onSaved: (value) => phoneNumber = int.parse(value!),
-        ),
-      ],
-    );
-  }
-
-  Widget buildPatientFields() {
-    return Column(
-      children: [
-        CustomTextFormField(
-          hitText: S.of(context).chronic_diseases,
-          keyboardType: TextInputType.text,
-          maxLines: 3,
-          isRequired: false,
-          onSaved: (value) => chronicDiseases = value!,
-        ),
-        const SizedBox(height: 16),
-        CustomTextFormField(
-          hitText: S.of(context).medicine_taken,
-          keyboardType: TextInputType.text,
-          isRequired: false,
-          maxLines: 3,
-          onSaved: (value) => medicineTaken = value!,
-        ),
-      ],
-    );
-  }
-
-  void onSubmit() async {
-    if (formKey.currentState!.validate()) {
-      formKey.currentState!.save();
-
-      final userAuthEntity = await context
-          .read<SignupCubit>()
-          .createUserWithEmailAndPassword(
-            email: email,
-            password: password,
-            name: '$firstName $lastName',
-            context: context,
-          );
-      if (userAuthEntity != null) {
-        if (selectedType == 'Doctor') {
-          await Prefs.setString(
-            BackendEndpoints.getUserRole,
-            BackendEndpoints.doctorEndpoint,
-          );
-          context.read<AddDoctorDataCubit>().addDoctorData(
-            DoctorEntity(
-              id: userAuthEntity.uId,
-              speciality: selectedSpeciality!,
-              firstName: firstName,
-              lastName: lastName,
-              email: email,
-              age: age,
-              gender: selectedGender,
-              phoneNumber: phoneNumber,
-              address: address,
-            ),
-          );
-          if (context.mounted) {
-            Future.delayed(const Duration(milliseconds: 500), () {
-              Navigator.pushReplacementNamed(context, RoutesName.doctorHome);
-              buildSnackBar(
-                context,
-                S.of(context).account_created_successfully,
-              );
-            });
-          }
-        }
-        if (selectedType == 'Patient') {
-          await Prefs.setString(
-            BackendEndpoints.getUserRole,
-            BackendEndpoints.patientsEndpoint,
-          );
-          context.read<AddPatientDataCubit>().addPatientData(
-            PatientEntity(
-              id: userAuthEntity.uId,
-              firstName: firstName,
-              lastName: lastName,
-              email: email,
-              age: age,
-              gender: selectedGender,
-              chronicDiseases: chronicDiseases,
-              medicineTaken: medicineTaken,
-            ),
-          );
-          if (context.mounted) {
-            Future.delayed(const Duration(milliseconds: 500), () {
-              Navigator.pushReplacementNamed(context, RoutesName.patientHome);
-              buildSnackBar(
-                context,
-                S.of(context).account_created_successfully,
-              );
-            });
-          }
-        }
-      }
-    } else {
-      setState(() {
-        autovalidateMode = AutovalidateMode.always;
-      });
-    }
   }
 }

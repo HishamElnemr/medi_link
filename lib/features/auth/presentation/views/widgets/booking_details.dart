@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 
@@ -13,7 +12,7 @@ class BookingDetails extends StatelessWidget {
         Text(title, style: FontStyles.regular14),
         const SizedBox(width: 30),
         Expanded(
-          child: AutoSizeText(
+          child: Text(
             textAlign: TextAlign.end,
             overflow: TextOverflow.ellipsis,
             value.toUpperCase(),

@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
@@ -32,7 +31,7 @@ class CustomButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
         ),
-        child: AutoSizeText(
+        child: Text(
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
           text,

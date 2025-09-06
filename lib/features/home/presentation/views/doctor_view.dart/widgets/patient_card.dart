@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
@@ -24,10 +23,10 @@ class PatientCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AutoSizeText(
+          Text(
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            booking.patientName.toUpperCase() ,
+            booking.patientName.toUpperCase(),
             style: FontStyles.medium15.copyWith(
               color: AppColors.primaryBlue,
               fontWeight: FontWeight.bold,
