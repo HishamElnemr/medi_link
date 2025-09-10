@@ -3,13 +3,13 @@ import 'package:medi_link/core/widgets/custom_text_form_field.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class PatientFields extends StatelessWidget {
-  final void Function(String?) onChronicDiseasesSaved;
-  final void Function(String?) onMedicineTakenSaved;
+  final void Function(String?) onChronicSaved;
+  final void Function(String?) onMedicineSaved;
 
   const PatientFields({
     super.key,
-    required this.onChronicDiseasesSaved,
-    required this.onMedicineTakenSaved,
+    required this.onChronicSaved,
+    required this.onMedicineSaved,
   });
 
   @override
@@ -21,7 +21,7 @@ class PatientFields extends StatelessWidget {
           keyboardType: TextInputType.text,
           maxLines: 3,
           isRequired: false,
-          onSaved: onChronicDiseasesSaved,
+          onSaved: onChronicSaved,
         ),
         const SizedBox(height: 16),
         CustomTextFormField(
@@ -29,7 +29,7 @@ class PatientFields extends StatelessWidget {
           keyboardType: TextInputType.text,
           isRequired: false,
           maxLines: 3,
-          onSaved: onMedicineTakenSaved,
+          onSaved: onMedicineSaved,
         ),
       ],
     );

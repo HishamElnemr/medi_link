@@ -5,7 +5,6 @@ import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/core/services/shared_preferences_singleton.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/login_view_body.dart';
 import 'package:medi_link/generated/l10n.dart';
-
 import '../../../../../core/utils/backend_endpoints.dart';
 import '../../cubits/login_cubit/login_cubit.dart';
 import '../../cubits/login_cubit/login_state.dart';
@@ -17,25 +16,24 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) async {
-        bool isDoctor =
-            Prefs.getString(BackendEndpoints.getUserRole) ==
-            BackendEndpoints.doctorEndpoint;
+        final role = Prefs.getString(BackendEndpoints.getUserRole);
+
         if (state is LoginSuccess) {
           buildSnackBar(context, S.of(context).login_successfully);
-          if (isDoctor) {
+          if (role == BackendEndpoints.doctorEndpoint) {
             Navigator.pushReplacementNamed(context, RoutesName.doctorHome);
           } else {
             Navigator.pushReplacementNamed(context, RoutesName.patientHome);
           }
-        }
-        if (state is LoginFailure) {
+        } else if (state is LoginFailure) {
           buildSnackBar(context, state.message);
         }
       },
       builder: (context, state) {
-        return state is LoginLoading
-            ? const CircularProgressIndicator()
-            : const LoginViewBody();
+        if (state is LoginLoading) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        return const LoginViewBody();
       },
     );
   }

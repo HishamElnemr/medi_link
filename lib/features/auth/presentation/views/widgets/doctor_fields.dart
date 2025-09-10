@@ -4,17 +4,19 @@ import 'package:medi_link/features/auth/presentation/views/widgets/speciality_dr
 import 'package:medi_link/generated/l10n.dart';
 
 class DoctorFields extends StatelessWidget {
+  final String? selectedSpeciality;
   final void Function(String?) onSpecialityChanged;
   final void Function(String?) onSpecialitySaved;
   final void Function(String?) onAddressSaved;
-  final void Function(String?) onPhoneNumberSaved;
+  final void Function(String?) onPhoneSaved;
 
   const DoctorFields({
     super.key,
+    required this.selectedSpeciality,
     required this.onSpecialityChanged,
     required this.onSpecialitySaved,
     required this.onAddressSaved,
-    required this.onPhoneNumberSaved,
+    required this.onPhoneSaved,
   });
 
   @override
@@ -22,7 +24,7 @@ class DoctorFields extends StatelessWidget {
     return Column(
       children: [
         SpecialityDropdown(
-          selectedKey: null,
+          selectedKey: selectedSpeciality,
           onChanged: onSpecialityChanged,
           onSaved: onSpecialitySaved,
         ),
@@ -45,7 +47,7 @@ class DoctorFields extends StatelessWidget {
             }
             return null;
           },
-          onSaved: onPhoneNumberSaved,
+          onSaved: onPhoneSaved,
         ),
       ],
     );

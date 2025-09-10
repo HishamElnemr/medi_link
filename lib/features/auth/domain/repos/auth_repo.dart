@@ -8,6 +8,7 @@ abstract class AuthRepo {
     required String email,
     required String password,
     required String name,
+    required String role,
     required BuildContext context,
   });
   Future<Either<Failure, UserAuthEntity>> signInWithEmailAndPassword({

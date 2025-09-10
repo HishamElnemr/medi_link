@@ -1,14 +1,23 @@
+// lib/features/auth/presentation/views/widgets/signup_view_body.dart
 import 'package:flutter/material.dart';
-import 'package:medi_link/core/widgets/custom_button.dart';
-import 'package:medi_link/core/widgets/custom_text_form_field.dart';
-import 'package:medi_link/core/widgets/radio_button.dart';
-import 'package:medi_link/features/auth/presentation/views/widgets/have_an_account.dart';
-import 'package:medi_link/features/auth/presentation/views/widgets/name_fields.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:medi_link/core/services/shared_preferences_singleton.dart';
+import 'package:medi_link/core/utils/backend_endpoints.dart';
+import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
+import 'package:medi_link/features/auth/domain/entites/patient_entity.dart';
+import 'package:medi_link/features/auth/presentation/cubits/add_doctor_data_cubit/add_doctor_data_cubit.dart';
+import 'package:medi_link/features/auth/presentation/cubits/add_patient_data_cubit/add_patient_data_cubit.dart';
+import 'package:medi_link/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/common_fields.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/doctor_fields.dart';
+import 'package:medi_link/features/auth/presentation/views/widgets/name_fields.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/patient_fields.dart';
-import 'package:medi_link/features/auth/presentation/views/widgets/signup_submit.dart';
 import 'package:medi_link/generated/l10n.dart';
+
+import '../../../../../../core/widgets/custom_button.dart';
+import '../../../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../../../core/widgets/radio_button.dart';
+import 'have_an_account.dart';
 
 class SignupViewBody extends StatefulWidget {
   const SignupViewBody({super.key});
@@ -18,13 +27,13 @@ class SignupViewBody extends StatefulWidget {
 }
 
 class _SignupViewBodyState extends State<SignupViewBody> {
-  final GlobalKey<FormState> formKey = GlobalKey <FormState>();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
   late String email,
       password,
       firstName,
       lastName,
-      specialization,
       chronicDiseases,
       address,
       medicineTaken;
@@ -59,13 +68,13 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               ),
               const SizedBox(height: 16),
               NameFields(
-                onFirstNameSaved: (value) => firstName = value!,
-                onLastNameSaved: (value) => lastName = value!,
+                onFirstNameSaved: (v) => firstName = v ?? '',
+                onLastNameSaved: (v) => lastName = v ?? '',
               ),
               const SizedBox(height: 16),
               CommonFields(
-                onEmailSaved: (value) => email = value!,
-                onPasswordSaved: (value) => password = value!,
+                onEmailSaved: (v) => email = v ?? '',
+                onPasswordSaved: (v) => password = v ?? '',
               ),
               const SizedBox(height: 16),
               CustomRadioGroup(
@@ -98,41 +107,21 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               const SizedBox(height: 16),
               if (selectedType == 'Doctor') ...[
                 DoctorFields(
-                  onSpecialityChanged: (value) => selectedSpeciality = value,
-                  onSpecialitySaved: (value) => selectedSpeciality = value,
-                  onAddressSaved: (value) => address = value!,
-                  onPhoneNumberSaved: (value) =>
-                      phoneNumber = int.parse(value!),
+                  selectedSpeciality: selectedSpeciality,
+                  onSpecialityChanged: (v) => selectedSpeciality = v,
+                  onSpecialitySaved: (v) => selectedSpeciality = v,
+                  onAddressSaved: (v) => address = v ?? '',
+                  onPhoneSaved: (v) => phoneNumber = int.parse(v ?? '0'),
                 ),
               ] else if (selectedType == 'Patient') ...[
                 PatientFields(
-                  onChronicDiseasesSaved: (value) => chronicDiseases = value!,
-                  onMedicineTakenSaved: (value) => medicineTaken = value!,
+                  onChronicSaved: (v) => chronicDiseases = v ?? '',
+                  onMedicineSaved: (v) => medicineTaken = v ?? '',
                 ),
               ],
               const SizedBox(height: 30),
               CustomButton(
-                onPressed: () => onSubmit(
-                  context: context,
-                  formKey: formKey,
-                  email: email,
-                  password: password,
-                  firstName: firstName,
-                  lastName: lastName,
-                  age: age,
-                  gender: selectedGender,
-                  selectedType: selectedType,
-                  speciality: selectedSpeciality,
-                  address: address,
-                  phoneNumber: phoneNumber,
-                  chronicDiseases: chronicDiseases,
-                  medicineTaken: medicineTaken,
-                  onValidationFailed: () {
-                    setState(() {
-                      autovalidateMode = AutovalidateMode.always;
-                    });
-                  },
-                ),
+                onPressed: onSubmit,
                 text: S.of(context).create_new_account,
               ),
               const SizedBox(height: 16),
@@ -144,5 +133,63 @@ class _SignupViewBodyState extends State<SignupViewBody> {
         ),
       ),
     );
+  }
+
+  void onSubmit() async {
+    if (!formKey.currentState!.validate()) {
+      setState(() {
+        autovalidateMode = AutovalidateMode.always;
+      });
+      return;
+    }
+
+    formKey.currentState!.save();
+
+    final signupCubit = context.read<SignupCubit>();
+    final patientCubit = context.read<AddPatientDataCubit>();
+    final doctorCubit = context.read<AddDoctorDataCubit>();
+
+    final role = selectedType == 'Doctor'
+        ? BackendEndpoints.doctorEndpoint
+        : BackendEndpoints.patientsEndpoint;
+
+    await Prefs.setString(BackendEndpoints.getUserRole, role);
+
+    final user = await signupCubit.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+      name: '$firstName $lastName',
+      role: role,
+      context: context,
+    );
+
+    if (user != null) {
+      if (role == BackendEndpoints.patientsEndpoint) {
+        final patient = PatientEntity(
+          id: user.uId,
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          age: age,
+          gender: selectedGender,
+          chronicDiseases: chronicDiseases,
+          medicineTaken: medicineTaken,
+        );
+        patientCubit.addPatientData(patient);
+      } else if (role == BackendEndpoints.doctorEndpoint) {
+        final doctor = DoctorEntity(
+          id: user.uId,
+          speciality: selectedSpeciality ?? '',
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          age: age,
+          gender: selectedGender,
+          phoneNumber: phoneNumber,
+          address: address,
+        );
+        doctorCubit.addDoctorData(doctor);
+      }
+    }
   }
 }

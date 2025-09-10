@@ -13,11 +13,13 @@ class AuthRepoImpl extends AuthRepo {
   final FirebaseAuthServices firebaseAuthServices;
 
   AuthRepoImpl({required this.firebaseAuthServices});
+
   @override
   Future<Either<Failure, UserAuthEntity>> createUserWithEmailAndPassword({
     required String email,
     required String password,
     required String name,
+    required String role,
     required BuildContext context,
   }) async {
     User? user;
@@ -27,10 +29,12 @@ class AuthRepoImpl extends AuthRepo {
         password: password,
         context: context,
       );
+
       UserAuthEntity userAuthEntity = UserAuthEntity(
         name: name,
         email: email,
         uId: user.uid,
+        role: role, // 🟢 مرر role هنا
       );
       return Right(userAuthEntity);
     } on CustomException catch (e) {
@@ -55,10 +59,12 @@ class AuthRepoImpl extends AuthRepo {
         password: password,
         context: context,
       );
+
       UserAuthEntity userAuthEntity = UserAuthEntity(
         name: result.displayName ?? '',
         email: result.email ?? '',
         uId: result.uid,
+        role: '', // 🟢 ممكن تجيب role من Firestore أو Prefs بعد تسجيل الدخول
       );
       return Right(userAuthEntity);
     } on CustomException catch (e) {
