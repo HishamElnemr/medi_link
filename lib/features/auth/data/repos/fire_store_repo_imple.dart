@@ -66,9 +66,13 @@ class FireStoreRepoImpl implements FireStoreRepo {
   }
 
   @override
-  Future<Either<Failure, List<DoctorEntity>>> getDoctorsBySpecialization({required String specialization}) async {
+  Future<Either<Failure, List<DoctorEntity>>> getDoctorsBySpecialization({
+    required String specialization,
+  }) async {
     try {
-      var result = await fireStoreServices.getDoctorsBySpecialization(specialization: specialization);
+      var result = await fireStoreServices.getDoctorsBySpecialization(
+        specialization: specialization,
+      );
       return Right(
         result.map((e) => DoctorModel.fromJson(e).toEntity()).toList(),
       );
@@ -78,30 +82,22 @@ class FireStoreRepoImpl implements FireStoreRepo {
     }
   }
 
-
   @override
   Future<void> getUserDataAndSaveRole(String uid) async {
     try {
-      log('Getting user data for UID: $uid');
-
       final doctorsQuery = await _firestore
           .collection(BackendEndpoints.doctorEndpoint)
           .where('id', isEqualTo: uid)
           .get();
 
       if (doctorsQuery.docs.isNotEmpty) {
-        log('User found as doctor');
         await Prefs.setString(
           BackendEndpoints.getUserRole,
           BackendEndpoints.doctorEndpoint,
         );
-
         var doctorData = doctorsQuery.docs.first.data();
-        log('Doctor data saved: $doctorData');
-        log('Doctor data from Firestore: $doctorData');
         var doctorModel = DoctorModel.fromJson(doctorData);
         await saveDoctorData(doctorModel.toEntity());
-        log('Doctor data saved successfully');
         return;
       }
 
@@ -111,47 +107,39 @@ class FireStoreRepoImpl implements FireStoreRepo {
           .get();
 
       if (patientsQuery.docs.isNotEmpty) {
-        log('User found as patient');
         await Prefs.setString(
           BackendEndpoints.getUserRole,
           BackendEndpoints.patientsEndpoint,
         );
-
         var patientData = patientsQuery.docs.first.data();
-        log('Patient data from Firestore: $patientData');
         var patientModel = PatientModel.fromJson(patientData);
         await savePatientData(patientModel.toEntity());
-        log('Patient data saved successfully');
         return;
       }
-
-      log('User not found in any collection');
     } catch (e) {
-      log('Error in getUserDataAndSaveRole: $e');
       rethrow;
     }
   }
-}
 
-Future savePatientData(PatientEntity user) async {
-  try {
-    // jsonEncode => Prefs can store only strings,int,bool,... but not store maps so we encode it to convert maps to json
-    var jsonData = jsonEncode(PatientModel.fromEntity(user).toMap());
-    await Prefs.setString(BackendEndpoints.kPatientData, jsonData);
-    log('Patient data saved to SharedPreferences');
-  } catch (e) {
-    log('Error saving patient data: $e');
-    rethrow;
+  Future savePatientData(PatientEntity user) async {
+    try {
+      var patientModel = PatientModel.fromEntity(user);
+      var mapData = patientModel.toMap();
+      var jsonData = jsonEncode(mapData);
+      await Prefs.setString(BackendEndpoints.kPatientData, jsonData);
+    } catch (e) {
+      rethrow;
+    }
   }
-}
 
-Future saveDoctorData(DoctorEntity user) async {
-  try {
-    var jsonData = jsonEncode(DoctorModel.fromEntity(user).toMap());
-    await Prefs.setString(BackendEndpoints.kDoctorData, jsonData);
-    log('Doctor data saved to SharedPreferences');
-  } catch (e) {
-    log('Error saving doctor data: $e');
-    rethrow;
+  Future saveDoctorData(DoctorEntity user) async {
+    try {
+      var doctorModel = DoctorModel.fromEntity(user);
+      var mapData = doctorModel.toMap();
+      var jsonData = jsonEncode(mapData);
+      await Prefs.setString(BackendEndpoints.kDoctorData, jsonData);
+    } catch (e) {
+      rethrow;
+    }
   }
 }

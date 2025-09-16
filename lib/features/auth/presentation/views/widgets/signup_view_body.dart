@@ -1,4 +1,3 @@
-// lib/features/auth/presentation/views/widgets/signup_view_body.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/services/shared_preferences_singleton.dart';
@@ -20,8 +19,8 @@ import '../../../../../../core/widgets/radio_button.dart';
 import 'have_an_account.dart';
 
 class SignupViewBody extends StatefulWidget {
-  const SignupViewBody({super.key});
-
+  const SignupViewBody({super.key, required this.isLoading});
+  final bool isLoading;
   @override
   State<SignupViewBody> createState() => _SignupViewBodyState();
 }
@@ -121,6 +120,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               ],
               const SizedBox(height: 30),
               CustomButton(
+                isLoading: widget.isLoading,
                 onPressed: onSubmit,
                 text: S.of(context).create_new_account,
               ),
@@ -175,7 +175,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           chronicDiseases: chronicDiseases,
           medicineTaken: medicineTaken,
         );
-        patientCubit.addPatientData(patient);
+        await patientCubit.addPatientData(patient);
       } else if (role == BackendEndpoints.doctorEndpoint) {
         final doctor = DoctorEntity(
           id: user.uId,
@@ -188,7 +188,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           phoneNumber: phoneNumber,
           address: address,
         );
-        doctorCubit.addDoctorData(doctor);
+        await doctorCubit.addDoctorData(doctor);
       }
     }
   }

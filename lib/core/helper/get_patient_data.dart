@@ -9,7 +9,6 @@ getPatientData() {
   if (data == null || data.isEmpty) {
     return null;
   }
-
   var patientData = PatientModel.fromJson(jsonDecode(data));
   return patientData;
 }

@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:medi_link/features/auth/presentation/cubits/login_cubit/login_state.dart';
-
 import '../../../domain/repos/auth_repo.dart';
 import '../../../domain/repos/fire_store_repo.dart';
 
@@ -10,6 +9,7 @@ class LoginCubit extends Cubit<LoginState> {
     : super(LoginInitial());
   final AuthRepo authRepo;
   final FireStoreRepo fireStoreRepo;
+
   Future<void> loginUserWithEmailAndPassword({
     required String email,
     required String password,

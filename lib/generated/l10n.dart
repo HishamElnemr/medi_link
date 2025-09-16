@@ -379,6 +379,11 @@ class S {
     return Intl.message('All', name: 'all', desc: '', args: []);
   }
 
+  /// `Loading`
+  String get loading {
+    return Intl.message('Loading', name: 'loading', desc: '', args: []);
+  }
+
   /// `Failed to add booking`
   String get failed_to_add_booking {
     return Intl.message(
@@ -627,6 +632,16 @@ class S {
   /// `Date`
   String get date {
     return Intl.message('Date', name: 'date', desc: '', args: []);
+  }
+
+  /// `Please select date`
+  String get please_select_date {
+    return Intl.message(
+      'Please select date',
+      name: 'please_select_date',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Other person`

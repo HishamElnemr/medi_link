@@ -34,7 +34,7 @@ class AuthRepoImpl extends AuthRepo {
         name: name,
         email: email,
         uId: user.uid,
-        role: role, // 🟢 مرر role هنا
+        role: role, 
       );
       return Right(userAuthEntity);
     } on CustomException catch (e) {
@@ -64,7 +64,7 @@ class AuthRepoImpl extends AuthRepo {
         name: result.displayName ?? '',
         email: result.email ?? '',
         uId: result.uid,
-        role: '', // 🟢 ممكن تجيب role من Firestore أو Prefs بعد تسجيل الدخول
+        role: '', 
       );
       return Right(userAuthEntity);
     } on CustomException catch (e) {

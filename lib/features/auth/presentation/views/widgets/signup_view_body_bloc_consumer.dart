@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/helper/build_snack_bar.dart';
@@ -29,12 +28,8 @@ class SignupViewBodyBlocConsumer extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        if (state is SignupLoading) {
-          return const Center(child: CircularProgressIndicator());
-        }
-        return const SignupViewBody();
+        return SignupViewBody(isLoading: state is SignupLoading);
       },
     );
   }
 }
-

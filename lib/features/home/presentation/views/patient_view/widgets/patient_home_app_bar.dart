@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,6 +11,7 @@ import 'package:medi_link/core/utils/backend_endpoints.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/app_bar_icon_button.dart';
 import 'package:medi_link/generated/l10n.dart';
 import 'package:medi_link/language_cubit.dart';
+
 import '../../../../../../core/helper/get_patient_data.dart';
 import '../../../../../../core/routes/routes_name.dart';
 
@@ -20,7 +23,7 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       final patientData = getPatientData();
       return patientData?.firstName.toUpperCase() ?? 'USER';
     } catch (e) {
-      print('Error getting patient data: $e');
+      log('Error getting patient data: $e');
       return 'USER';
     }
   }
@@ -50,6 +53,7 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   TextSpan(
                     text: _getPatientName(context),
+                    
                     style: FontStyles.light12.copyWith(
                       color: AppColors.darkGrey,
                       fontWeight: FontWeight.bold,
@@ -59,6 +63,7 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
+              
             ),
           ),
           const Spacer(),
@@ -66,14 +71,12 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             onPressed: () async {
               try {
                 await FirebaseAuth.instance.signOut();
-                // مسح البيانات من SharedPreferences
                 await Prefs.clear();
                 if (context.mounted) {
                   Navigator.pushReplacementNamed(context, RoutesName.login);
                 }
               } catch (e) {
-                print('Error during logout: $e');
-                // يمكنك إضافة SnackBar لإظهار الخطأ
+                log('Error during logout: $e');
                 if (context.mounted) {
                   ScaffoldMessenger.of(
                     context,
@@ -94,7 +97,7 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                   languageCubit.state.languageCode,
                 );
               } catch (e) {
-                print('Error changing language: $e');
+                log('Error changing language: $e');
               }
             },
             icon: Icons.translate_rounded,

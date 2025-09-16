@@ -132,6 +132,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Length should be more than 8",
     ),
     "liver": MessageLookupByLibrary.simpleMessage("Liver"),
+    "loading": MessageLookupByLibrary.simpleMessage("Loading"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_successfully": MessageLookupByLibrary.simpleMessage(
       "Login successfully",
@@ -153,6 +154,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pediatrics": MessageLookupByLibrary.simpleMessage("Pediatrics"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "please_select_date": MessageLookupByLibrary.simpleMessage(
+      "Please select date",
+    ),
     "psychiatry": MessageLookupByLibrary.simpleMessage("Psychiatry"),
     "pulmonology": MessageLookupByLibrary.simpleMessage("Pulmonology"),
     "radiology": MessageLookupByLibrary.simpleMessage("Radiology"),

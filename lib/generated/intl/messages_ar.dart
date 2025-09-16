@@ -120,6 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "كلمة المرور يجب ان تكون اكثر من 8 حروف",
     ),
     "liver": MessageLookupByLibrary.simpleMessage("الكبد"),
+    "loading": MessageLookupByLibrary.simpleMessage("جاري التحميل"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "login_successfully": MessageLookupByLibrary.simpleMessage(
       "تم تسجيل الدخول بنجاح",
@@ -141,6 +142,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pediatrics": MessageLookupByLibrary.simpleMessage("أطفال"),
     "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "please_select_date": MessageLookupByLibrary.simpleMessage(
+      "برجاء تحديد التاريخ",
+    ),
     "psychiatry": MessageLookupByLibrary.simpleMessage("نفسية"),
     "pulmonology": MessageLookupByLibrary.simpleMessage("صدرية"),
     "radiology": MessageLookupByLibrary.simpleMessage("أشعة"),

@@ -8,8 +8,8 @@ import 'package:medi_link/generated/l10n.dart';
 import '../../cubits/login_cubit/login_cubit.dart';
 
 class LoginViewBody extends StatefulWidget {
-  const LoginViewBody({super.key});
-
+  const LoginViewBody({super.key, required this.isLoading});
+  final bool isLoading;
   @override
   State<LoginViewBody> createState() => _LoginViewBodyState();
 }
@@ -40,6 +40,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
 
               const SizedBox(height: 33),
               CustomButton(
+                isLoading: widget.isLoading,
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();

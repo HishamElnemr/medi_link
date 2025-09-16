@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
+import 'package:medi_link/core/helper/build_snack_bar.dart';
 import 'package:medi_link/core/helper/get_patient_data.dart';
 import 'package:medi_link/core/utils/specialty_utils.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
-import 'package:medi_link/core/widgets/custom_text_form_field.dart';
 import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
-import 'package:medi_link/features/auth/presentation/views/widgets/booking_details.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
 import 'package:medi_link/features/booking/presentation/cubits/booking_cubit.dart';
+import 'package:medi_link/features/booking/presentation/views/booking_view/widgets/book_for_another_person_form.dart';
+import 'package:medi_link/features/booking/presentation/views/booking_view/widgets/book_for_me_details.dart';
+import 'package:medi_link/features/booking/presentation/views/booking_view/widgets/booking_type_selector.dart';
 import 'package:medi_link/features/booking/presentation/views/booking_view/widgets/doctor_details.dart';
 import 'package:medi_link/features/booking/presentation/views/booking_view/widgets/select_date.dart';
-import 'package:medi_link/features/booking/presentation/views/booking_view/widgets/select_patient.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class BookingViewBody extends StatefulWidget {
@@ -57,7 +58,7 @@ class _BookingViewBodyState extends State<BookingViewBody> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DoctorDetails(
-                  doctorName: doctor.firstName + ' ' + doctor.lastName,
+                  doctorName: '${doctor.firstName} ${doctor.lastName}',
                   speciality: SpecialtyUtils.getLocalizedSpecialty(
                     context,
                     doctor.speciality,
@@ -74,10 +75,23 @@ class _BookingViewBodyState extends State<BookingViewBody> {
                   ),
                 ),
                 const SizedBox(height: 13),
-                bookinType(context),
+                BookingTypeSelector(
+                  isMyselfSelected: isAnotherPatientSelected,
+                  onSelectionChanged: (isMyself) {
+                    setState(() {
+                      isAnotherPatientSelected = isMyself;
+                    });
+                  },
+                ),
                 const SizedBox(height: 24),
-                if (!isAnotherPatientSelected) ...bookForAnotherPerson(context),
-                if (isAnotherPatientSelected) ...bookForMe(context),
+                if (isAnotherPatientSelected)
+                  const BookForMeDetails()
+                else
+                  BookForAnotherPersonForm(
+                    firstNameController: firstNameController,
+                    lastNameController: lastNameController,
+                    ageController: ageController,
+                  ),
                 const SizedBox(height: 16),
                 SelectDate(
                   initialDate: selectedDate,
@@ -110,58 +124,34 @@ class _BookingViewBodyState extends State<BookingViewBody> {
     );
   }
 
-  Row bookinType(BuildContext context) {
-    return Row(
-      children: [
-        SelectPatient(
-          text: S.of(context).myself,
-          onTap: () {
-            setState(() {
-              isAnotherPatientSelected = true;
-            });
-          },
-          isSelected: isAnotherPatientSelected,
-        ),
-        const SizedBox(width: 10),
-        SelectPatient(
-          text: S.of(context).other_person,
-          onTap: () {
-            setState(() {
-              isAnotherPatientSelected = false;
-            });
-          },
-          isSelected: !isAnotherPatientSelected,
-        ),
-      ],
-    );
-  }
-
   SafeArea bookingButton(BuildContext context, DoctorEntity doctor) {
     return SafeArea(
       child: CustomButton(
         onPressed: () {
           if (_formKey.currentState!.validate()) {
             if (selectedDate == null) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Please select date and time')),
-              );
+              buildSnackBar(context, S.of(context).please_select_date);
               return;
             }
 
-            final String patientName = isAnotherPatientSelected
-                ? getPatientData().firstName + ' ' + getPatientData().lastName
-                : firstNameController.text.trim() +
-                      ' ' +
-                      lastNameController.text.trim();
+            final bool isBookingForSelf = isAnotherPatientSelected;
+
+            final String patientName = isBookingForSelf
+                ? '${getPatientData().firstName} ${getPatientData().lastName}'
+                : '${firstNameController.text.trim()} ${lastNameController.text.trim()}';
+
+            final int patientAge = isBookingForSelf
+                ? getPatientData().age
+                : int.parse(ageController.text.trim());
 
             final booking = BookingEntity(
               id: '',
               patientId: getPatientData().id,
               doctorId: doctor.id,
               patientName: patientName,
-              doctorName: doctor.firstName + ' ' + doctor.lastName,
+              doctorName: '${doctor.firstName} ${doctor.lastName}',
               date: selectedDate!.toIso8601String(),
-              patientAge: isAnotherPatientSelected ? getPatientData().age : int.parse(ageController.text.trim()),
+              patientAge: patientAge,
               status: 'pending',
             );
 
@@ -171,65 +161,5 @@ class _BookingViewBodyState extends State<BookingViewBody> {
         text: S.of(context).book_now,
       ),
     );
-  }
-
-  List<Widget> bookForMe(BuildContext context) {
-    return [
-      BookingDetails(
-        title: S.of(context).full_name,
-        value: getPatientData().firstName + ' ' + getPatientData().lastName,
-      ),
-      const SizedBox(height: 16),
-      BookingDetails(
-        title: S.of(context).age,
-        value: getPatientData().age.toString(),
-      ),
-      const SizedBox(height: 16),
-      BookingDetails(title: S.of(context).email, value: getPatientData().email),
-    ];
-  }
-
-  List<Widget> bookForAnotherPerson(BuildContext context) {
-    return [
-      CustomTextFormField(
-        controller: firstNameController,
-        hitText: S.of(context).first_name,
-        keyboardType: TextInputType.name,
-        validator: (value) {
-          if (value == null || value.trim().isEmpty) {
-            return 'Please enter full name';
-          }
-          return null;
-        },
-      ),
-      const SizedBox(height: 16),
-      CustomTextFormField(
-        controller: lastNameController,
-        hitText: S.of(context).last_name,
-        keyboardType: TextInputType.name,
-        validator: (value) {
-          if (value == null || value.trim().isEmpty) {
-            return 'Please enter full name';
-          }
-          return null;
-        },
-      ),
-      const SizedBox(height: 16),
-      CustomTextFormField(
-        controller: ageController,
-        hitText: S.of(context).age,
-        keyboardType: TextInputType.number,
-        validator: (value) {
-          if (value == null || value.trim().isEmpty) {
-            return 'Please enter age';
-          }
-          final age = int.tryParse(value);
-          if (age == null || age <= 0) {
-            return 'Please enter valid age';
-          }
-          return null;
-        },
-      ),
-    ];
   }
 }

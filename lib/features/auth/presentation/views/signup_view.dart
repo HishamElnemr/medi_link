@@ -17,7 +17,10 @@ class SignupView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => SignupCubit(getIt<AuthRepoImpl>())),
+        BlocProvider(
+          create: (context) =>
+              SignupCubit(getIt<AuthRepoImpl>(), getIt<FireStoreRepoImpl>()),
+        ),
         BlocProvider(
           create: (context) => AddPatientDataCubit(getIt<FireStoreRepoImpl>()),
         ),
