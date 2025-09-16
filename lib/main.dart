@@ -33,9 +33,7 @@ class MediLink extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => LanguageCubit()),
-        BlocProvider(
-          create: (context) => GetAllDoctorsCubit(getIt<FireStoreRepoImpl>()),
-        ),
+        
       ],
       child: BlocBuilder<LanguageCubit, Locale>(
         builder: (context, locale) {
