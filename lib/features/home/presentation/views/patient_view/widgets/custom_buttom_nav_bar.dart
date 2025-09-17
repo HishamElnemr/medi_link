@@ -14,7 +14,7 @@ class CustomButtomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 77 + MediaQuery.of(context).padding.bottom,
+      height: 77,
       decoration: const BoxDecoration(color: AppColors.white),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),

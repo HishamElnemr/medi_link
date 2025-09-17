@@ -26,7 +26,7 @@ class BottomNavBarItemsContainer extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: bottomNavBarItems(context).asMap().entries.map((e) {
+            children: bottomNavBarItems().asMap().entries.map((e) {
               var index = e.key;
               var entity = e.value;
               return Expanded(

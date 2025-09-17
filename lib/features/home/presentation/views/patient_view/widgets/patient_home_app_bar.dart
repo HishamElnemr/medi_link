@@ -53,7 +53,7 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   TextSpan(
                     text: _getPatientName(context),
-                    
+
                     style: FontStyles.light12.copyWith(
                       color: AppColors.darkGrey,
                       fontWeight: FontWeight.bold,
@@ -63,7 +63,6 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
-              
             ),
           ),
           const Spacer(),
@@ -101,13 +100,6 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               }
             },
             icon: Icons.translate_rounded,
-          ),
-          const SizedBox(width: 5),
-          AppBarIconButton(
-            onPressed: () {
-              Navigator.pushNamed(context, RoutesName.patientBooking);
-            },
-            icon: Icons.calendar_month_outlined,
           ),
         ],
       ),
