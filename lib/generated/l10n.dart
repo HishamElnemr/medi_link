@@ -599,6 +599,31 @@ class S {
     return Intl.message('No', name: 'no', desc: '', args: []);
   }
 
+  /// `Home`
+  String get home {
+    return Intl.message('Home', name: 'home', desc: '', args: []);
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message('Profile', name: 'profile', desc: '', args: []);
+  }
+
+  /// `Appointments`
+  String get appointments {
+    return Intl.message(
+      'Appointments',
+      name: 'appointments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Doctors`
+  String get doctors {
+    return Intl.message('Doctors', name: 'doctors', desc: '', args: []);
+  }
+
   /// `Patient Details`
   String get patient_details {
     return Intl.message(

@@ -59,7 +59,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
         if (isDoctor) {
           Navigator.pushReplacementNamed(context, RoutesName.doctorHome);
         } else {
-          Navigator.pushReplacementNamed(context, RoutesName.patientHome);
+          Navigator.pushReplacementNamed(context, RoutesName.patientMainView);
         }
       } else {
         Navigator.pushReplacementNamed(context, RoutesName.login);

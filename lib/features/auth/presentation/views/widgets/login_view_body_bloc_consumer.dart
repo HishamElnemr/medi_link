@@ -28,7 +28,7 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
           } else if (role == BackendEndpoints.patientsEndpoint) {
             Prefs.getString(BackendEndpoints.kPatientData);
 
-            Navigator.pushReplacementNamed(context, RoutesName.patientHome);
+            Navigator.pushReplacementNamed(context, RoutesName.patientMainView);
           } else {
             log(
               '⚠️ BlocConsumer: No valid role found, staying on login screen',

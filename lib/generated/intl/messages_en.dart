@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "age": MessageLookupByLibrary.simpleMessage("Age"),
     "all": MessageLookupByLibrary.simpleMessage("All"),
     "anesthesia": MessageLookupByLibrary.simpleMessage("Anesthesia"),
+    "appointments": MessageLookupByLibrary.simpleMessage("Appointments"),
     "approve": MessageLookupByLibrary.simpleMessage("Approve"),
     "approved": MessageLookupByLibrary.simpleMessage("Approved"),
     "are_you_sure": MessageLookupByLibrary.simpleMessage("Are you sure?"),
@@ -78,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "dentistry": MessageLookupByLibrary.simpleMessage("Dentistry"),
     "dermatology": MessageLookupByLibrary.simpleMessage("Dermatology"),
     "doctor": MessageLookupByLibrary.simpleMessage("Doctor"),
+    "doctors": MessageLookupByLibrary.simpleMessage("Doctors"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
     ),
@@ -117,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "have_account": MessageLookupByLibrary.simpleMessage("Have an account?"),
     "hello": MessageLookupByLibrary.simpleMessage("Hello"),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
     "icu": MessageLookupByLibrary.simpleMessage("Intensive Care (ICU)"),
     "internal_medicine": MessageLookupByLibrary.simpleMessage(
       "Internal Medicine",
@@ -157,6 +160,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "please_select_date": MessageLookupByLibrary.simpleMessage(
       "Please select date",
     ),
+    "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "psychiatry": MessageLookupByLibrary.simpleMessage("Psychiatry"),
     "pulmonology": MessageLookupByLibrary.simpleMessage("Pulmonology"),
     "radiology": MessageLookupByLibrary.simpleMessage("Radiology"),

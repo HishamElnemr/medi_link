@@ -18,6 +18,14 @@ class Assets {
   /// assets/images/appointment.svg
   static const String assetsImagesAppointment = "assets/images/appointment.svg";
 
+  /// Assets for assetsImagesBookingIcon
+  /// assets/images/booking_icon.svg
+  static const String assetsImagesBookingIcon = "assets/images/booking_icon.svg";
+
+  /// Assets for assetsImagesBookingInactive
+  /// assets/images/booking_inactive.svg
+  static const String assetsImagesBookingInactive = "assets/images/booking_inactive.svg";
+
   /// Assets for assetsImagesCadiologist
   /// assets/images/Cadiologist.svg
   static const String assetsImagesCadiologist = "assets/images/Cadiologist.svg";
@@ -46,9 +54,13 @@ class Assets {
   /// assets/images/Hepatologists.svg
   static const String assetsImagesHepatologists = "assets/images/Hepatologists.svg";
 
-  /// Assets for assetsImagesHome
-  /// assets/images/home.svg
-  static const String assetsImagesHome = "assets/images/home.svg";
+  /// Assets for assetsImagesHomeActive
+  /// assets/images/home_active.svg
+  static const String assetsImagesHomeActive = "assets/images/home_active.svg";
+
+  /// Assets for assetsImagesHomeInactiveIcon
+  /// assets/images/home_inactive_icon.svg
+  static const String assetsImagesHomeInactiveIcon = "assets/images/home_inactive_icon.svg";
 
   /// Assets for assetsImagesLogoRB
   /// assets/images/logoRB.png
