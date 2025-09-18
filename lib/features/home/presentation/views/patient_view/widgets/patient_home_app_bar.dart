@@ -53,7 +53,6 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   TextSpan(
                     text: _getPatientName(context),
-
                     style: FontStyles.light12.copyWith(
                       color: AppColors.darkGrey,
                       fontWeight: FontWeight.bold,

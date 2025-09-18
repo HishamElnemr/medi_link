@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:medi_link/core/constants/app_colors.dart';
 
 class InActiveItem extends StatelessWidget {
   const InActiveItem({super.key, required this.image});
@@ -7,13 +8,17 @@ class InActiveItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.transparent,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [SvgPicture.asset(image, width: 32, height: 27)],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        SvgPicture.asset(
+          image,
+          width: 32,
+          height: 27,
+          color: AppColors.lightGrey.withOpacity(.9),
+        ),
+      ],
     );
   }
 }
