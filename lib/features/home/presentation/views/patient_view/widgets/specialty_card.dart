@@ -25,46 +25,40 @@ class SpecialtyCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
-        child: Container(
-          width: 72,
-          height: 72,
-          decoration: BoxDecoration(
-            color: backgroundColor ?? AppColors.softBlue2,
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
-                icon,
-                width: iconSize(context),
-                color: iconColor ?? AppColors.primaryBlue,
-              ),
-              const SizedBox(height: 6),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4),
-                child: Text(
-                  title,
-                  style: FontStyles.light12.copyWith(
-                    color: textColor ?? AppColors.darkGrey,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+      child: Container(
+        width: 72,
+        height: 72,
+        decoration: BoxDecoration(
+          color: backgroundColor ?? AppColors.softBlue2,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              icon,
+              width: 24,
+              color: iconColor ?? AppColors.primaryBlue,
+            ),
+            const SizedBox(height: 6),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Text(
+                title,
+                style: FontStyles.light12.copyWith(
+                  color: textColor ?? AppColors.darkGrey,
+                  fontWeight: FontWeight.w400,
                 ),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
   }
 
-  double iconSize(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    return screenWidth > 600 ? 28 : 24;
-  }
+
 }

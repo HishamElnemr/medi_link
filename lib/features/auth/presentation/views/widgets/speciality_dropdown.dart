@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
-import 'package:medi_link/core/utils/specialty_utils.dart';
+import 'package:medi_link/core/utils/all_specialty_utils.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class SpecialityDropdown extends StatelessWidget {
@@ -40,11 +40,13 @@ class SpecialityDropdown extends StatelessWidget {
         enabledBorder: _buildBorder(),
         focusedBorder: _buildBorder(),
       ),
-      items: SpecialtyUtils.specialtyKeys
+      items: AllSpecialtyUtils.specialtyKeys
           .map(
             (key) => DropdownMenuItem<String>(
               value: key,
-              child: Text(SpecialtyUtils.getLocalizedSpecialty(context, key)),
+              child: Text(
+                AllSpecialtyUtils.getLocalizedSpecialty(context, key),
+              ),
             ),
           )
           .toList(),

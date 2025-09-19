@@ -53,19 +53,6 @@ class FireStoreRepoImpl implements FireStoreRepo {
   }
 
   @override
-  Future<Either<Failure, List<DoctorEntity>>> getAllDoctors() async {
-    try {
-      var result = await fireStoreServices.getAllDoctors();
-      return Right(
-        result.map((e) => DoctorModel.fromJson(e).toEntity()).toList(),
-      );
-    } on Exception catch (e) {
-      log('Error getting all doctors: $e');
-      return left(ServerFailure(e.toString()));
-    }
-  }
-
-  @override
   Future<Either<Failure, List<DoctorEntity>>> getDoctorsBySpecialization({
     required String specialization,
   }) async {
@@ -73,6 +60,7 @@ class FireStoreRepoImpl implements FireStoreRepo {
       var result = await fireStoreServices.getDoctorsBySpecialization(
         specialization: specialization,
       );
+      log('Length: ${result.length}');  
       return Right(
         result.map((e) => DoctorModel.fromJson(e).toEntity()).toList(),
       );

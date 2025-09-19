@@ -147,6 +147,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "neurology": MessageLookupByLibrary.simpleMessage("Neurology"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
     "no_appointment": MessageLookupByLibrary.simpleMessage("No Appointments"),
+    "no_doctors_found": MessageLookupByLibrary.simpleMessage(
+      "No Doctors Found",
+    ),
     "oncology": MessageLookupByLibrary.simpleMessage("Oncology"),
     "ophthalmology": MessageLookupByLibrary.simpleMessage("Ophthalmology"),
     "orthopedics": MessageLookupByLibrary.simpleMessage("Orthopedics"),
@@ -159,6 +162,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "please_select_date": MessageLookupByLibrary.simpleMessage(
       "Please select date",
+    ),
+    "please_try_later": MessageLookupByLibrary.simpleMessage(
+      "Please try later",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "psychiatry": MessageLookupByLibrary.simpleMessage("Psychiatry"),

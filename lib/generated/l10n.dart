@@ -334,6 +334,16 @@ class S {
     return Intl.message('Years', name: 'years', desc: '', args: []);
   }
 
+  /// `No Doctors Found`
+  String get no_doctors_found {
+    return Intl.message(
+      'No Doctors Found',
+      name: 'no_doctors_found',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please enter valid age`
   String get invalid_age {
     return Intl.message(
@@ -597,6 +607,16 @@ class S {
   /// `No`
   String get no {
     return Intl.message('No', name: 'no', desc: '', args: []);
+  }
+
+  /// `Please try later`
+  String get please_try_later {
+    return Intl.message(
+      'Please try later',
+      name: 'please_try_later',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Home`

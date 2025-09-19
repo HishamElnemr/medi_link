@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
+import 'package:medi_link/core/utils/all_specialty_utils.dart';
 import 'package:medi_link/core/utils/assets.dart';
-import 'package:medi_link/core/utils/specialty_utils.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/custom_icon.dart';
@@ -76,7 +76,7 @@ class DoctorCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  SpecialtyUtils.getLocalizedSpecialty(
+                  AllSpecialtyUtils.getLocalizedSpecialty(
                     context,
                     doctorEntity.speciality,
                   ),

@@ -11,13 +11,6 @@ class FireStoreServices {
     await firestore.collection(BackendEndpoints.doctorEndpoint).add(data);
   }
 
-  Future<List<Map<String, dynamic>>> getAllDoctors() async {
-    final snapshot = await firestore
-        .collection(BackendEndpoints.doctorEndpoint)
-        .get();
-    return snapshot.docs.map((doc) => doc.data()).toList();
-  }
-
   Future<List<Map<String, dynamic>>> getDoctorsBySpecialization({required String specialization}) async {
     final snapshot = await firestore
         .collection(BackendEndpoints.doctorEndpoint)

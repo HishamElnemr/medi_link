@@ -135,6 +135,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "neurology": MessageLookupByLibrary.simpleMessage("مخ وأعصاب"),
     "no": MessageLookupByLibrary.simpleMessage("لا"),
     "no_appointment": MessageLookupByLibrary.simpleMessage("لا يوجد حجوزات"),
+    "no_doctors_found": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد أطباء حاليا",
+    ),
     "oncology": MessageLookupByLibrary.simpleMessage("أورام"),
     "ophthalmology": MessageLookupByLibrary.simpleMessage("عيون"),
     "orthopedics": MessageLookupByLibrary.simpleMessage("عظام"),
@@ -147,6 +150,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "please_select_date": MessageLookupByLibrary.simpleMessage(
       "برجاء تحديد التاريخ",
+    ),
+    "please_try_later": MessageLookupByLibrary.simpleMessage(
+      "يرجى المحاولة لاحقا",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "psychiatry": MessageLookupByLibrary.simpleMessage("نفسية"),

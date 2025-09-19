@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/generated/l10n.dart';
 
-class SpecialtyUtils {
+class AllSpecialtyUtils {
   static const List<String> specialtyKeys = [
     'internal_medicine',
     'surgery',
@@ -62,5 +62,4 @@ class SpecialtyUtils {
 
     return specialtyMap[specialtyKey] ?? specialtyKey;
   }
-
 }

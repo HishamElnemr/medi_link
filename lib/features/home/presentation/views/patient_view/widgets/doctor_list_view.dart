@@ -16,14 +16,13 @@ class DoctorListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: doctors.length,
       itemBuilder: (context, index) {
-        final doctor = doctors[index];
         return DoctorCard(
-          doctorEntity: doctor,
+          doctorEntity: doctors[index],
           onPressed: () {
             Navigator.pushNamed(
               context,
               RoutesName.booking,
-              arguments: doctor,
+              arguments: doctors[index],
             );
           },
         );

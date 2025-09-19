@@ -17,6 +17,7 @@ class GetDoctorBySpecialityCubit extends Cubit<GetDoctorBySpecialityState> {
     final result = await fireStoreRepoImpl.getDoctorsBySpecialization(
       specialization: specialization,
     );
+
     result.fold(
       (failure) =>
           emit(GetDoctorBySpecialityFailure(errorMessage: failure.message)),

@@ -26,6 +26,10 @@ class Assets {
   /// assets/images/booking_inactive.svg
   static const String assetsImagesBookingInactive = "assets/images/booking_inactive.svg";
 
+  /// Assets for assetsImagesBrain
+  /// assets/images/brain.svg
+  static const String assetsImagesBrain = "assets/images/brain.svg";
+
   /// Assets for assetsImagesCadiologist
   /// assets/images/Cadiologist.svg
   static const String assetsImagesCadiologist = "assets/images/Cadiologist.svg";
@@ -33,6 +37,14 @@ class Assets {
   /// Assets for assetsImagesDentists
   /// assets/images/Dentists.svg
   static const String assetsImagesDentists = "assets/images/Dentists.svg";
+
+  /// Assets for assetsImagesDoctorsActive
+  /// assets/images/doctors_active.svg
+  static const String assetsImagesDoctorsActive = "assets/images/doctors_active.svg";
+
+  /// Assets for assetsImagesDoctorsInactive
+  /// assets/images/doctors_inactive.svg
+  static const String assetsImagesDoctorsInactive = "assets/images/doctors_inactive.svg";
 
   /// Assets for assetsImagesFacebookIcon
   /// assets/images/facebook_icon.svg
