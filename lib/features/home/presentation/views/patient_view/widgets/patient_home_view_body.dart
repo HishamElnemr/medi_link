@@ -3,6 +3,7 @@ import 'package:medi_link/features/home/presentation/views/patient_view/widgets/
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/medical_specialties_grid.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/patient_home_app_bar.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/specialities_widget.dart';
+import 'package:medi_link/features/home/presentation/views/patient_view/widgets/upcoming_appointments.dart';
 
 class PatientHomeViewBody extends StatelessWidget {
   const PatientHomeViewBody({super.key});
@@ -16,12 +17,14 @@ class PatientHomeViewBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           sliver: SliverList(
             delegate: SliverChildListDelegate([
+              const SizedBox(height: 40),
+              const UpcomingAppointments(),
               const SizedBox(height: 20),
               const SpecialitiesWidget(),
               const SizedBox(height: 10),
               const MedicalSpecialtiesGrid(),
               const SizedBox(height: 20),
-              const DoctorsList(),
+              const DoctorListViewBuilder(),
               const SizedBox(height: 24),
             ]),
           ),

@@ -184,6 +184,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "too_many_requests": MessageLookupByLibrary.simpleMessage(
       "تم تجاوز عدد المحاولات المسموح، يرجى المحاولة لاحقاً ",
     ),
+    "upcoming_appointments": MessageLookupByLibrary.simpleMessage(
+      "الحجوزات القادمة",
+    ),
     "urology": MessageLookupByLibrary.simpleMessage("مسالك بولية"),
     "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "week_password": MessageLookupByLibrary.simpleMessage(

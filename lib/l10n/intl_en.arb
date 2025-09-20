@@ -54,6 +54,7 @@
   "book_appointment": "Book Now",
   "book_now": "Book Now",
   "approve": "Approve",
+  "upcoming_appointments" : "Upcoming Appointments",
   "reject": "Reject",
   "pending": "Pending",
   "cancelled": "Cancelled",

@@ -41,6 +41,8 @@
   "address": "العنوان",
   "phone_number": "رقم الهاتف",
   "invalid_phone_number": "برجاء ادخال رقم هاتف صحيح",
+  "upcoming_appointments" : "الحجوزات القادمة",
+  
   "see_all": "اظهار الكل",
   "all": "الكل",
   "loading": "جاري التحميل",

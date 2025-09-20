@@ -198,6 +198,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "too_many_requests": MessageLookupByLibrary.simpleMessage(
       "Too many requests, please try again later",
     ),
+    "upcoming_appointments": MessageLookupByLibrary.simpleMessage(
+      "Upcoming Appointments",
+    ),
     "urology": MessageLookupByLibrary.simpleMessage("Urology"),
     "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
     "week_password": MessageLookupByLibrary.simpleMessage(

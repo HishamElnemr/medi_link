@@ -6,8 +6,8 @@ import 'package:medi_link/generated/l10n.dart';
 
 import '../../../../../../core/constants/app_colors.dart';
 
-class DoctorsList extends StatelessWidget {
-  const DoctorsList({super.key});
+class DoctorListViewBuilder extends StatelessWidget {
+  const DoctorListViewBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {

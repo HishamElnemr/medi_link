@@ -14,8 +14,8 @@ class SpecialitiesWidget extends StatelessWidget {
         Text(
           S.of(context).specialities,
           style: FontStyles.medium15.copyWith(
-            color: AppColors.darkGrey,
             fontSize: 17,
+          fontWeight: FontWeight.bold,
           ),
         ),
         Text(
