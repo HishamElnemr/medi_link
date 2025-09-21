@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
 import 'package:medi_link/features/home/presentation/views/doctor_view.dart/widgets/patient_card.dart';
 
-class SkeltonizerLoadingBody extends StatelessWidget {
-  const SkeltonizerLoadingBody({super.key});
+class CardSkeltonizerLoadingBody extends StatelessWidget {
+  const CardSkeltonizerLoadingBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +23,12 @@ class SkeltonizerLoadingBody extends StatelessWidget {
               patientName: 'Ali Mohamed Ali',
               doctorName: 'Ali Mohamed Ali',
               patientAge: 25,
+              doctorSpeciality: 'Cardiologist',
             ),
           ),
         );
       },
-      itemCount: 4,
+      itemCount: 2,
     );
   }
 }

@@ -153,6 +153,7 @@ class _BookingViewBodyState extends State<BookingViewBody> {
               date: selectedDate!.toIso8601String(),
               patientAge: patientAge,
               status: 'pending',
+              doctorSpeciality: doctor.speciality,
             );
 
             context.read<BookingCubit>().addBooking(booking);
