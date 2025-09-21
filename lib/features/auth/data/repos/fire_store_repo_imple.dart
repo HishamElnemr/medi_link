@@ -60,7 +60,6 @@ class FireStoreRepoImpl implements FireStoreRepo {
       var result = await fireStoreServices.getDoctorsBySpecialization(
         specialization: specialization,
       );
-      log('Length: ${result.length}');  
       return Right(
         result.map((e) => DoctorModel.fromJson(e).toEntity()).toList(),
       );
