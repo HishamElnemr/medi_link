@@ -1,0 +1,1 @@
+final double kHorizontalPadding = 16.0;

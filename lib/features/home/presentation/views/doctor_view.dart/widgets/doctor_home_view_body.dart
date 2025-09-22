@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medi_link/core/utils/constants.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
 import 'package:medi_link/features/home/presentation/views/doctor_view.dart/widgets/doctor_home_app_bar.dart';
 import 'package:medi_link/features/home/presentation/views/doctor_view.dart/widgets/patients_list_view.dart';
@@ -13,7 +14,7 @@ class DoctorHomeViewBody extends StatelessWidget {
       slivers: [
         const DoctorHomeAppBar(),
         SliverPadding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
           sliver: SliverList(
             delegate: SliverChildListDelegate([
               patients.isEmpty

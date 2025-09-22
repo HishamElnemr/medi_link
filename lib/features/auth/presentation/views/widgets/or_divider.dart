@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
+import 'package:medi_link/core/utils/constants.dart';
 
 class OrDivider extends StatelessWidget {
   const OrDivider({super.key});
@@ -12,7 +13,7 @@ class OrDivider extends StatelessWidget {
       children: [
         const Expanded(child: Divider(color: Color(0xffC9CECF), thickness: 1)),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
           child: Text(
             'أو',
             style: FontStyles.light12.copyWith(color: AppColors.darkGrey),

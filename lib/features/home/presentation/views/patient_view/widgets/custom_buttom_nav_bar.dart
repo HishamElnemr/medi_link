@@ -11,14 +11,16 @@ class CustomButtomNavBar extends StatelessWidget {
   final int selectedIndex;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: const BoxDecoration(color: Colors.transparent),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-        child: BottomNavBarItemsContainer(
-          onItemTapped: onItemTapped,
-          selectedIndex: selectedIndex,
+    return IntrinsicHeight(
+      child: Container(
+        width: double.infinity,
+        decoration: const BoxDecoration(color: Colors.transparent),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+          child: BottomNavBarItemsContainer(
+            onItemTapped: onItemTapped,
+            selectedIndex: selectedIndex,
+          ),
         ),
       ),
     );

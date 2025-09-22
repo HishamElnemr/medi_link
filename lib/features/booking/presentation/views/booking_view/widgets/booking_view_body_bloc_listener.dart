@@ -20,7 +20,7 @@ class BookingViewBodyBlocListener extends StatelessWidget {
             S.of(context).booking_successfully,
             color: Colors.green,
           );
-          Navigator.pop(context);
+          Navigator.pop(context, true);
         } else if (state is BookingError) {
           buildSnackBar(
             context,

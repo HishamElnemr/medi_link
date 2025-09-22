@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
 import 'package:medi_link/features/home/presentation/views/doctor_view.dart/widgets/patient_card.dart';
 
-class CardSkeltonizerLoadingBody extends StatelessWidget {
-  const CardSkeltonizerLoadingBody({super.key});
+class BookingCardSkeltonizerLoadingBody extends StatelessWidget {
+  const BookingCardSkeltonizerLoadingBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class CardSkeltonizerLoadingBody extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
         return Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.symmetric(vertical: 8),
           child: PatientCard(
             booking: BookingEntity(
               id: '13',
@@ -28,7 +28,7 @@ class CardSkeltonizerLoadingBody extends StatelessWidget {
           ),
         );
       },
-      itemCount: 2,
+      itemCount: 3,
     );
   }
 }

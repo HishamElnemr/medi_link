@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:medi_link/core/utils/constants.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/common_fields.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/dont_have_account_widget.dart';
@@ -22,7 +23,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
       child: SingleChildScrollView(
         child: Form(
           key: formKey,

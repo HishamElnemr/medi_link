@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/services/shared_preferences_singleton.dart';
 import 'package:medi_link/core/utils/backend_endpoints.dart';
+import 'package:medi_link/core/utils/constants.dart';
 import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
 import 'package:medi_link/features/auth/domain/entites/patient_entity.dart';
 import 'package:medi_link/features/auth/presentation/cubits/add_doctor_data_cubit/add_doctor_data_cubit.dart';
@@ -44,7 +45,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
       child: SingleChildScrollView(
         child: Form(
           key: formKey,

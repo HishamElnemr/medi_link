@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
+import 'package:medi_link/core/utils/constants.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
 import 'package:medi_link/features/booking/presentation/cubits/booking_cubit.dart';
@@ -69,7 +70,10 @@ class StatusState extends StatelessWidget {
 
       case 'completed':
         return Container(
-          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+          padding: EdgeInsets.symmetric(
+            vertical: 8,
+            horizontal: kHorizontalPadding,
+          ),
           decoration: BoxDecoration(
             color: Colors.green.withOpacity(0.1),
             borderRadius: BorderRadius.circular(8),
@@ -82,7 +86,10 @@ class StatusState extends StatelessWidget {
 
       case 'rejected':
         return Container(
-          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+          padding: EdgeInsets.symmetric(
+            vertical: 8,
+            horizontal: kHorizontalPadding,
+          ),
           decoration: BoxDecoration(
             color: Colors.red.withOpacity(0.1),
             borderRadius: BorderRadius.circular(8),
@@ -109,7 +116,11 @@ class StatusState extends StatelessWidget {
           ),
           title: Row(
             children: [
-              const Icon(Icons.warning_amber_rounded, color: Colors.red, size: 28),
+              const Icon(
+                Icons.warning_amber_rounded,
+                color: Colors.red,
+                size: 28,
+              ),
               const SizedBox(width: 8),
               Text(
                 S.of(context).confirm_cancellation,

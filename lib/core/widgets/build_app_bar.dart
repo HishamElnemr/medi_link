@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
+import 'package:medi_link/core/utils/constants.dart';
 
 AppBar buildAppBar(
   BuildContext context, {
@@ -9,7 +10,6 @@ AppBar buildAppBar(
   Color? backgroundColor,
 }) {
   return AppBar(
-    
     leading: Visibility(
       visible: isVisible,
       child: IconButton(
@@ -20,8 +20,10 @@ AppBar buildAppBar(
         color: AppColors.primaryBlue,
       ),
     ),
-    actions: const [Padding(padding: EdgeInsets.symmetric(horizontal: 16))],
-    backgroundColor: backgroundColor ??  Colors.transparent,
+    actions: [
+      Padding(padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding)),
+    ],
+    backgroundColor: backgroundColor ?? Colors.transparent,
     elevation: 0,
     centerTitle: true,
     title: Text(

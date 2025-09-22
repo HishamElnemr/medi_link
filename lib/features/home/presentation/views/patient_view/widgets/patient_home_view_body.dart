@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medi_link/core/utils/constants.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/doctor_list_view_bloc_builder.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/medical_specialties_grid.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/patient_home_app_bar.dart';
@@ -14,7 +15,7 @@ class PatientHomeViewBody extends StatelessWidget {
       slivers: [
         const PatientHomeAppBar(),
         SliverPadding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
           sliver: SliverList(
             delegate: SliverChildListDelegate([
               const SizedBox(height: 40),

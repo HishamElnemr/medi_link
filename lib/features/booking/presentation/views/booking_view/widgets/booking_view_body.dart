@@ -5,6 +5,7 @@ import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/core/helper/build_snack_bar.dart';
 import 'package:medi_link/core/helper/get_patient_data.dart';
 import 'package:medi_link/core/utils/all_specialty_utils.dart';
+import 'package:medi_link/core/utils/constants.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
@@ -51,7 +52,7 @@ class _BookingViewBodyState extends State<BookingViewBody> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
           child: Form(
             key: _formKey,
             child: Column(
