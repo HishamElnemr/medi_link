@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
@@ -12,7 +10,6 @@ class PatientBookingListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log('Bookings length: ${bookings.length}');
     if (bookings.isEmpty) {
       return Center(
         child: Padding(
@@ -28,7 +25,10 @@ class PatientBookingListView extends StatelessWidget {
     return ListView.builder(
       itemCount: bookings.length,
       itemBuilder: (context, index) {
-        return PatientBookingCard(booking: bookings[index]);
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: PatientBookingCard(booking: bookings[index]),
+        );
       },
     );
   }

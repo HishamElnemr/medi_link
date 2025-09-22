@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
+import 'package:medi_link/core/utils/all_specialty_utils.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
 import 'package:medi_link/generated/l10n.dart';
 
-class UpcomingAppointmentsWidget extends StatelessWidget {
+class UpcomingAppointmentsCard extends StatelessWidget {
   String _formatDate(String date) {
     try {
       return DateFormat('d MMM').format(DateTime.parse(date));
@@ -14,10 +15,11 @@ class UpcomingAppointmentsWidget extends StatelessWidget {
       return date;
     }
   }
+
   final BookingEntity booking;
   final VoidCallback onCancelPressed;
   final bool moreThanOne;
-  const UpcomingAppointmentsWidget({
+  const UpcomingAppointmentsCard({
     required this.onCancelPressed,
     required this.booking,
     this.moreThanOne = false,
@@ -47,7 +49,10 @@ class UpcomingAppointmentsWidget extends StatelessWidget {
             ),
           ),
           Text(
-            booking.doctorSpeciality,
+            AllSpecialtyUtils.getLocalizedSpecialty(
+              context,
+              booking.doctorSpeciality,
+            ),
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
             style: FontStyles.light12.copyWith(

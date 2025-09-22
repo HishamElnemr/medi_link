@@ -30,6 +30,9 @@
   "too_many_requests": "تم تجاوز عدد المحاولات المسموح، يرجى المحاولة لاحقاً ",
   "sign_as": "تسجيل الدخول ك",
   "patient": "مريض",
+  "patient_name": "اسم المريض",
+  "doctor_name": "اسم الطبيب",
+  "doctor_specialization": "تخصص الطبيب",
   "doctor": "طبيب",
   "gender": "النوع",
   "male": "ذكر",
@@ -42,7 +45,6 @@
   "phone_number": "رقم الهاتف",
   "invalid_phone_number": "برجاء ادخال رقم هاتف صحيح",
   "upcoming_appointments" : "الحجوزات القادمة",
-  
   "see_all": "اظهار الكل",
   "all": "الكل",
   "loading": "جاري التحميل",

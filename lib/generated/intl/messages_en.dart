@@ -79,6 +79,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "dentistry": MessageLookupByLibrary.simpleMessage("Dentistry"),
     "dermatology": MessageLookupByLibrary.simpleMessage("Dermatology"),
     "doctor": MessageLookupByLibrary.simpleMessage("Doctor"),
+    "doctor_name": MessageLookupByLibrary.simpleMessage("Doctor Name"),
+    "doctor_specialization": MessageLookupByLibrary.simpleMessage(
+      "Doctor Specialization",
+    ),
     "doctors": MessageLookupByLibrary.simpleMessage("Doctors"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
@@ -157,6 +161,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "patient": MessageLookupByLibrary.simpleMessage("Patient"),
     "patient_details": MessageLookupByLibrary.simpleMessage("Patient Details"),
+    "patient_name": MessageLookupByLibrary.simpleMessage("Patient Name"),
     "pediatrics": MessageLookupByLibrary.simpleMessage("Pediatrics"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),

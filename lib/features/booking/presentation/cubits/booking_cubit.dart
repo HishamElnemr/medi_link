@@ -70,6 +70,7 @@ class BookingCubit extends Cubit<BookingState> {
 
   Future<void> cancelBooking(String bookingId) async {
     await updateBookingStatus(bookingId, 'cancelled');
+    bookingRepo.deleteBooking(bookingId);
   }
 
   Future<void> completeBooking(String bookingId) async {

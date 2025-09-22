@@ -50,4 +50,10 @@ class FireStoreServices {
         .doc(bookingId)
         .update({'status': newStatus});
   }
+  Future<void> deleteBooking(String bookingId) async {
+    await firestore
+        .collection(BackendEndpoints.bookingsEndpoint)
+        .doc(bookingId)
+        .delete();
+  }
 }

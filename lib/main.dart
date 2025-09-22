@@ -18,7 +18,7 @@ void main() async {
   );
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  Prefs.init();
+  await Prefs.init();
   setup();
   runApp(const MediLink());
 }

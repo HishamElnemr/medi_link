@@ -1,4 +1,5 @@
 import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:medi_link/core/errors/failures.dart';
 import 'package:medi_link/core/services/fire_store_services.dart';
@@ -21,7 +22,7 @@ class BookingRepoImpl implements BookingRepo {
       return const Right(null);
     } on Exception catch (e) {
       log('Error adding booking: $e');
-      return left(ServerFailure(e.toString()));
+      return left(ServerFailure('حدث خطأ ما يرجى المحاولة مرة أخرى'));
     }
   }
 
@@ -66,6 +67,18 @@ class BookingRepoImpl implements BookingRepo {
       return const Right(null);
     } on Exception catch (e) {
       log('Error updating booking status: $e');
+      return left(ServerFailure('حدث خطأ ما يرجى المحاولة مرة أخرى'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> deleteBooking(String bookingId) async {
+    try {
+      fireStoreServices.deleteBooking(bookingId);
+      log('Booking deleted successfully');
+      return const Right(null);
+    } on Exception catch (e) {
+      log('Error deleting booking: $e');
       return left(ServerFailure('حدث خطأ ما يرجى المحاولة مرة أخرى'));
     }
   }

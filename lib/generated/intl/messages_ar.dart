@@ -75,6 +75,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "dentistry": MessageLookupByLibrary.simpleMessage("أسنان"),
     "dermatology": MessageLookupByLibrary.simpleMessage("جلدية"),
     "doctor": MessageLookupByLibrary.simpleMessage("طبيب"),
+    "doctor_name": MessageLookupByLibrary.simpleMessage("اسم الطبيب"),
+    "doctor_specialization": MessageLookupByLibrary.simpleMessage(
+      "تخصص الطبيب",
+    ),
     "doctors": MessageLookupByLibrary.simpleMessage("الأطباء"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "dr": MessageLookupByLibrary.simpleMessage("د /"),
@@ -145,6 +149,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "patient": MessageLookupByLibrary.simpleMessage("مريض"),
     "patient_details": MessageLookupByLibrary.simpleMessage("تفاصيل الحجز"),
+    "patient_name": MessageLookupByLibrary.simpleMessage("اسم المريض"),
     "pediatrics": MessageLookupByLibrary.simpleMessage("أطفال"),
     "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),

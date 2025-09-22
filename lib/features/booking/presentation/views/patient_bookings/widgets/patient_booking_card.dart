@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/core/models/booking_status.dart';
+import 'package:medi_link/core/utils/all_specialty_utils.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
-import 'package:medi_link/features/booking/presentation/views/patient_bookings/widgets/build_patient_action_button.dart';
+import 'package:medi_link/features/booking/presentation/views/patient_bookings/widgets/patient_action_button.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class PatientBookingCard extends StatelessWidget {
@@ -14,7 +15,6 @@ class PatientBookingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: AppColors.softBlue2,
@@ -38,7 +38,16 @@ class PatientBookingCard extends StatelessWidget {
           Text(
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            '${S.of(context).patient}: ${booking.patientName}',
+            '${S.of(context).doctor_specialization} : ${AllSpecialtyUtils.getLocalizedSpecialty(context, booking.doctorSpeciality)} '
+                .toUpperCase(),
+            style: FontStyles.light12.copyWith(color: AppColors.darkGrey),
+          ),
+          const SizedBox(height: 8),
+
+          Text(
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            '${S.of(context).patient_name} : ${booking.patientName}',
             style: FontStyles.light12.copyWith(color: AppColors.darkGrey),
           ),
           const SizedBox(height: 8),

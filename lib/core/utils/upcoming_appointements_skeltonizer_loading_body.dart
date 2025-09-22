@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
-import 'package:medi_link/features/home/presentation/views/patient_view/widgets/upcoming_appointments_widget.dart';
+import 'package:medi_link/features/home/presentation/views/patient_view/widgets/upcoming_appointments_card.dart';
 
 class UpcomingAppointementsSkeltonizerLoadingBody extends StatelessWidget {
   const UpcomingAppointementsSkeltonizerLoadingBody({super.key});
@@ -15,7 +15,7 @@ class UpcomingAppointementsSkeltonizerLoadingBody extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: UpcomingAppointmentsWidget(
+            child: UpcomingAppointmentsCard(
               moreThanOne: true,
               onCancelPressed: () {},
               booking: BookingEntity(

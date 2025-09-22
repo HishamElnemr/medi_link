@@ -1,25 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
-import 'package:medi_link/core/helper/get_patient_data.dart';
 import 'package:medi_link/core/widgets/build_app_bar.dart';
-import 'package:medi_link/features/booking/presentation/cubits/booking_cubit.dart';
 import 'package:medi_link/features/booking/presentation/views/patient_bookings/widgets/patient_booking_view_bloc_builder.dart';
 import 'package:medi_link/generated/l10n.dart';
 
-class PatientBookingView extends StatefulWidget {
+class PatientBookingView extends StatelessWidget {
   const PatientBookingView({super.key});
-
-  @override
-  State<PatientBookingView> createState() => _PatientBookingViewState();
-}
-
-class _PatientBookingViewState extends State<PatientBookingView> {
-  @override
-  void initState() {
-    context.read<BookingCubit>().getPatientBookings(getPatientData().id!);
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +16,10 @@ class _PatientBookingViewState extends State<PatientBookingView> {
         backgroundColor: AppColors.softBlue2,
         isVisible: false,
       ),
-      body: const PatientBookingViewBlocBuilder(),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 35),
+        child: PatientBookingViewBlocBuilder(),
+      ),
     );
   }
 }

@@ -294,6 +294,31 @@ class S {
     return Intl.message('Patient', name: 'patient', desc: '', args: []);
   }
 
+  /// `Patient Name`
+  String get patient_name {
+    return Intl.message(
+      'Patient Name',
+      name: 'patient_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Doctor Name`
+  String get doctor_name {
+    return Intl.message('Doctor Name', name: 'doctor_name', desc: '', args: []);
+  }
+
+  /// `Doctor Specialization`
+  String get doctor_specialization {
+    return Intl.message(
+      'Doctor Specialization',
+      name: 'doctor_specialization',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Doctor`
   String get doctor {
     return Intl.message('Doctor', name: 'doctor', desc: '', args: []);

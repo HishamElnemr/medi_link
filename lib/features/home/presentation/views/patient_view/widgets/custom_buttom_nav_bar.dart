@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/widgets/buttom_nav_bar_items_container.dart';
 
 class CustomButtomNavBar extends StatelessWidget {
@@ -14,8 +13,7 @@ class CustomButtomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 77,
-      decoration: const BoxDecoration(color: AppColors.white),
+      decoration: const BoxDecoration(color: Colors.transparent),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
         child: BottomNavBarItemsContainer(

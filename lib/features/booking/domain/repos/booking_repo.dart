@@ -15,4 +15,6 @@ abstract class BookingRepo {
     String newStatus,
   );
 
+  Future<Either<Failure, void>> deleteBooking(String bookingId);
+
 }
