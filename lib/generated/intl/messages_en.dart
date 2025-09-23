@@ -64,8 +64,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Click to select date",
     ),
     "complete": MessageLookupByLibrary.simpleMessage("Complete"),
-    "complete_the_appointment": MessageLookupByLibrary.simpleMessage(
-      "Complete the appointment",
+    "complete_booking": MessageLookupByLibrary.simpleMessage(
+      "Complete Booking",
     ),
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
     "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),

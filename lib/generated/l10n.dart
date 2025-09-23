@@ -589,11 +589,11 @@ class S {
     return Intl.message('Bookings', name: 'bookings', desc: '', args: []);
   }
 
-  /// `Complete the appointment`
-  String get complete_the_appointment {
+  /// `Complete Booking`
+  String get complete_booking {
     return Intl.message(
-      'Complete the appointment',
-      name: 'complete_the_appointment',
+      'Complete Booking',
+      name: 'complete_booking',
       desc: '',
       args: [],
     );

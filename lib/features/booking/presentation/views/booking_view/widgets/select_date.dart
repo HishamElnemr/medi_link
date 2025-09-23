@@ -5,7 +5,7 @@ import 'package:medi_link/generated/l10n.dart';
 
 class SelectDate extends StatefulWidget {
   final Function(DateTime?)? onDateSelected;
-  final DateTime? initialDate; 
+  final DateTime? initialDate;
 
   const SelectDate({super.key, this.onDateSelected, this.initialDate});
 
@@ -19,7 +19,7 @@ class _SelectDateState extends State<SelectDate> {
   @override
   void initState() {
     super.initState();
-    selectedDate = widget.initialDate; 
+    selectedDate = widget.initialDate;
   }
 
   Future<void> _selectDate(BuildContext context) async {
@@ -28,21 +28,29 @@ class _SelectDateState extends State<SelectDate> {
       initialDate: selectedDate ?? DateTime.now(),
       firstDate: DateTime.now(),
       lastDate: DateTime(2026),
+      builder: (BuildContext context, Widget? child) {
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: Theme.of(
+              context,
+            ).colorScheme.copyWith(primary: AppColors.primaryBlue),
+          ),
+          child: child!,
+        );
+      },
     );
     if (picked != null && mounted) {
       setState(() {
-        selectedDate = picked; 
+        selectedDate = picked;
       });
-      if (widget.onDateSelected != null) {
-        widget.onDateSelected!(selectedDate); 
-      }
+      widget.onDateSelected?.call(selectedDate);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           S.of(context).select_date,
@@ -51,20 +59,50 @@ class _SelectDateState extends State<SelectDate> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        const Spacer(),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.darkGrey,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
+        const SizedBox(height: 10),
+        GestureDetector(
+          onTap: () => _selectDate(context),
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+            decoration: BoxDecoration(
+              color: AppColors.white,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: AppColors.darkGrey.withOpacity(0.4)),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  blurRadius: 6,
+                  offset: const Offset(0, 2),
+                ),
+              ],
             ),
-          ),
-          onPressed: () => _selectDate(context),
-          child: Text(
-            selectedDate == null
-                ? S.of(context).click_to_select_date
-                : '${selectedDate!.toLocal().toString().split(' ')[0]}',
-            style: const TextStyle(color: AppColors.white),
+            child: Row(
+              children: [
+                const Icon(
+                  Icons.calendar_today,
+                  color: AppColors.primaryBlue,
+                  size: 20,
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    selectedDate == null
+                        ? S.of(context).click_to_select_date
+                        : '${selectedDate!.day}/${selectedDate!.month}/${selectedDate!.year}',
+                    style: FontStyles.medium15.copyWith(
+                      color: selectedDate == null
+                          ? AppColors.darkGrey.withOpacity(0.6)
+                          : AppColors.darkGrey,
+                    ),
+                  ),
+                ),
+                const Icon(
+                  Icons.arrow_forward_ios,
+                  size: 16,
+                  color: AppColors.darkGrey,
+                ),
+              ],
+            ),
           ),
         ),
       ],

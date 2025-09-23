@@ -13,9 +13,9 @@ class BookingDetails extends StatelessWidget {
         const SizedBox(width: 30),
         Expanded(
           child: Text(
+            value,
             textAlign: TextAlign.end,
             overflow: TextOverflow.ellipsis,
-            value.toUpperCase(),
             style: FontStyles.medium15.copyWith(fontWeight: FontWeight.bold),
           ),
         ),

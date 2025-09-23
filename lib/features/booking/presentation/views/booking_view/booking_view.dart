@@ -15,10 +15,7 @@ class BookingView extends StatelessWidget {
     return BlocProvider(
       create: (context) => BookingCubit(bookingRepo: getIt<BookingRepoImpl>()),
       child: Scaffold(
-        appBar: buildAppBar(
-          context,
-          title: S.of(context).complete_the_appointment,
-        ),
+        appBar: buildAppBar(context, title: S.of(context).complete_booking),
         body: const BookingViewBodyBlocListener(),
       ),
     );

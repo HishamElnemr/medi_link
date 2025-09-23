@@ -60,9 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "انقر لتحديد التاريخ",
     ),
     "complete": MessageLookupByLibrary.simpleMessage("إنهاء"),
-    "complete_the_appointment": MessageLookupByLibrary.simpleMessage(
-      "اكمل الحجز",
-    ),
+    "complete_booking": MessageLookupByLibrary.simpleMessage("اكمل الحجز"),
     "completed": MessageLookupByLibrary.simpleMessage("مكتمل"),
     "confirm": MessageLookupByLibrary.simpleMessage("تاكيد"),
     "confirm_cancellation": MessageLookupByLibrary.simpleMessage(
