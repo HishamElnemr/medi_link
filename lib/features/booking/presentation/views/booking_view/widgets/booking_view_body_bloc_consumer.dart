@@ -6,12 +6,12 @@ import 'package:medi_link/features/booking/presentation/cubits/booking_state.dar
 import 'package:medi_link/features/booking/presentation/views/booking_view/widgets/booking_view_body.dart';
 import 'package:medi_link/generated/l10n.dart';
 
-class BookingViewBodyBlocListener extends StatelessWidget {
-  const BookingViewBodyBlocListener({super.key});
+class BookingViewBodyBlocConsumer extends StatelessWidget {
+  const BookingViewBodyBlocConsumer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<BookingCubit, BookingState>(
+    return BlocConsumer<BookingCubit, BookingState>(
       listener: (context, state) {
         if (state is BookingSuccess) {
           buildSnackBar(
@@ -26,11 +26,11 @@ class BookingViewBodyBlocListener extends StatelessWidget {
             S.of(context).booking_failed,
             color: Colors.red,
           );
-        } else {
-          CircularProgressIndicator;
         }
       },
-      child: const BookingViewBody(),
+      builder: (context, state) {
+        return BookingViewBody(isLoading: state is BookingLoading);
+      },
     );
   }
 }

@@ -16,6 +16,7 @@ class BookingButtonSliver extends StatelessWidget {
   final TextEditingController ageController;
   final GlobalKey<FormState> formKey;
   final DateTime? selectedDate;
+  final bool isLoading;
 
   const BookingButtonSliver({
     super.key,
@@ -26,6 +27,7 @@ class BookingButtonSliver extends StatelessWidget {
     required this.ageController,
     required this.formKey,
     required this.selectedDate,
+    required this.isLoading,
   });
 
   @override
@@ -38,6 +40,7 @@ class BookingButtonSliver extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: SafeArea(
             child: CustomButton(
+              isLoading: isLoading,
               onPressed: () {
                 _onBookNowPressed(context);
               },

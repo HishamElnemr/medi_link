@@ -4,7 +4,7 @@ import 'package:medi_link/core/services/getit_services.dart';
 import 'package:medi_link/core/widgets/build_app_bar.dart';
 import 'package:medi_link/features/booking/data/repos/booking_repo_impl.dart';
 import 'package:medi_link/features/booking/presentation/cubits/booking_cubit.dart';
-import 'package:medi_link/features/booking/presentation/views/booking_view/widgets/booking_view_body_bloc_listener.dart';
+import 'package:medi_link/features/booking/presentation/views/booking_view/widgets/booking_view_body_bloc_consumer.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class BookingView extends StatelessWidget {
@@ -16,7 +16,7 @@ class BookingView extends StatelessWidget {
       create: (context) => BookingCubit(bookingRepo: getIt<BookingRepoImpl>()),
       child: Scaffold(
         appBar: buildAppBar(context, title: S.of(context).complete_booking),
-        body: const BookingViewBodyBlocListener(),
+        body: const BookingViewBodyBlocConsumer(),
       ),
     );
   }

@@ -4,8 +4,8 @@ import 'package:medi_link/features/booking/presentation/views/booking_view/widge
 import 'package:medi_link/features/booking/presentation/views/booking_view/widgets/booking_details_sliver.dart';
 
 class BookingViewBody extends StatefulWidget {
-  const BookingViewBody({super.key});
-
+  const BookingViewBody({super.key, required this.isLoading});
+  final bool isLoading;
   @override
   State<BookingViewBody> createState() => _BookingViewBodyState();
 }
@@ -57,7 +57,7 @@ class _BookingViewBodyState extends State<BookingViewBody> {
           },
         ),
         BookingButtonSliver(
-          
+          isLoading: widget.isLoading,
           doctor: doctor,
           isAnotherPatientSelected: isAnotherPatientSelected,
           firstNameController: firstNameController,
