@@ -12,7 +12,7 @@ class SpecialityModel {
   });
 }
 
-final List<SpecialityModel> specialtiesList = [
+final List<SpecialityModel> homeSpecialtiesList = [
   SpecialityModel(
     icon: Assets.assetsImagesCadiologist,
     titleKey: 'cardiology',

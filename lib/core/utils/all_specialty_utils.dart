@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medi_link/core/utils/assets.dart';
+import 'package:medi_link/features/home/data/models/speciality_model.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class AllSpecialtyUtils {
@@ -62,4 +64,35 @@ class AllSpecialtyUtils {
 
     return specialtyMap[specialtyKey] ?? specialtyKey;
   }
+
+  static String _getSpecialtyIcon(String specialtyKey) {
+    switch (specialtyKey) {
+      case 'cardiology':
+        return Assets.assetsImagesCadiologist;
+      case 'dentistry':
+        return Assets.assetsImagesDentists;
+      case 'nephrology':
+        return Assets.assetsImagesNephrologists;
+      case 'gastroenterology':
+        return Assets.assetsImagesGastroenterologists;
+      case 'pulmonology':
+        return Assets.assetsImagesPulmonologists;
+      case 'psychiatry':
+        return Assets.assetsImagesPsychiatrists;
+      case 'neurology':
+        return Assets.assetsImagesNeurologists;
+      case 'internal_medicine':
+        return Assets.assetsImagesHepatologists;
+      default:
+        return Assets.assetsImagesHepatologists;
+    }
+  }
+
+  static final List<SpecialityModel> allSpecialtiesList = specialtyKeys.map((key) {
+    return SpecialityModel(
+      icon: _getSpecialtyIcon(key),
+      titleKey: key,
+      rawName: key,
+    );
+  }).toList();
 }

@@ -19,7 +19,7 @@ class _MedicalSpecialtiesGridState extends State<MedicalSpecialtiesGrid> {
   void initState() {
     super.initState();
     context.read<GetDoctorBySpecialityCubit>().getDoctorsBySpeciality(
-      specialization: specialtiesList[0].rawName,
+      specialization: homeSpecialtiesList[0].rawName,
     );
   }
 
@@ -51,9 +51,9 @@ class _MedicalSpecialtiesGridState extends State<MedicalSpecialtiesGrid> {
           mainAxisSpacing: 12,
           childAspectRatio: 1,
         ),
-        itemCount: specialtiesList.length,
+        itemCount: homeSpecialtiesList.length,
         itemBuilder: (context, index) {
-          final speciality = specialtiesList[index];
+          final speciality = homeSpecialtiesList[index];
           final isSelected = index == selectedIndex;
           return SpecialtyCard(
             icon: speciality.icon,
