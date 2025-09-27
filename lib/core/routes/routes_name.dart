@@ -9,6 +9,7 @@ class RoutesName {
   static const String booking = '/BookingView';
   static const String patientBooking = '/PatientBookingView';
   static const String specialitiesView = '/SpecialitiesView';
+  static const String doctorsBySpecialityView = '/DoctorsBySpecialityView';
   
 
 }

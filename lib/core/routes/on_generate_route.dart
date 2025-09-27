@@ -7,6 +7,7 @@ import 'package:medi_link/features/booking/presentation/views/booking_view/booki
 import 'package:medi_link/features/booking/presentation/views/patient_bookings/patient_booking_view.dart';
 import 'package:medi_link/features/home/presentation/views/doctor_view.dart/doctor_home_view.dart';
 import 'package:medi_link/features/home/presentation/views/patient_main_view.dart';
+import 'package:medi_link/features/home/presentation/views/patient_view/doctors_by_speciality_view.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/patient_home_view.dart';
 import 'package:medi_link/features/home/presentation/views/patient_view/specialities_view.dart';
 import 'package:medi_link/features/splash/presentation/views/splash_view.dart';
@@ -40,6 +41,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return slideFromRightRoute(const PatientBookingView(), settings);
     case RoutesName.specialitiesView:
       return slideFromRightRoute(const SpecialitiesView(), settings);
+
+    case RoutesName.doctorsBySpecialityView:
+      return slideFromRightRoute(const DoctorsBySpecialityView(), settings);
 
     default:
       return MaterialPageRoute(builder: (_) => const Scaffold());
