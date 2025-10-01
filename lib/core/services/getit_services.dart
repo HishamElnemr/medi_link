@@ -2,7 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:medi_link/core/services/firebase_auth_services.dart';
 import 'package:medi_link/features/auth/data/repos/auth_repo_imple.dart';
 import 'package:medi_link/features/auth/data/repos/fire_store_repo_imple.dart';
-import 'package:medi_link/features/booking/data/repos/booking_repo_impl.dart';
+import 'package:medi_link/features/patient_home/data/repos/booking_repo_impl.dart';
 
 import 'fire_store_services.dart';
 

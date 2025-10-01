@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:medi_link/features/booking/domain/entities/booking_entity.dart';
-import 'package:medi_link/features/home/presentation/views/patient_view/widgets/upcoming_appointments_card.dart';
+import 'package:medi_link/features/patient_home/domain/entities/booking_entity.dart';
+import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/upcoming_appointments_card.dart';
 
 class UpcomingAppointementsSkeltonizerLoadingBody extends StatelessWidget {
   const UpcomingAppointementsSkeltonizerLoadingBody({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/utils/assets.dart';
-import 'package:medi_link/features/home/data/models/speciality_model.dart';
+import 'package:medi_link/features/patient_home/data/models/speciality_model.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class AllSpecialtyUtils {
