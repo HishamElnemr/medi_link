@@ -70,6 +70,8 @@
   "no_appointment": "لا يوجد حجوزات",
   "approved": "تم قبول الحجز",
   "rejected": "تم رفض الحجز",
+  "doctor_added_to_favorites": "تم اضافة الطبيب للمفضلة",
+  "doctor_removed_from_favorites": "تم حذف الطبيب من المفضلة",
   "confirm": "تاكيد",
   "are_you_sure_reject_booking": "هل أنت متأكد من رفض هذا الحجز؟",
   "yes_reject": "نعم، ارفض",

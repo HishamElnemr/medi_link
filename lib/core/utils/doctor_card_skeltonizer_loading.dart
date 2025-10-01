@@ -25,6 +25,8 @@ class DoctorCardSkeltonizerLoading extends StatelessWidget {
               phoneNumber: 0123456789,
               email: 'fG9pU@example.com',
             ),
+            isFavorite: false,
+            onFavPressed: () {},
             onPressed: () {},
           ),
         );

@@ -614,6 +614,26 @@ class S {
     );
   }
 
+  /// `Doctor added to favorites`
+  String get doctor_added_to_favorites {
+    return Intl.message(
+      'Doctor added to favorites',
+      name: 'doctor_added_to_favorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Doctor removed from favorites`
+  String get doctor_removed_from_favorites {
+    return Intl.message(
+      'Doctor removed from favorites',
+      name: 'doctor_removed_from_favorites',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Yes, Reject`
   String get yes_reject {
     return Intl.message('Yes, Reject', name: 'yes_reject', desc: '', args: []);

@@ -8,9 +8,16 @@ import 'package:medi_link/features/home/presentation/views/patient_view/widgets/
 import '../../../../../auth/domain/entites/doctor_entity.dart';
 
 class DoctorListView extends StatelessWidget {
-  const DoctorListView({super.key, required this.doctors});
+  const DoctorListView({
+    super.key,
+    required this.doctors,
+    required this.favorites,
+    required this.onFavoriteToggle,
+  });
 
   final List<DoctorEntity> doctors;
+  final List<String> favorites;
+  final Function(DoctorEntity doctor, bool currentlyFavorite) onFavoriteToggle;
 
   @override
   Widget build(BuildContext context) {
@@ -19,21 +26,32 @@ class DoctorListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: doctors.length,
       itemBuilder: (context, index) {
+        final doctor = doctors[index];
+        final isFavorite = favorites.contains(doctor.id);
+
         return DoctorCard(
-          doctorEntity: doctors[index],
-          onPressed: () async {
-            final result = await Navigator.pushNamed(
-              context,
-              RoutesName.booking,
-              arguments: doctors[index],
-            );
-            if (result == true) {
-              final patientId = getPatientData().id;
-              context.read<BookingCubit>().getPatientBookings(patientId);
-            }
-          },
+          isFavorite: isFavorite,
+          onFavPressed: () => onFavoriteToggle(doctor, isFavorite),
+          doctorEntity: doctor,
+          onPressed: () => _handleBookingNavigation(context, doctor),
         );
       },
     );
+  }
+
+  Future<void> _handleBookingNavigation(
+    BuildContext context,
+    DoctorEntity doctor,
+  ) async {
+    final result = await Navigator.pushNamed(
+      context,
+      RoutesName.booking,
+      arguments: doctor,
+    );
+
+    if (result == true && context.mounted) {
+      final patientId = getPatientData().id;
+      context.read<BookingCubit>().getPatientBookings(patientId);
+    }
   }
 }

@@ -9,7 +9,7 @@ class DoctorsBySpecialityView extends StatelessWidget {
   const DoctorsBySpecialityView({super.key});
   @override
   Widget build(BuildContext context) {
-     final args = ModalRoute.of(context)?.settings.arguments;
+    final args = ModalRoute.of(context)?.settings.arguments;
     return BlocProvider(
       create: (context) => GetDoctorBySpecialityCubit(
         fireStoreRepoImpl: getIt<FireStoreRepoImpl>(),

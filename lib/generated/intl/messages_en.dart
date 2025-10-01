@@ -79,7 +79,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "dentistry": MessageLookupByLibrary.simpleMessage("Dentistry"),
     "dermatology": MessageLookupByLibrary.simpleMessage("Dermatology"),
     "doctor": MessageLookupByLibrary.simpleMessage("Doctor"),
+    "doctor_added_to_favorites": MessageLookupByLibrary.simpleMessage(
+      "Doctor added to favorites",
+    ),
     "doctor_name": MessageLookupByLibrary.simpleMessage("Doctor Name"),
+    "doctor_removed_from_favorites": MessageLookupByLibrary.simpleMessage(
+      "Doctor removed from favorites",
+    ),
     "doctor_specialization": MessageLookupByLibrary.simpleMessage(
       "Doctor Specialization",
     ),

@@ -74,6 +74,8 @@
   "complete_booking": "Complete Booking",
   "dr": "Dr.",
   "are_you_sure_reject_booking": "Are you sure to reject this booking?",
+  "doctor_added_to_favorites": "Doctor added to favorites",
+  "doctor_removed_from_favorites": "Doctor removed from favorites",
   "yes_reject": "Yes, Reject",
   "are_you_sure_cancel_booking": "Are you sure to cancel this booking?",
   "yes_cancel": "Yes, Cancel",

@@ -11,14 +11,16 @@ import '../../../../../../generated/l10n.dart';
 
 class DoctorCard extends StatelessWidget {
   final void Function() onPressed;
-  final VoidCallback? onFavPressed;
+  final VoidCallback onFavPressed;
   final DoctorEntity doctorEntity;
+  final bool isFavorite;
 
   const DoctorCard({
     super.key,
     required this.doctorEntity,
-    this.onFavPressed,
+    required this.onFavPressed,
     required this.onPressed,
+    required this.isFavorite,
   });
 
   @override
@@ -94,7 +96,7 @@ class DoctorCard extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: onFavPressed,
-                child: const CustomIcon(icon: Assets.assetsImagesFav),
+                child: CustomIcon(icon: isFavorite ? Assets.assetsImagesAddToFav : Assets.assetsImagesFav),
               ),
               const SizedBox(width: 5),
               const CustomIcon(icon: Assets.assetsImagesAbout),

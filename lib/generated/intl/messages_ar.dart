@@ -73,7 +73,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "dentistry": MessageLookupByLibrary.simpleMessage("أسنان"),
     "dermatology": MessageLookupByLibrary.simpleMessage("جلدية"),
     "doctor": MessageLookupByLibrary.simpleMessage("طبيب"),
+    "doctor_added_to_favorites": MessageLookupByLibrary.simpleMessage(
+      "تم اضافة الطبيب للمفضلة",
+    ),
     "doctor_name": MessageLookupByLibrary.simpleMessage("اسم الطبيب"),
+    "doctor_removed_from_favorites": MessageLookupByLibrary.simpleMessage(
+      "تم حذف الطبيب من المفضلة",
+    ),
     "doctor_specialization": MessageLookupByLibrary.simpleMessage(
       "تخصص الطبيب",
     ),

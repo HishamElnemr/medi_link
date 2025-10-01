@@ -13,6 +13,7 @@ class DoctorSliverList extends StatelessWidget {
       delegate: SliverChildBuilderDelegate((context, index) {
         final doctor = doctors[index];
         return DoctorCard(
+          isFavorite: false,
           doctorEntity: doctor,
           onPressed: () {},
           onFavPressed: () {},
