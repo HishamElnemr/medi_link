@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/utils/doctor_card_skeltonizer_loading.dart';
 import 'package:medi_link/features/patient_home/presentation/cubits/get_doctors_by_speciality.dart/get_doctor_by_speciality_cubit.dart';
+import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/doctor_list_view_with_favorites.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../../../generated/l10n.dart';
-import 'doctor_sliver_list.dart';
 
 class DoctorSliverListBlocBuilder extends StatelessWidget {
   const DoctorSliverListBlocBuilder({super.key});
@@ -17,17 +17,25 @@ class DoctorSliverListBlocBuilder extends StatelessWidget {
         if (state is GetDoctorBySpecialitySuccess) {
           return state.doctorsBySpeciality.isEmpty
               ? SliverToBoxAdapter(
-                child: Center(
+                  child: Center(
                     child: Text(
                       '${S.of(context).no_doctors_found} , ${S.of(context).please_try_later}',
                     ),
                   ),
-              )
-              : DoctorSliverList(doctors: state.doctorsBySpeciality);
+                )
+              : SliverToBoxAdapter(
+                  child: DoctorListViewWithFavorites(
+                    doctors: state.doctorsBySpeciality,
+                  ),
+                );
         } else if (state is GetDoctorBySpecialityFailure) {
-          return SliverToBoxAdapter(child: Center(child: Text(state.errorMessage)));
+          return SliverToBoxAdapter(
+            child: Center(child: Text(state.errorMessage)),
+          );
         } else {
-          return const SliverToBoxAdapter(child: Skeletonizer(child: DoctorCardSkeltonizerLoading()));
+          return const SliverToBoxAdapter(
+            child: Skeletonizer(child: DoctorCardSkeltonizerLoading()),
+          );
         }
       },
     );
