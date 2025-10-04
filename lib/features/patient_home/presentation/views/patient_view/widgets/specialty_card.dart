@@ -59,6 +59,4 @@ class SpecialtyCard extends StatelessWidget {
       ),
     );
   }
-
-
 }
