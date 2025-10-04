@@ -16,7 +16,7 @@ class CustomSliverAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       pinned: true,
-  leading: isVisible
+      leading: isVisible
           ? IconButton(
               icon: const Icon(Icons.arrow_back_ios_new),
               onPressed: () {

@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
+import 'package:medi_link/features/patient_home/data/models/profile_menu_item.dart';
 
 class ProfileListTile extends StatelessWidget {
-  const ProfileListTile({
-    super.key,
-    required this.text,
-    required this.assetIconPath,
-    this.onTap,
-  });
+  const ProfileListTile({super.key, required this.item, this.onTap});
 
-  final String text;
-  final String assetIconPath;
+  final ProfileMenuItem item;
   final VoidCallback? onTap;
 
   @override
@@ -39,10 +34,10 @@ class ProfileListTile extends StatelessWidget {
             color: AppColors.softBlue2,
             borderRadius: BorderRadius.circular(50),
           ),
-          child: SvgPicture.asset(assetIconPath, color: AppColors.primaryBlue),
+          child: SvgPicture.asset(item.iconPath, color: AppColors.primaryBlue),
         ),
         title: Text(
-          text,
+          item.title,
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
