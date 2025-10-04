@@ -10,7 +10,7 @@ class FavoriteViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        CustomSliverAppBar(title: S.of(context).favorites),
+        CustomSliverAppBar(title: S.of(context).favorites, isVisible: false),
         const SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 20),
           sliver: FavoriteDoctorsList(),
