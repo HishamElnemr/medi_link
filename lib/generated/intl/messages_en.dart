@@ -117,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "failed_to_update_booking_status": MessageLookupByLibrary.simpleMessage(
       "Failed to update booking status",
     ),
+    "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
     "female": MessageLookupByLibrary.simpleMessage("Female"),
     "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
     "full_name": MessageLookupByLibrary.simpleMessage("Full Name"),
@@ -203,6 +204,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "specialities": MessageLookupByLibrary.simpleMessage("Specialities"),
     "specialization": MessageLookupByLibrary.simpleMessage("Specialization"),
     "surgery": MessageLookupByLibrary.simpleMessage("Surgery"),
+    "there_is_no_doctors_in_favorites": MessageLookupByLibrary.simpleMessage(
+      "There is no doctors in favorites",
+    ),
     "this_field_is_required": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),

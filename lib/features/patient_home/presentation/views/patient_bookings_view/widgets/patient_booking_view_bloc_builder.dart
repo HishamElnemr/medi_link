@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/utils/booking_card_skeltonizer_loading_body.dart';
-import 'package:medi_link/features/home/presentation/cubits/booking_cubit/booking_cubit.dart';
+import 'package:medi_link/features/patient_home/presentation/cubits/booking_cubit/booking_cubit.dart';
 import 'package:medi_link/features/patient_home/presentation/cubits/booking_cubit/booking_state.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_bookings_view/widgets/patient_booking_list_view.dart';
 import 'package:skeletonizer/skeletonizer.dart';

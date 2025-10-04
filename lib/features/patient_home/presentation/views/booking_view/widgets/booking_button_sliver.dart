@@ -4,8 +4,8 @@ import 'package:medi_link/core/helper/build_snack_bar.dart';
 import 'package:medi_link/core/helper/get_patient_data.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
-import 'package:medi_link/features/home/presentation/cubits/booking_cubit/booking_cubit.dart';
 import 'package:medi_link/features/patient_home/domain/entities/booking_entity.dart';
+import 'package:medi_link/features/patient_home/presentation/cubits/booking_cubit/booking_cubit.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class BookingButtonSliver extends StatelessWidget {

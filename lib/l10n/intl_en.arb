@@ -81,6 +81,8 @@
   "yes_cancel": "Yes, Cancel",
   "complete": "Complete",
   "no": "No",
+  "favorites": "Favorites",
+  "there_is_no_doctors_in_favorites": "There is no doctors in favorites",
   "please_try_later": "Please try later",
   "home": "Home",
   "profile": "Profile",

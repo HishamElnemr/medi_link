@@ -664,6 +664,21 @@ class S {
     return Intl.message('No', name: 'no', desc: '', args: []);
   }
 
+  /// `Favorites`
+  String get favorites {
+    return Intl.message('Favorites', name: 'favorites', desc: '', args: []);
+  }
+
+  /// `There is no doctors in favorites`
+  String get there_is_no_doctors_in_favorites {
+    return Intl.message(
+      'There is no doctors in favorites',
+      name: 'there_is_no_doctors_in_favorites',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please try later`
   String get please_try_later {
     return Intl.message(

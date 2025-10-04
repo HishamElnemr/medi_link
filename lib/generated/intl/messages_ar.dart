@@ -111,6 +111,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "failed_to_update_booking_status": MessageLookupByLibrary.simpleMessage(
       "فشل في تحديث حالة الحجز",
     ),
+    "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "female": MessageLookupByLibrary.simpleMessage("انثى"),
     "first_name": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
     "full_name": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
@@ -187,6 +188,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "specialities": MessageLookupByLibrary.simpleMessage("التخصصات"),
     "specialization": MessageLookupByLibrary.simpleMessage("التخصص"),
     "surgery": MessageLookupByLibrary.simpleMessage("جراحة"),
+    "there_is_no_doctors_in_favorites": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد اطباء في المفضلة",
+    ),
     "this_field_is_required": MessageLookupByLibrary.simpleMessage(
       "هذا الحقل مطلوب",
     ),

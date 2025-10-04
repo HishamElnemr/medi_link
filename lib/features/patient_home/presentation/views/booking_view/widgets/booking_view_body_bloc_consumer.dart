@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/helper/build_snack_bar.dart';
-import 'package:medi_link/features/home/presentation/cubits/booking_cubit/booking_cubit.dart';
+import 'package:medi_link/features/patient_home/presentation/cubits/booking_cubit/booking_cubit.dart';
 import 'package:medi_link/features/patient_home/presentation/cubits/booking_cubit/booking_state.dart';
 import 'package:medi_link/features/patient_home/presentation/views/booking_view/widgets/booking_view_body.dart';
 import 'package:medi_link/generated/l10n.dart';

@@ -7,6 +7,7 @@ import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/services/getit_services.dart';
 import 'package:medi_link/core/services/shared_preferences_singleton.dart';
 import 'package:medi_link/core/utils/backend_endpoints.dart';
+import 'package:medi_link/features/patient_home/presentation/cubits/favorite_cubit/favorite_cubit.dart';
 import 'package:medi_link/language_cubit.dart';
 
 void main() async {
@@ -29,7 +30,10 @@ class MediLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => LanguageCubit())],
+      providers: [
+        BlocProvider(create: (context) => LanguageCubit()),
+        BlocProvider(create: (context) => FavoriteCubit()..loadFavorites()),
+      ],
       child: BlocBuilder<LanguageCubit, Locale>(
         builder: (context, locale) {
           return AppView(

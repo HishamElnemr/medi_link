@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/helper/get_patient_data.dart';
 import 'package:medi_link/core/widgets/build_app_bar.dart';
-import 'package:medi_link/features/home/presentation/cubits/booking_cubit/booking_cubit.dart';
+import 'package:medi_link/features/patient_home/presentation/cubits/booking_cubit/booking_cubit.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_bookings_view/widgets/patient_booking_view_bloc_builder.dart';
 import 'package:medi_link/generated/l10n.dart';
 
