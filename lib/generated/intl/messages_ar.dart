@@ -86,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "doctors": MessageLookupByLibrary.simpleMessage("الأطباء"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "dr": MessageLookupByLibrary.simpleMessage("د /"),
+    "edit_profile": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "email_is_not_valid": MessageLookupByLibrary.simpleMessage(
       "البريد الالكتروني غير صحيح",
@@ -120,6 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "gynecology": MessageLookupByLibrary.simpleMessage("نساء وتوليد"),
     "have_account": MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
     "hello": MessageLookupByLibrary.simpleMessage("أهلاً وسهلاً"),
+    "help": MessageLookupByLibrary.simpleMessage("الحصول علي مساعدة"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "icu": MessageLookupByLibrary.simpleMessage("عناية مركزة"),
     "internal_medicine": MessageLookupByLibrary.simpleMessage("باطنة"),
@@ -127,6 +129,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalid_phone_number": MessageLookupByLibrary.simpleMessage(
       "برجاء ادخال رقم هاتف صحيح",
     ),
+    "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "last_name": MessageLookupByLibrary.simpleMessage("الاسم الأخير"),
     "length_should_be_more_than_8": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور يجب ان تكون اكثر من 8 حروف",
@@ -137,6 +140,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "login_successfully": MessageLookupByLibrary.simpleMessage(
       "تم تسجيل الدخول بنجاح",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
     "male": MessageLookupByLibrary.simpleMessage("ذكر"),
     "medicine_taken": MessageLookupByLibrary.simpleMessage("الأدوية المتناولة"),
     "myself": MessageLookupByLibrary.simpleMessage("لنفسي"),
@@ -155,8 +159,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "patient": MessageLookupByLibrary.simpleMessage("مريض"),
     "patient_details": MessageLookupByLibrary.simpleMessage("تفاصيل الحجز"),
     "patient_name": MessageLookupByLibrary.simpleMessage("اسم المريض"),
+    "payment_method": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
     "pediatrics": MessageLookupByLibrary.simpleMessage("أطفال"),
     "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
+    "personal_info": MessageLookupByLibrary.simpleMessage("المعلومات الشخصية "),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "please_select_date": MessageLookupByLibrary.simpleMessage(
       "برجاء تحديد التاريخ",
@@ -164,7 +170,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "please_try_later": MessageLookupByLibrary.simpleMessage(
       "يرجى المحاولة لاحقا",
     ),
-    "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+    "privacy_policy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
+    "profile": MessageLookupByLibrary.simpleMessage("الحساب"),
+    "profile_updated_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم تحديث الملف الشخصي بنجاح",
+    ),
     "psychiatry": MessageLookupByLibrary.simpleMessage("نفسية"),
     "pulmonology": MessageLookupByLibrary.simpleMessage("صدرية"),
     "radiology": MessageLookupByLibrary.simpleMessage("أشعة"),
@@ -174,6 +184,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "search_for_doctor": MessageLookupByLibrary.simpleMessage("ابحث عن طبيب"),
     "see_all": MessageLookupByLibrary.simpleMessage("اظهار الكل"),
     "select_date": MessageLookupByLibrary.simpleMessage("حدد تاريخ الحجز"),
+    "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
     "sign_as": MessageLookupByLibrary.simpleMessage("تسجيل الدخول ك"),
     "sign_in_with_facebook": MessageLookupByLibrary.simpleMessage(
       "تسجيل الدخول باستخدام فيسبوك",
@@ -196,6 +207,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "too_many_requests": MessageLookupByLibrary.simpleMessage(
       "تم تجاوز عدد المحاولات المسموح، يرجى المحاولة لاحقاً ",
+    ),
+    "upadte_profile": MessageLookupByLibrary.simpleMessage(
+      "تحديث الملف الشخصي",
     ),
     "upcoming_appointments": MessageLookupByLibrary.simpleMessage(
       "الحجوزات القادمة",

@@ -137,7 +137,7 @@ class StatusState extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(dialogContext).pop(); // إغلاق الديالوج
+                Navigator.of(dialogContext).pop();
               },
               child: Text(
                 S.of(context).no,
@@ -146,7 +146,7 @@ class StatusState extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(dialogContext).pop(); // إغلاق الديالوج
+                Navigator.of(dialogContext).pop();
                 context.read<BookingCubit>().rejectBooking(booking.id);
               },
               style: ElevatedButton.styleFrom(
@@ -194,7 +194,7 @@ class StatusState extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(dialogContext).pop(); // إغلاق الديالوج
+                Navigator.of(dialogContext).pop();
               },
               child: Text(
                 S.of(context).no,
@@ -203,10 +203,10 @@ class StatusState extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(dialogContext).pop(); // إغلاق الديالوج
+                Navigator.of(dialogContext).pop();
                 context.read<BookingCubit>().rejectBooking(
                   booking.id,
-                ); // أو أي method خاص بالإلغاء
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,

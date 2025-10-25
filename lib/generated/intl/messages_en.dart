@@ -94,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Don\'t have an account?",
     ),
     "dr": MessageLookupByLibrary.simpleMessage("Dr."),
+    "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_is_not_valid": MessageLookupByLibrary.simpleMessage("Invalid email"),
     "email_or_password_incorrect": MessageLookupByLibrary.simpleMessage(
@@ -130,6 +131,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "have_account": MessageLookupByLibrary.simpleMessage("Have an account?"),
     "hello": MessageLookupByLibrary.simpleMessage("Hello"),
+    "help": MessageLookupByLibrary.simpleMessage("Help"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "icu": MessageLookupByLibrary.simpleMessage("Intensive Care (ICU)"),
     "internal_medicine": MessageLookupByLibrary.simpleMessage(
@@ -141,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalid_phone_number": MessageLookupByLibrary.simpleMessage(
       "Please enter valid phone number",
     ),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
     "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
     "length_should_be_more_than_8": MessageLookupByLibrary.simpleMessage(
       "Length should be more than 8",
@@ -151,6 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "login_successfully": MessageLookupByLibrary.simpleMessage(
       "Login successfully",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "medicine_taken": MessageLookupByLibrary.simpleMessage("Medicine Taken"),
     "myself": MessageLookupByLibrary.simpleMessage("Myself"),
@@ -169,8 +173,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "patient": MessageLookupByLibrary.simpleMessage("Patient"),
     "patient_details": MessageLookupByLibrary.simpleMessage("Patient Details"),
     "patient_name": MessageLookupByLibrary.simpleMessage("Patient Name"),
+    "payment_method": MessageLookupByLibrary.simpleMessage("Payment Method"),
     "pediatrics": MessageLookupByLibrary.simpleMessage("Pediatrics"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
+    "personal_info": MessageLookupByLibrary.simpleMessage("Personal Info"),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "please_select_date": MessageLookupByLibrary.simpleMessage(
       "Please select date",
@@ -178,7 +184,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "please_try_later": MessageLookupByLibrary.simpleMessage(
       "Please try later",
     ),
+    "privacy_policy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "profile_updated_successfully": MessageLookupByLibrary.simpleMessage(
+      "Profile updated successfully",
+    ),
     "psychiatry": MessageLookupByLibrary.simpleMessage("Psychiatry"),
     "pulmonology": MessageLookupByLibrary.simpleMessage("Pulmonology"),
     "radiology": MessageLookupByLibrary.simpleMessage("Radiology"),
@@ -190,6 +200,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "see_all": MessageLookupByLibrary.simpleMessage("See All"),
     "select_date": MessageLookupByLibrary.simpleMessage("Select Date"),
+    "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "sign_as": MessageLookupByLibrary.simpleMessage("Sign in as"),
     "sign_in_with_facebook": MessageLookupByLibrary.simpleMessage(
       "Sign in with Facebook",
@@ -213,6 +224,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "too_many_requests": MessageLookupByLibrary.simpleMessage(
       "Too many requests, please try again later",
     ),
+    "upadte_profile": MessageLookupByLibrary.simpleMessage("Update Profile"),
     "upcoming_appointments": MessageLookupByLibrary.simpleMessage(
       "Upcoming Appointments",
     ),

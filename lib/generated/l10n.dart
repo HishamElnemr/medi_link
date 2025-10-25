@@ -174,6 +174,16 @@ class S {
     );
   }
 
+  /// `Personal Info`
+  String get personal_info {
+    return Intl.message(
+      'Personal Info',
+      name: 'personal_info',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Login successfully`
   String get login_successfully {
     return Intl.message(
@@ -694,6 +704,56 @@ class S {
     return Intl.message('Home', name: 'home', desc: '', args: []);
   }
 
+  /// `Help`
+  String get help {
+    return Intl.message('Help', name: 'help', desc: '', args: []);
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message('Logout', name: 'logout', desc: '', args: []);
+  }
+
+  /// `Edit Profile`
+  String get edit_profile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'edit_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message('Settings', name: 'settings', desc: '', args: []);
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message('Language', name: 'language', desc: '', args: []);
+  }
+
+  /// `Payment Method`
+  String get payment_method {
+    return Intl.message(
+      'Payment Method',
+      name: 'payment_method',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Policy`
+  String get privacy_policy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'privacy_policy',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Profile`
   String get profile {
     return Intl.message('Profile', name: 'profile', desc: '', args: []);
@@ -774,11 +834,31 @@ class S {
     return Intl.message('Full Name', name: 'full_name', desc: '', args: []);
   }
 
+  /// `Update Profile`
+  String get upadte_profile {
+    return Intl.message(
+      'Update Profile',
+      name: 'upadte_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Booking successfully`
   String get booking_successfully {
     return Intl.message(
       'Booking successfully',
       name: 'booking_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile updated successfully`
+  String get profile_updated_successfully {
+    return Intl.message(
+      'Profile updated successfully',
+      name: 'profile_updated_successfully',
       desc: '',
       args: [],
     );

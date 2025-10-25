@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/core/utils/assets.dart';
 import 'package:medi_link/features/patient_home/data/models/profile_menu_item.dart';
 import 'package:medi_link/features/patient_home/presentation/views/profile_view/widgets/profile_list_tile.dart';
+import 'package:medi_link/generated/l10n.dart';
 
 class ProfileMenuList extends StatelessWidget {
   const ProfileMenuList({super.key});
@@ -9,25 +11,30 @@ class ProfileMenuList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<ProfileMenuItem> profileMenuItems = [
-      const ProfileMenuItem(
-        title: 'Profile',
+      ProfileMenuItem(
+        title: S.of(context).personal_info,
         iconPath: Assets.assetsImagesProfileInctive,
+        route: RoutesName.personalInformation,
       ),
-      const ProfileMenuItem(
-        title: 'Settings',
-        iconPath: Assets.assetsImagesProfileInctive,
+      ProfileMenuItem(
+        title: S.of(context).settings,
+        iconPath: Assets.assetsImagesSetting,
       ),
-      const ProfileMenuItem(
-        title: 'Help',
-        iconPath: Assets.assetsImagesProfileInctive,
+      ProfileMenuItem(
+        title: S.of(context).payment_method,
+        iconPath: Assets.assetsImagesPayment,
       ),
-      const ProfileMenuItem(
-        title: 'Privacy',
-        iconPath: Assets.assetsImagesProfileInctive,
+      ProfileMenuItem(
+        title: S.of(context).help,
+        iconPath: Assets.assetsImagesAbout,
       ),
-      const ProfileMenuItem(
-        title: 'About',
-        iconPath: Assets.assetsImagesProfileInctive,
+      ProfileMenuItem(
+        title: S.of(context).privacy_policy,
+        iconPath: Assets.assetsImagesPrivacy,
+      ),
+      ProfileMenuItem(
+        title: S.of(context).logout,
+        iconPath: Assets.assetsImagesLogout,
       ),
     ];
 
@@ -35,7 +42,11 @@ class ProfileMenuList extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         (context, index) => ProfileListTile(
           item: profileMenuItems[index],
-          onTap: () {},
+          onTap: () {
+            profileMenuItems[index].route != null
+                ? Navigator.pushNamed(context, profileMenuItems[index].route!)
+                : null;
+          },
         ),
         childCount: profileMenuItems.length,
       ),

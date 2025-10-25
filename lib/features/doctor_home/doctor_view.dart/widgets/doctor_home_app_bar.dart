@@ -40,13 +40,13 @@ class DoctorHomeAppBar extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  // TextSpan(
-                  //   text: '${getDoctorData().firstName.toUpperCase()} ',
-                  //   style: FontStyles.medium15.copyWith(
-                  //     color: AppColors.darkGrey,
-                  //     fontWeight: FontWeight.bold,
-                  //   ),
-                  // ),
+
+
+
+
+
+
+
                 ],
               ),
               overflow: TextOverflow.ellipsis,

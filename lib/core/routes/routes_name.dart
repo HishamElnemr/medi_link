@@ -10,6 +10,8 @@ class RoutesName {
   static const String patientBooking = '/PatientBookingView';
   static const String specialitiesView = '/SpecialitiesView';
   static const String doctorsBySpecialityView = '/DoctorsBySpecialityView';
+  static const String personalInformation = '/PersonalInformation';
+
   
 
 }

@@ -19,7 +19,7 @@ class SpecialityDropdown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField<String>(
-      value: selectedKey,
+      initialValue: selectedKey,
       onChanged: onChanged,
       onSaved: onSaved,
       validator: (value) {

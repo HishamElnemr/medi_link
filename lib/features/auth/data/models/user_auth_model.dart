@@ -23,7 +23,7 @@ class UserAuthModel extends UserAuthEntity {
       name: json['name'],
       email: json['email'],
       uId: json['uId'],
-      role: json['role'] ?? '', // تأكد أنه موجود في الـ json
+      role: json['role'] ?? '',
     );
   }
 

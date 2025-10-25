@@ -68,4 +68,52 @@ class FireStoreServices {
         .doc(bookingId)
         .delete();
   }
+
+  Future<void> deletePatient(String patientId) async {
+    await firestore
+        .collection(BackendEndpoints.patientsEndpoint)
+        .doc(patientId)
+        .delete();
+  }
+
+  Future<void> deleteDoctor(String doctorId) async {
+    await firestore
+        .collection(BackendEndpoints.doctorEndpoint)
+        .doc(doctorId)
+        .delete();
+  }
+
+  Future<void> updatePatientData({
+    required Map<String, dynamic> data,
+    required String uId,
+  }) async {
+    final querySnapshot = await firestore
+        .collection(BackendEndpoints.patientsEndpoint)
+        .where('id', isEqualTo: uId)
+        .get();
+
+    if (querySnapshot.docs.isNotEmpty) {
+      await firestore
+          .collection(BackendEndpoints.patientsEndpoint)
+          .doc(querySnapshot.docs.first.id)
+          .update(data);
+    }
+  }
+
+  Future<void> updateDoctorData({
+    required Map<String, dynamic> data,
+    required String uId,
+  }) async {
+    final querySnapshot = await firestore
+        .collection(BackendEndpoints.doctorEndpoint)
+        .where('id', isEqualTo: uId)
+        .get();
+
+    if (querySnapshot.docs.isNotEmpty) {
+      await firestore
+          .collection(BackendEndpoints.doctorEndpoint)
+          .doc(querySnapshot.docs.first.id)
+          .update(data);
+    }
+  }
 }

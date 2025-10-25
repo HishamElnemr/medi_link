@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medi_link/generated/l10n.dart';
 
 class Validators {
   static final RegExp _emailRegExp = RegExp(
@@ -28,6 +29,17 @@ class Validators {
     }
     if (value.length < minLength) {
       return 'كلمة المرور يجب أن تكون ${minLength} أحرف على الأقل';
+    }
+    return null;
+  }
+
+  static String? validateAge(BuildContext context, String? value) {
+    if (value == null || value.isEmpty) {
+      return S.of(context).this_field_is_required;
+    }
+    final int? age = int.tryParse(value);
+    if (age == null || age < 1 || age > 199) {
+      return S.of(context).invalid_age;
     }
     return null;
   }
