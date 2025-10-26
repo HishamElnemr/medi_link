@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +12,6 @@ import 'package:medi_link/generated/l10n.dart';
 import 'package:medi_link/language_cubit.dart';
 
 import '../../../../../../core/helper/get_patient_data.dart';
-import '../../../../../../core/routes/routes_name.dart';
 
 class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const PatientHomeAppBar({super.key});
@@ -64,27 +62,6 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               maxLines: 1,
             ),
           ),
-          const Spacer(),
-          AppBarIconButton(
-            onPressed: () async {
-              try {
-                await FirebaseAuth.instance.signOut();
-                await Prefs.clear();
-                if (context.mounted) {
-                  Navigator.pushReplacementNamed(context, RoutesName.login);
-                }
-              } catch (e) {
-                log('Error during logout: $e');
-                if (context.mounted) {
-                  ScaffoldMessenger.of(
-                    context,
-                  ).showSnackBar(SnackBar(content: Text('Logout failed: $e')));
-                }
-              }
-            },
-            icon: Icons.logout,
-          ),
-          const SizedBox(width: 5),
           AppBarIconButton(
             onPressed: () {
               try {

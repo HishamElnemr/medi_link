@@ -3,6 +3,7 @@ import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/core/utils/assets.dart';
 import 'package:medi_link/features/patient_home/data/models/profile_menu_item.dart';
+import 'package:medi_link/features/patient_home/presentation/views/profile_view/widgets/language_change_dialog.dart';
 import 'package:medi_link/features/patient_home/presentation/views/profile_view/widgets/logout_confirmation_dialog.dart';
 import 'package:medi_link/features/patient_home/presentation/views/profile_view/widgets/profile_list_tile.dart';
 import 'package:medi_link/generated/l10n.dart';
@@ -37,6 +38,12 @@ class ProfileMenuList extends StatelessWidget {
       ProfileMenuItem(
         title: S.of(context).logout,
         iconPath: Assets.assetsImagesLogout,
+        action: 'logout',
+      ),
+      ProfileMenuItem(
+        title: S.of(context).language,
+        iconPath: Assets.assetsImagesLanguageSolidFull,
+        action: 'language',
       ),
     ];
 
@@ -45,18 +52,32 @@ class ProfileMenuList extends StatelessWidget {
         (context, index) => ProfileListTile(
           item: profileMenuItems[index],
           onTap: () {
-            if (profileMenuItems[index].route != null) {
-              Navigator.pushNamed(context, profileMenuItems[index].route!);
-            } else if (profileMenuItems[index].title == S.of(context).logout) {
-              showModalBottomSheet(
-                context: context,
-                backgroundColor: AppColors.primaryBlue.withOpacity(.54),
-                isScrollControlled: false,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-                ),
-                builder: (context) => const LogoutConfirmationDialog(),
-              );
+            final item = profileMenuItems[index];
+            if (item.route != null) {
+              Navigator.pushNamed(context, item.route!);
+            }
+            if (item.action != null) {
+              switch (item.action!) {
+                case 'logout':
+                  showModalBottomSheet(
+                    context: context,
+                    backgroundColor: AppColors.primaryBlue.withOpacity(.54),
+                    isScrollControlled: false,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(24),
+                      ),
+                    ),
+                    builder: (context) => const LogoutConfirmationDialog(),
+                  );
+                  break;
+                case 'language':
+                  showDialog(
+                    context: context,
+                    builder: (context) => const LanguageChangeDialog(),
+                  );
+                  break;
+              }
             }
           },
         ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 
 class CustomRoundedTextButton extends StatelessWidget {
@@ -30,9 +29,7 @@ class CustomRoundedTextButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: FontStyles.medium15.copyWith(
-            color: textColor,
-          ),
+          style: FontStyles.medium15.copyWith(color: textColor),
         ),
       ),
     );
