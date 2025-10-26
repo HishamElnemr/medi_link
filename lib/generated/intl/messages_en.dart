@@ -43,6 +43,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "are_you_sure_reject_booking": MessageLookupByLibrary.simpleMessage(
       "Are you sure to reject this booking?",
     ),
+    "are_you_sure_to_logout": MessageLookupByLibrary.simpleMessage(
+      "Are you sure to logout?",
+    ),
     "book_appointment": MessageLookupByLibrary.simpleMessage("Book Now"),
     "book_now": MessageLookupByLibrary.simpleMessage("Book Now"),
     "booking_failed": MessageLookupByLibrary.simpleMessage("Booking failed"),
@@ -150,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "liver": MessageLookupByLibrary.simpleMessage("Liver"),
     "loading": MessageLookupByLibrary.simpleMessage("Loading"),
+    "log_out_failed": MessageLookupByLibrary.simpleMessage("Log out failed"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_successfully": MessageLookupByLibrary.simpleMessage(
       "Login successfully",

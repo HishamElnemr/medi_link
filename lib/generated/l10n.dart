@@ -804,6 +804,16 @@ class S {
     );
   }
 
+  /// `Are you sure to logout?`
+  String get are_you_sure_to_logout {
+    return Intl.message(
+      'Are you sure to logout?',
+      name: 'are_you_sure_to_logout',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Date`
   String get date {
     return Intl.message('Date', name: 'date', desc: '', args: []);
@@ -814,6 +824,16 @@ class S {
     return Intl.message(
       'Please select date',
       name: 'please_select_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log out failed`
+  String get log_out_failed {
+    return Intl.message(
+      'Log out failed',
+      name: 'log_out_failed',
       desc: '',
       args: [],
     );

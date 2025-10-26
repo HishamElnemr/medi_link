@@ -41,6 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "are_you_sure_reject_booking": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد من رفض هذا الحجز؟",
     ),
+    "are_you_sure_to_logout": MessageLookupByLibrary.simpleMessage(
+      "هل انت متاكد لتسجيل الخروج",
+    ),
     "book_appointment": MessageLookupByLibrary.simpleMessage("حجز موعد"),
     "book_now": MessageLookupByLibrary.simpleMessage("احجز الان"),
     "booking_failed": MessageLookupByLibrary.simpleMessage("فشل حجز الموعد"),
@@ -136,6 +139,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "liver": MessageLookupByLibrary.simpleMessage("الكبد"),
     "loading": MessageLookupByLibrary.simpleMessage("جاري التحميل"),
+    "log_out_failed": MessageLookupByLibrary.simpleMessage("فشل تسجيل الخروج"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "login_successfully": MessageLookupByLibrary.simpleMessage(
       "تم تسجيل الدخول بنجاح",
