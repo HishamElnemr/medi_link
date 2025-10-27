@@ -17,6 +17,8 @@ String getLocalizedSpecialtyTitle(BuildContext context, String key) {
       return S.of(context).psychiatry;
     case 'liver':
       return S.of(context).liver;
+    case 'pediatrics':
+      return S.of(context).pediatrics;
     default:
       return key;
   }

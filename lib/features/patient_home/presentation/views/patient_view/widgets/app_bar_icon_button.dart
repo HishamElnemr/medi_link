@@ -21,9 +21,11 @@ class AppBarIconButton extends StatelessWidget {
         color: AppColors.softBlue1,
         shape: BoxShape.circle,
       ),
-      child: IconButton(
-        onPressed: onPressed,
-        icon: Icon(icon, color: AppColors.primaryBlue),
+      child: FittedBox(
+        child: IconButton(
+          onPressed: onPressed,
+          icon: Icon(icon, color: AppColors.darkGrey, size: 40),
+        ),
       ),
     );
   }

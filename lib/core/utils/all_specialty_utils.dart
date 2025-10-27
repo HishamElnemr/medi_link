@@ -67,6 +67,8 @@ class AllSpecialtyUtils {
 
   static String _getSpecialtyIcon(String specialtyKey) {
     switch (specialtyKey) {
+      case 'pediatrics':
+        return Assets.assetsImagesBabyBoyIcon;
       case 'cardiology':
         return Assets.assetsImagesCadiologist;
       case 'dentistry':
@@ -84,11 +86,13 @@ class AllSpecialtyUtils {
       case 'internal_medicine':
         return Assets.assetsImagesHepatologists;
       default:
-        return Assets.assetsImagesHepatologists;
+        return Assets.assetsImagesHealtcare;
     }
   }
 
-  static final List<SpecialityModel> allSpecialtiesList = specialtyKeys.map((key) {
+  static final List<SpecialityModel> allSpecialtiesList = specialtyKeys.map((
+    key,
+  ) {
     return SpecialityModel(
       icon: _getSpecialtyIcon(key),
       titleKey: key,

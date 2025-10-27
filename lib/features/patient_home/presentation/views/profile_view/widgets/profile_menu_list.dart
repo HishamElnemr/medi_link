@@ -61,8 +61,8 @@ class ProfileMenuList extends StatelessWidget {
                 case 'logout':
                   showModalBottomSheet(
                     context: context,
-                    backgroundColor: AppColors.primaryBlue.withOpacity(.54),
                     isScrollControlled: false,
+                    barrierColor: AppColors.primaryBlue.withOpacity(.54),
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(24),
@@ -74,6 +74,7 @@ class ProfileMenuList extends StatelessWidget {
                 case 'language':
                   showDialog(
                     context: context,
+                    barrierColor: AppColors.primaryBlue.withOpacity(.54),
                     builder: (context) => const LanguageChangeDialog(),
                   );
                   break;

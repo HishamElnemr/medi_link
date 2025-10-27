@@ -40,7 +40,7 @@ class UpcomingAppointmentsCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            booking.doctorName,
+            '${S.of(context).dr} ${booking.doctorName}',
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
             style: FontStyles.regular14.copyWith(
@@ -82,7 +82,7 @@ class UpcomingAppointmentsCard extends StatelessWidget {
                 height: 35,
                 backgroundColor: Colors.red,
                 style: FontStyles.medium15.copyWith(
-                  color: Colors.white,
+                  color: AppColors.white,
                   fontSize: 13,
                 ),
               ),

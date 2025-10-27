@@ -16,7 +16,7 @@ class LanguageChangeDialog extends StatelessWidget {
     return AlertDialog(
       title: Text(
         S.of(context).language,
-        style: TextStyle(
+        style: const TextStyle(
           color: AppColors.primaryBlue,
           fontWeight: FontWeight.bold,
           fontSize: 18,

@@ -19,6 +19,11 @@ final List<SpecialityModel> homeSpecialtiesList = [
     rawName: 'cardiology',
   ),
   SpecialityModel(
+    icon: Assets.assetsImagesBabyBoyIcon,
+    titleKey: 'pediatrics',
+    rawName: 'pediatrics',
+  ),
+  SpecialityModel(
     icon: Assets.assetsImagesDentists,
     titleKey: 'dentistry',
     rawName: 'dentistry',

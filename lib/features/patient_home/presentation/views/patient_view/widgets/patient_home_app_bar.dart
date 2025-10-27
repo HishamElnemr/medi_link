@@ -1,15 +1,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
-import 'package:medi_link/core/services/shared_preferences_singleton.dart';
-import 'package:medi_link/core/utils/backend_endpoints.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/app_bar_icon_button.dart';
 import 'package:medi_link/generated/l10n.dart';
-import 'package:medi_link/language_cubit.dart';
 
 import '../../../../../../core/helper/get_patient_data.dart';
 
@@ -29,13 +24,10 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      pinned: true,
       automaticallyImplyLeading: false,
-      backgroundColor: AppColors.softBlue2,
+      backgroundColor: AppColors.white,
       elevation: 2.0,
-      systemOverlayStyle: const SystemUiOverlayStyle(
-        statusBarColor: AppColors.softBlue2,
-        statusBarIconBrightness: Brightness.dark,
-      ),
       title: Row(
         children: [
           Expanded(
@@ -62,21 +54,10 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               maxLines: 1,
             ),
           ),
-          AppBarIconButton(
-            onPressed: () {
-              try {
-                final languageCubit = context.read<LanguageCubit>();
-                languageCubit.toggleLanguage();
-                Prefs.setString(
-                  BackendEndpoints.languageCode,
-                  languageCubit.state.languageCode,
-                );
-              } catch (e) {
-                log('Error changing language: $e');
-              }
-            },
-            icon: Icons.translate_rounded,
-          ),
+          const Spacer(),
+          AppBarIconButton(onPressed: () {}, icon: Icons.settings_sharp),
+          const SizedBox(width: 15),
+          AppBarIconButton(onPressed: () {}, icon: Icons.notifications),
         ],
       ),
     );

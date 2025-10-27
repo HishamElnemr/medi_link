@@ -34,7 +34,6 @@ class _PatientBookingViewState extends State<PatientBookingView> {
       appBar: buildAppBar(
         context,
         title: S.of(context).bookings,
-        backgroundColor: AppColors.softBlue2,
         isVisible: false,
       ),
       body: RefreshIndicator(

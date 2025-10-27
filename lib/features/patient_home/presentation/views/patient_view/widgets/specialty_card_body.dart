@@ -31,6 +31,7 @@ class SpecialtyCardBody extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor ?? AppColors.softBlue2,
           borderRadius: BorderRadius.circular(16),
+          border: BoxBorder.all(color: AppColors.softBlue1, width: 1),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
