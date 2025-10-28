@@ -130,10 +130,15 @@
   "radiology": "Radiology",
   "anesthesia": "Anesthesia",
   "icu": "Intensive Care (ICU)",
+  "egp": "EGP",
   "emergency": "Emergency",
   "endocrinology": "Endocrinology",
   "rheumatology": "Rheumatology",
   "gastroenterology": "Gastroenterology",
   "pulmonology": "Pulmonology",
-  "liver": "Liver"
+  "liver": "Liver",
+  "salary": "Salary",
+  "years_of_experience": "Years of Experience",
+  "hospital_name": "Hospital Name",
+  "description": "Description"
 }

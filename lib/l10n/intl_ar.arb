@@ -136,5 +136,10 @@
   "rheumatology": "روماتيزم",
   "gastroenterology": "جهاز هضمي",
   "pulmonology": "صدرية",
-  "liver": "الكبد"
+  "liver": "الكبد",
+  "salary": "سعر الكشف",
+  "years_of_experience": "سنوات الخبرة",
+  "hospital_name": "اسم المستشفى",
+  "description": "الوصف",
+  "egp" : "ج"
 }

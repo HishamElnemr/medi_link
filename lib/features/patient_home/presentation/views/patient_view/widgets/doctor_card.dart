@@ -85,16 +85,28 @@ class DoctorCard extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 8),
-                          Text(
-                            AllSpecialtyUtils.getLocalizedSpecialty(
-                              context,
-                              doctorEntity.speciality,
-                            ),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: FontStyles.regular14.copyWith(
-                              color: AppColors.darkGrey,
-                            ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  AllSpecialtyUtils.getLocalizedSpecialty(
+                                    context,
+                                    doctorEntity.speciality,
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: FontStyles.regular14.copyWith(
+                                    color: AppColors.darkGrey,
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                '${doctorEntity.sallary} ${S.of(context).egp}',
+                                style: FontStyles.regular14.copyWith(
+                                  color: AppColors.darkGrey,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),

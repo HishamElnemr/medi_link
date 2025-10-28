@@ -1029,6 +1029,11 @@ class S {
     );
   }
 
+  /// `EGP`
+  String get egp {
+    return Intl.message('EGP', name: 'egp', desc: '', args: []);
+  }
+
   /// `Emergency`
   String get emergency {
     return Intl.message('Emergency', name: 'emergency', desc: '', args: []);
@@ -1072,6 +1077,36 @@ class S {
   /// `Liver`
   String get liver {
     return Intl.message('Liver', name: 'liver', desc: '', args: []);
+  }
+
+  /// `Salary`
+  String get salary {
+    return Intl.message('Salary', name: 'salary', desc: '', args: []);
+  }
+
+  /// `Years of Experience`
+  String get years_of_experience {
+    return Intl.message(
+      'Years of Experience',
+      name: 'years_of_experience',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hospital Name`
+  String get hospital_name {
+    return Intl.message(
+      'Hospital Name',
+      name: 'hospital_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message('Description', name: 'description', desc: '', args: []);
   }
 }
 

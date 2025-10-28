@@ -79,6 +79,8 @@ class BookingButtonSliver extends StatelessWidget {
         patientAge: patientAge,
         status: 'pending',
         doctorSpeciality: doctor.speciality,
+        doctorImageUrl: doctor.imageUrl!,
+        sallary: doctor.sallary,
       );
 
       context.read<BookingCubit>().addBooking(booking);

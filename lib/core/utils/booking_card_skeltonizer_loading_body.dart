@@ -24,6 +24,8 @@ class BookingCardSkeltonizerLoadingBody extends StatelessWidget {
               doctorName: 'Ali Mohamed Ali',
               patientAge: 25,
               doctorSpeciality: 'Cardiologist',
+              doctorImageUrl: '',
+              sallary: 50,
             ),
           ),
         );

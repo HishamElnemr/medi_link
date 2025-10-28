@@ -22,9 +22,9 @@ class UpcomingAppointmentsListViewBuilder extends StatelessWidget {
         } else if (state is BookingError) {
           return Center(child: Text(state.failure.message));
         } else {
-          return const Skeletonizer(
-            containersColor: AppColors.softBlue5,
-            child: UpcomingAppointementsSkeltonizerLoadingBody(),
+          return Skeletonizer(
+            containersColor: AppColors.softBlue5.withOpacity(0.2),
+            child: const UpcomingAppointementsSkeltonizerLoadingBody(),
           );
         }
       },

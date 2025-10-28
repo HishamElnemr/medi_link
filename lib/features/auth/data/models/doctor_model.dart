@@ -7,6 +7,9 @@ class DoctorModel extends UserModel {
   final String speciality;
   final int phoneNumber;
   final String address;
+  final int sallary;
+  final int yearsOfExperience;
+  final String hospitalName;
   final File image;
   String? imageUrl;
   DoctorModel({
@@ -20,6 +23,9 @@ class DoctorModel extends UserModel {
     required this.phoneNumber,
     required this.address,
     required this.image,
+    required this.sallary,
+    required this.yearsOfExperience,
+    required this.hospitalName,
     this.imageUrl,
   });
 
@@ -33,6 +39,9 @@ class DoctorModel extends UserModel {
     gender: gender,
     phoneNumber: phoneNumber,
     address: address,
+    sallary: sallary,
+    yearsOfExperience: yearsOfExperience,
+    hospitalName: hospitalName,
     imageUrl: imageUrl,
     image: image,
   );
@@ -49,6 +58,9 @@ class DoctorModel extends UserModel {
     address: entity.address,
     image: entity.image,
     imageUrl: entity.imageUrl,
+    sallary: entity.sallary,
+    yearsOfExperience: entity.yearsOfExperience,
+    hospitalName: entity.hospitalName,
   );
 
   factory DoctorModel.fromJson(Map<String, dynamic> json) => DoctorModel(
@@ -63,6 +75,9 @@ class DoctorModel extends UserModel {
     address: json['address'],
     image: File(''),
     imageUrl: json['imageUrl'],
+    sallary: json['sallary'],
+    yearsOfExperience: json['yearsOfExperience'],
+    hospitalName: json['hospitalName'],
   );
 
   Map<String, dynamic> toJson() => {
@@ -76,7 +91,9 @@ class DoctorModel extends UserModel {
     'phoneNumber': phoneNumber,
     'address': address,
     'imageUrl': imageUrl,
-
+    'sallary': sallary,
+    'yearsOfExperience': yearsOfExperience,
+    'hospitalName': hospitalName,
   };
 
   Map<String, dynamic> toMap() {
@@ -91,6 +108,9 @@ class DoctorModel extends UserModel {
       'phoneNumber': phoneNumber,
       'address': address,
       'imageUrl': imageUrl,
+      'sallary': sallary,
+      'yearsOfExperience': yearsOfExperience,
+      'hospitalName': hospitalName,
     };
   }
 }

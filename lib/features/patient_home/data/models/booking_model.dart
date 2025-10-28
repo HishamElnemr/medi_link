@@ -11,7 +11,8 @@ class BookingModel {
   final String date;
   final String status;
   final String doctorSpeciality;
-
+  final String doctorImageUrl;
+  final int sallary;
 
   BookingModel({
     required this.id,
@@ -23,6 +24,8 @@ class BookingModel {
     required this.status,
     required this.patientAge,
     required this.doctorSpeciality,
+    required this.doctorImageUrl,
+    required this.sallary,
   });
 
   factory BookingModel.fromJson(Map<String, dynamic> json) => BookingModel(
@@ -35,6 +38,8 @@ class BookingModel {
     status: json['status'],
     patientAge: json['patientAge'],
     doctorSpeciality: json['doctorSpeciality'],
+    doctorImageUrl: json['doctorImageUrl'],
+    sallary: json['sallary'],
   );
 
   Map<String, dynamic> toJson() => {
@@ -47,6 +52,8 @@ class BookingModel {
     'status': status,
     'patientAge': patientAge,
     'doctorSpeciality': doctorSpeciality,
+    'doctorImageUrl': doctorImageUrl,
+    'sallary': sallary,
   };
 
   BookingEntity toEntity() => BookingEntity(
@@ -59,6 +66,8 @@ class BookingModel {
     status: status,
     patientAge: patientAge,
     doctorSpeciality: doctorSpeciality,
+    doctorImageUrl: doctorImageUrl,
+    sallary: sallary,
   );
 
   factory BookingModel.fromEntity(BookingEntity entity) => BookingModel(
@@ -71,5 +80,7 @@ class BookingModel {
     status: entity.status,
     patientAge: entity.patientAge,
     doctorSpeciality: entity.doctorSpeciality,
+    doctorImageUrl: entity.doctorImageUrl,
+    sallary: entity.sallary,
   );
 }

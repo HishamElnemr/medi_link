@@ -13,6 +13,7 @@ class CustomTextFormField extends StatelessWidget {
     this.obscureText = false,
     this.isRequired = true,
     this.maxLines = 1,
+    this.minLines,
     this.validator,
     this.controller,
   });
@@ -24,6 +25,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final bool isRequired;
   final int maxLines;
+  final int? minLines;
   final String? Function(String?)? validator;
 
   @override
@@ -42,6 +44,7 @@ class CustomTextFormField extends StatelessWidget {
           },
       keyboardType: keyboardType,
       maxLines: maxLines,
+      minLines: minLines,
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         hintText: hitText,

@@ -12,6 +12,9 @@ class DoctorFields extends StatelessWidget {
   final void Function(String?) onSpecialitySaved;
   final void Function(String?) onAddressSaved;
   final void Function(String?) onPhoneSaved;
+  final void Function(String?) onSalarySaved;
+  final void Function(String?) onYearsOfExperienceSaved;
+  final void Function(String?) onHospitalNameSaved;
   final void Function(File?)? onFileChanged;
   const DoctorFields({
     super.key,
@@ -20,6 +23,9 @@ class DoctorFields extends StatelessWidget {
     required this.onSpecialitySaved,
     required this.onAddressSaved,
     required this.onPhoneSaved,
+    required this.onSalarySaved,
+    required this.onYearsOfExperienceSaved,
+    required this.onHospitalNameSaved,
     required this.onFileChanged,
   });
 
@@ -34,6 +40,12 @@ class DoctorFields extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         CustomTextFormField(
+          hitText: S.of(context).phone_number,
+          keyboardType: TextInputType.number,
+          onSaved: onPhoneSaved,
+        ),
+        const SizedBox(height: 16),
+        CustomTextFormField(
           hitText: S.of(context).address,
           keyboardType: TextInputType.text,
           maxLines: 2,
@@ -41,22 +53,24 @@ class DoctorFields extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         CustomTextFormField(
-          hitText: S.of(context).phone_number,
+          hitText: S.of(context).salary,
           keyboardType: TextInputType.number,
-          validator: (p0) {
-            if ((p0 == null || p0.isEmpty)) {
-              return S.of(context).this_field_is_required;
-            } else if (p0.length != 11) {
-              return S.of(context).invalid_phone_number;
-            }
-            return null;
-          },
-          onSaved: onPhoneSaved,
+          onSaved: onSalarySaved,
         ),
         const SizedBox(height: 16),
-        ImageField(
-          onFileChanged: onFileChanged,
+        CustomTextFormField(
+          hitText: S.of(context).years_of_experience,
+          keyboardType: TextInputType.number,
+          onSaved: onYearsOfExperienceSaved,
         ),
+        const SizedBox(height: 16),
+        CustomTextFormField(
+          hitText: S.of(context).hospital_name,
+          keyboardType: TextInputType.text,
+          onSaved: onHospitalNameSaved,
+        ),
+        const SizedBox(height: 16),
+        ImageField(onFileChanged: onFileChanged),
       ],
     );
   }

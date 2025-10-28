@@ -1,94 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
-import 'package:medi_link/core/utils/all_specialty_utils.dart';
-import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/features/patient_home/domain/entities/booking_entity.dart';
-import 'package:medi_link/generated/l10n.dart';
+import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/appointment_cancel_button.dart';
+import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/doctor_appointment_row.dart';
 
 class UpcomingAppointmentsCard extends StatelessWidget {
-  String _formatDate(String date) {
-    try {
-      return DateFormat('d MMM').format(DateTime.parse(date));
-    } catch (e) {
-      return date;
-    }
-  }
-
   final BookingEntity booking;
   final VoidCallback onCancelPressed;
-  final bool moreThanOne;
+
   const UpcomingAppointmentsCard({
     required this.onCancelPressed,
     required this.booking,
-    this.moreThanOne = false,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: moreThanOne ? 218 : MediaQuery.of(context).size.width * 0.8,
-      height: 132,
-      padding: const EdgeInsets.all(16),
+      width: MediaQuery.of(context).size.width * 0.8,
+      height: 140,
       decoration: ShapeDecoration(
-        color: AppColors.primaryBlue,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            '${S.of(context).dr} ${booking.doctorName}',
-            overflow: TextOverflow.ellipsis,
-            maxLines: 1,
-            style: FontStyles.regular14.copyWith(
-              color: AppColors.white,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          Text(
-            AllSpecialtyUtils.getLocalizedSpecialty(
-              context,
-              booking.doctorSpeciality,
-            ),
-            overflow: TextOverflow.ellipsis,
-            maxLines: 1,
-            style: FontStyles.light12.copyWith(
-              color: AppColors.lightGrey,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          const Spacer(),
-          Row(
-            children: [
-              Expanded(
-                child: Text(
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                  _formatDate(booking.date),
-                  style: FontStyles.regular14.copyWith(
-                    color: AppColors.white,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              const Spacer(),
-              CustomButton(
-                onPressed: onCancelPressed,
-                text: S.of(context).cancel,
-                width: 70,
-                height: 35,
-                backgroundColor: Colors.red,
-                style: FontStyles.medium15.copyWith(
-                  color: AppColors.white,
-                  fontSize: 13,
-                ),
-              ),
-            ],
+        gradient: const LinearGradient(
+          colors: [AppColors.primaryBlue, AppColors.blue2],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        shadows: [
+          BoxShadow(
+            color: AppColors.primaryBlue.withOpacity(0.3),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
           ),
         ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            DoctorAppointmentRow(booking: booking),
+            const SizedBox(height: 16),
+            AppointmentCancelButton(onPressed: onCancelPressed),
+          ],
+        ),
       ),
     );
   }

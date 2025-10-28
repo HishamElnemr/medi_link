@@ -54,6 +54,8 @@ class BookingDetailsSliver extends StatelessWidget {
                     doctor.speciality,
                   ),
                   age: doctor.age,
+                  imageUrl: doctor.imageUrl!,
+                  sallary: doctor.sallary,
                 ),
                 const SizedBox(height: 13),
                 const Divider(color: AppColors.primaryBlue, thickness: 2),

@@ -81,6 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "date": MessageLookupByLibrary.simpleMessage("Date"),
     "dentistry": MessageLookupByLibrary.simpleMessage("Dentistry"),
     "dermatology": MessageLookupByLibrary.simpleMessage("Dermatology"),
+    "description": MessageLookupByLibrary.simpleMessage("Description"),
     "doctor": MessageLookupByLibrary.simpleMessage("Doctor"),
     "doctor_added_to_favorites": MessageLookupByLibrary.simpleMessage(
       "Doctor added to favorites",
@@ -98,6 +99,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "dr": MessageLookupByLibrary.simpleMessage("Dr."),
     "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
+    "egp": MessageLookupByLibrary.simpleMessage("EGP"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_is_not_valid": MessageLookupByLibrary.simpleMessage("Invalid email"),
     "email_or_password_incorrect": MessageLookupByLibrary.simpleMessage(
@@ -136,6 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hello": MessageLookupByLibrary.simpleMessage("Hello"),
     "help": MessageLookupByLibrary.simpleMessage("Help"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "hospital_name": MessageLookupByLibrary.simpleMessage("Hospital Name"),
     "icu": MessageLookupByLibrary.simpleMessage("Intensive Care (ICU)"),
     "internal_medicine": MessageLookupByLibrary.simpleMessage(
       "Internal Medicine",
@@ -199,6 +202,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "reject": MessageLookupByLibrary.simpleMessage("Reject"),
     "rejected": MessageLookupByLibrary.simpleMessage("Rejected"),
     "rheumatology": MessageLookupByLibrary.simpleMessage("Rheumatology"),
+    "salary": MessageLookupByLibrary.simpleMessage("Salary"),
     "search_for_doctor": MessageLookupByLibrary.simpleMessage(
       "Search for doctor",
     ),
@@ -239,6 +243,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
     "years": MessageLookupByLibrary.simpleMessage("Years"),
+    "years_of_experience": MessageLookupByLibrary.simpleMessage(
+      "Years of Experience",
+    ),
     "yes": MessageLookupByLibrary.simpleMessage("Yes"),
     "yes_cancel": MessageLookupByLibrary.simpleMessage("Yes, Cancel"),
     "yes_reject": MessageLookupByLibrary.simpleMessage("Yes, Reject"),

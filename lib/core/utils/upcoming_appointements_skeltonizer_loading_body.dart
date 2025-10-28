@@ -9,14 +9,13 @@ class UpcomingAppointementsSkeltonizerLoadingBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 132,
+      height: 140,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4),
             child: UpcomingAppointmentsCard(
-              moreThanOne: true,
               onCancelPressed: () {},
               booking: BookingEntity(
                 id: '',
@@ -28,6 +27,8 @@ class UpcomingAppointementsSkeltonizerLoadingBody extends StatelessWidget {
                 status: 'pending',
                 patientAge: 20,
                 doctorSpeciality: 'cardiologist',
+                doctorImageUrl: '',
+                sallary: 50,
               ),
             ),
           );

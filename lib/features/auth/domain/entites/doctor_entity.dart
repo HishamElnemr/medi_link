@@ -7,6 +7,10 @@ class DoctorEntity extends UserEntity {
   final int phoneNumber;
   final String address;
   final File image;
+  final int sallary;
+  final int yearsOfExperience;
+  final String hospitalName;
+
   String? imageUrl;
   DoctorEntity({
     required this.speciality,
@@ -16,9 +20,13 @@ class DoctorEntity extends UserEntity {
     required super.email,
     required super.age,
     required super.gender,
+    required this.sallary,
+    required this.yearsOfExperience,
+    required this.hospitalName,
     required this.phoneNumber,
     required this.address,
     required this.image,
+
     this.imageUrl,
   });
 }

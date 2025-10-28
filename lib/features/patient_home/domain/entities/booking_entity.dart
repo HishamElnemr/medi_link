@@ -8,6 +8,8 @@ class BookingEntity {
   final String date;
   final String status;
   final String doctorSpeciality;
+  final String doctorImageUrl;
+  final int sallary;
 
   BookingEntity( {
     required this.id,
@@ -19,5 +21,7 @@ class BookingEntity {
     required this.status,
     required this.patientAge,
     required this.doctorSpeciality,
+    required this.doctorImageUrl,
+    required this.sallary
   });
 }

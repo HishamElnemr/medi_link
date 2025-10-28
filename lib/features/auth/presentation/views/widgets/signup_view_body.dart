@@ -38,8 +38,9 @@ class _SignupViewBodyState extends State<SignupViewBody> {
       lastName,
       chronicDiseases,
       address,
-      medicineTaken;
-  late int age, phoneNumber;
+      medicineTaken,
+      hospitalName;
+  late int age, phoneNumber, salary, yearsOfExperience;
   File? fileImage;
   String selectedType = 'Patient';
   String selectedGender = 'Male';
@@ -115,6 +116,10 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                   onSpecialitySaved: (v) => selectedSpeciality = v,
                   onAddressSaved: (v) => address = v ?? '',
                   onPhoneSaved: (v) => phoneNumber = int.parse(v ?? '0'),
+                  onSalarySaved: (v) => salary = int.parse(v ?? '0'),
+                  onYearsOfExperienceSaved: (v) =>
+                      yearsOfExperience = int.parse(v ?? '0'),
+                  onHospitalNameSaved: (v) => hospitalName = v ?? '',
                   onFileChanged: (v) => fileImage = v,
                 ),
               ] else if (selectedType == 'Patient') ...[
@@ -193,6 +198,9 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           phoneNumber: phoneNumber,
           address: address,
           image: fileImage!,
+          sallary: salary,
+          yearsOfExperience: yearsOfExperience,
+          hospitalName: hospitalName,
         );
         await doctorCubit.addDoctorData(doctor);
       }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
 import 'package:medi_link/features/patient_home/presentation/views/booking_view/widgets/booking_button_sliver.dart';
 import 'package:medi_link/features/patient_home/presentation/views/booking_view/widgets/booking_details_sliver.dart';
-
+import 'package:medi_link/generated/l10n.dart';
 
 class BookingViewBody extends StatefulWidget {
   const BookingViewBody({super.key, required this.isLoading});
@@ -33,7 +33,11 @@ class _BookingViewBodyState extends State<BookingViewBody> {
     final doctor = ModalRoute.of(context)?.settings.arguments as DoctorEntity?;
 
     if (doctor == null) {
-      return const Center(child: Text('No doctor data received'));
+      return Center(
+        child: Text(
+          S.of(context).something_went_wrong + S.of(context).please_try_later,
+        ),
+      );
     }
 
     return CustomScrollView(
@@ -70,6 +74,4 @@ class _BookingViewBodyState extends State<BookingViewBody> {
       ],
     );
   }
-
-
 }
