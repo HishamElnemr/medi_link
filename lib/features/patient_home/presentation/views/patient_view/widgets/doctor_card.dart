@@ -3,6 +3,7 @@ import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/core/utils/all_specialty_utils.dart';
 import 'package:medi_link/core/utils/assets.dart';
+import 'package:medi_link/core/widgets/cached_network_image_widget.dart';
 import 'package:medi_link/core/widgets/custom_button.dart';
 import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/custom_icon.dart';
@@ -53,40 +54,52 @@ class DoctorCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    CachedNetworkImageWidget(imageUrl: doctorEntity.imageUrl!),
+                    const SizedBox(width: 8),
                     Expanded(
-                      child: Text(
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        S.of(context).dr +
-                            ' ' +
-                            doctorEntity.firstName +
-                            ' ' +
-                            doctorEntity.lastName,
-                        style: FontStyles.medium15.copyWith(
-                          color: AppColors.primaryBlue,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  S.of(context).dr +
+                                      ' ' +
+                                      doctorEntity.firstName +
+                                      ' ' +
+                                      doctorEntity.lastName,
+                                  style: FontStyles.medium15.copyWith(
+                                    color: AppColors.primaryBlue,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                '${doctorEntity.age} ${S.of(context).years}',
+                                style: FontStyles.light12,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            AllSpecialtyUtils.getLocalizedSpecialty(
+                              context,
+                              doctorEntity.speciality,
+                            ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: FontStyles.regular14.copyWith(
+                              color: AppColors.darkGrey,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    Text(
-                      '${doctorEntity.age} ${S.of(context).years}',
-                      style: FontStyles.light12,
-                    ),
                   ],
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  AllSpecialtyUtils.getLocalizedSpecialty(
-                    context,
-                    doctorEntity.speciality,
-                  ),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: FontStyles.regular14.copyWith(
-                    color: AppColors.darkGrey,
-                  ),
                 ),
               ],
             ),
@@ -96,7 +109,11 @@ class DoctorCard extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: onFavPressed,
-                child: CustomIcon(icon: isFavorite ? Assets.assetsImagesAddToFav : Assets.assetsImagesFav),
+                child: CustomIcon(
+                  icon: isFavorite
+                      ? Assets.assetsImagesAddToFav
+                      : Assets.assetsImagesFav,
+                ),
               ),
               const SizedBox(width: 5),
               const CustomIcon(icon: Assets.assetsImagesAbout),
