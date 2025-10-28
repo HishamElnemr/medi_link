@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/widgets/custom_text_form_field.dart';
+import 'package:medi_link/features/auth/presentation/views/widgets/image_field.dart';
 import 'package:medi_link/features/auth/presentation/views/widgets/speciality_dropdown.dart';
 import 'package:medi_link/generated/l10n.dart';
 
@@ -9,7 +12,7 @@ class DoctorFields extends StatelessWidget {
   final void Function(String?) onSpecialitySaved;
   final void Function(String?) onAddressSaved;
   final void Function(String?) onPhoneSaved;
-
+  final void Function(File?)? onFileChanged;
   const DoctorFields({
     super.key,
     required this.selectedSpeciality,
@@ -17,6 +20,7 @@ class DoctorFields extends StatelessWidget {
     required this.onSpecialitySaved,
     required this.onAddressSaved,
     required this.onPhoneSaved,
+    required this.onFileChanged,
   });
 
   @override
@@ -48,6 +52,10 @@ class DoctorFields extends StatelessWidget {
             return null;
           },
           onSaved: onPhoneSaved,
+        ),
+        const SizedBox(height: 16),
+        ImageField(
+          onFileChanged: onFileChanged,
         ),
       ],
     );

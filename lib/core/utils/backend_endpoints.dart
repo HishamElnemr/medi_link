@@ -7,4 +7,6 @@ class BackendEndpoints {
   static const bookingsEndpoint = 'bookings';
   static const addToFavoritesEndpoint = 'addToFavorites';
   static String languageCode = 'languageCode';
+  static const images = 'images';
+  static const supabaseStorageName = 'doctor_photo';
 }

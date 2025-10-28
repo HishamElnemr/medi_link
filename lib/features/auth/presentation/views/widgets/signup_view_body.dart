@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/services/shared_preferences_singleton.dart';
@@ -38,6 +40,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
       address,
       medicineTaken;
   late int age, phoneNumber;
+  File? fileImage;
   String selectedType = 'Patient';
   String selectedGender = 'Male';
   String? selectedSpeciality;
@@ -112,6 +115,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                   onSpecialitySaved: (v) => selectedSpeciality = v,
                   onAddressSaved: (v) => address = v ?? '',
                   onPhoneSaved: (v) => phoneNumber = int.parse(v ?? '0'),
+                  onFileChanged: (v) => fileImage = v,
                 ),
               ] else if (selectedType == 'Patient') ...[
                 PatientFields(
@@ -188,6 +192,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           gender: selectedGender,
           phoneNumber: phoneNumber,
           address: address,
+          image: fileImage!,
         );
         await doctorCubit.addDoctorData(doctor);
       }

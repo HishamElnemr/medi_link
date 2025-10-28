@@ -34,6 +34,7 @@ class FireStoreServices {
     final docRef = await firestore
         .collection(BackendEndpoints.bookingsEndpoint)
         .add(data);
+      
     await docRef.update({'id': docRef.id});
   }
 

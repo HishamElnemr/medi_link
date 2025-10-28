@@ -1,10 +1,14 @@
+import 'dart:io';
+
 import 'package:medi_link/core/models/user_entity.dart';
 
 class DoctorEntity extends UserEntity {
   final String speciality;
   final int phoneNumber;
   final String address;
-    DoctorEntity({
+  final File image;
+  String? imageUrl;
+  DoctorEntity({
     required this.speciality,
     required super.id,
     required super.firstName,
@@ -13,6 +17,8 @@ class DoctorEntity extends UserEntity {
     required super.age,
     required super.gender,
     required this.phoneNumber,
-    required this.address
+    required this.address,
+    required this.image,
+    this.imageUrl,
   });
 }

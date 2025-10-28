@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/doctor_card.dart';
@@ -24,6 +26,8 @@ class DoctorCardSkeltonizerLoading extends StatelessWidget {
               address: 'Giza, Cairo, Egypt',
               phoneNumber: 0123456789,
               email: 'fG9pU@example.com',
+              imageUrl: '',
+              image: File(''),
             ),
             isFavorite: false,
             onFavPressed: () {},

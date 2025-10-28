@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:medi_link/core/models/user_model.dart';
 import 'package:medi_link/features/auth/domain/entites/doctor_entity.dart';
 
@@ -5,6 +7,8 @@ class DoctorModel extends UserModel {
   final String speciality;
   final int phoneNumber;
   final String address;
+  final File image;
+  String? imageUrl;
   DoctorModel({
     required this.speciality,
     required super.id,
@@ -15,6 +19,8 @@ class DoctorModel extends UserModel {
     required super.gender,
     required this.phoneNumber,
     required this.address,
+    required this.image,
+    this.imageUrl,
   });
 
   DoctorEntity toEntity() => DoctorEntity(
@@ -27,6 +33,8 @@ class DoctorModel extends UserModel {
     gender: gender,
     phoneNumber: phoneNumber,
     address: address,
+    imageUrl: imageUrl,
+    image: image,
   );
 
   factory DoctorModel.fromEntity(DoctorEntity entity) => DoctorModel(
@@ -39,6 +47,8 @@ class DoctorModel extends UserModel {
     gender: entity.gender,
     phoneNumber: entity.phoneNumber,
     address: entity.address,
+    image: entity.image,
+    imageUrl: entity.imageUrl,
   );
 
   factory DoctorModel.fromJson(Map<String, dynamic> json) => DoctorModel(
@@ -51,6 +61,8 @@ class DoctorModel extends UserModel {
     gender: json['gender'],
     phoneNumber: json['phoneNumber'],
     address: json['address'],
+    image: File(''),
+    imageUrl: json['imageUrl'],
   );
 
   Map<String, dynamic> toJson() => {
@@ -63,10 +75,11 @@ class DoctorModel extends UserModel {
     'gender': gender,
     'phoneNumber': phoneNumber,
     'address': address,
+    'imageUrl': imageUrl,
+
   };
 
-  Map<String, dynamic> toMap() 
-  {
+  Map<String, dynamic> toMap() {
     return {
       'speciality': speciality,
       'id': id,
@@ -77,6 +90,7 @@ class DoctorModel extends UserModel {
       'gender': gender,
       'phoneNumber': phoneNumber,
       'address': address,
+      'imageUrl': imageUrl,
     };
   }
 }
