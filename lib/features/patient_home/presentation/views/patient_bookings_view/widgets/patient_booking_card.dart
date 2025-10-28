@@ -3,6 +3,7 @@ import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/core/models/booking_status.dart';
 import 'package:medi_link/core/utils/all_specialty_utils.dart';
+import 'package:medi_link/core/widgets/cached_network_image_widget.dart';
 import 'package:medi_link/features/patient_home/domain/entities/booking_entity.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_bookings_view/widgets/patient_action_button.dart';
 import 'package:medi_link/generated/l10n.dart';
@@ -24,14 +25,21 @@ class PatientBookingCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            '${S.of(context).dr} ${booking.doctorName} '.toUpperCase(),
-            style: FontStyles.medium15.copyWith(
-              color: AppColors.primaryBlue,
-              fontWeight: FontWeight.bold,
-            ),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  '${S.of(context).dr} ${booking.doctorName} '.toUpperCase(),
+                  style: FontStyles.medium15.copyWith(
+                    color: AppColors.primaryBlue,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              CachedNetworkImageWidget(imageUrl: booking.doctorImageUrl),
+            ],
           ),
           const SizedBox(height: 8),
 
