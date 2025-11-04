@@ -11,7 +11,5 @@ class RoutesName {
   static const String specialitiesView = '/SpecialitiesView';
   static const String doctorsBySpecialityView = '/DoctorsBySpecialityView';
   static const String personalInformation = '/PersonalInformation';
-
-  
-
+  static const String doctorDetailsView = 'DoctorDetailsView';
 }

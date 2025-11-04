@@ -31,6 +31,13 @@ class DoctorListView extends StatelessWidget {
 
         return DoctorCard(
           isFavorite: isFavorite,
+          onTap: () {
+            Navigator.pushNamed(
+              context,
+              RoutesName.doctorDetailsView,
+              arguments: doctor,
+            );
+          },
           onFavPressed: () => onFavoriteToggle(doctor, isFavorite),
           doctorEntity: doctor,
           onPressed: () => _handleBookingNavigation(context, doctor),
