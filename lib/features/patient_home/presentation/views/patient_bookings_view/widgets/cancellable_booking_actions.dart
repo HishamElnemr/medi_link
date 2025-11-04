@@ -20,32 +20,13 @@ class CancellableBookingActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            decoration: BoxDecoration(
-              color: statusColor.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Text(
-              statusText,
-              textAlign: TextAlign.center,
-              style: FontStyles.light12.copyWith(color: statusColor),
-            ),
-          ),
-        ),
-        const SizedBox(width: 12),
-        CustomButton(
-          onPressed: () => showCancelBookingDialog(context, booking),
-          text: S.of(context).cancel,
-          width: 80,
-          height: 35,
-          backgroundColor: Colors.red,
-          style: FontStyles.medium15.copyWith(color: Colors.white),
-        ),
-      ],
+    return CustomButton(
+      onPressed: () => showCancelBookingDialog(context, booking),
+      text: S.of(context).cancel,
+      width: double.infinity,
+      height: 35,
+      backgroundColor: Colors.red,
+      style: FontStyles.medium15.copyWith(color: Colors.white),
     );
   }
 }

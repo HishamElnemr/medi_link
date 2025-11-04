@@ -17,6 +17,7 @@ class BookingButtonSliver extends StatelessWidget {
   final GlobalKey<FormState> formKey;
   final DateTime? selectedDate;
   final bool isLoading;
+  final String id;
 
   const BookingButtonSliver({
     super.key,
@@ -28,6 +29,7 @@ class BookingButtonSliver extends StatelessWidget {
     required this.formKey,
     required this.selectedDate,
     required this.isLoading,
+    required this.id,
   });
 
   @override
@@ -70,7 +72,7 @@ class BookingButtonSliver extends StatelessWidget {
           : int.parse(ageController.text.trim());
 
       final booking = BookingEntity(
-        id: '',
+        id: id,
         patientId: getPatientData().id,
         doctorId: doctor.id,
         patientName: patientName,

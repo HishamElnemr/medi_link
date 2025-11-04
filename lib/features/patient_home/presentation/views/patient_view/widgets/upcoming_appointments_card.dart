@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
-import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/features/patient_home/domain/entities/booking_entity.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/appointment_cancel_button.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/doctor_appointment_row.dart';

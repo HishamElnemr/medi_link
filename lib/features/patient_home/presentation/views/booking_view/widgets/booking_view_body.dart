@@ -70,6 +70,7 @@ class _BookingViewBodyState extends State<BookingViewBody> {
           ageController: ageController,
           formKey: _formKey,
           selectedDate: selectedDate,
+          id: '',
         ),
       ],
     );
