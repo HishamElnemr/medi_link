@@ -80,6 +80,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "doctor_added_to_favorites": MessageLookupByLibrary.simpleMessage(
       "تم اضافة الطبيب للمفضلة",
     ),
+    "doctor_details": MessageLookupByLibrary.simpleMessage("معلومات الطبيب"),
     "doctor_name": MessageLookupByLibrary.simpleMessage("اسم الطبيب"),
     "doctor_removed_from_favorites": MessageLookupByLibrary.simpleMessage(
       "تم حذف الطبيب من المفضلة",
@@ -105,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "emergency": MessageLookupByLibrary.simpleMessage("طوارئ"),
     "endocrinology": MessageLookupByLibrary.simpleMessage("غدد صماء"),
     "ent": MessageLookupByLibrary.simpleMessage("أنف وأذن"),
+    "experience": MessageLookupByLibrary.simpleMessage("خبرة"),
     "failed_to_add_booking": MessageLookupByLibrary.simpleMessage(
       "فشل في إضافة الحجز",
     ),

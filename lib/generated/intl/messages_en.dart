@@ -86,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "doctor_added_to_favorites": MessageLookupByLibrary.simpleMessage(
       "Doctor added to favorites",
     ),
+    "doctor_details": MessageLookupByLibrary.simpleMessage("Doctor Details"),
     "doctor_name": MessageLookupByLibrary.simpleMessage("Doctor Name"),
     "doctor_removed_from_favorites": MessageLookupByLibrary.simpleMessage(
       "Doctor removed from favorites",
@@ -111,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "emergency": MessageLookupByLibrary.simpleMessage("Emergency"),
     "endocrinology": MessageLookupByLibrary.simpleMessage("Endocrinology"),
     "ent": MessageLookupByLibrary.simpleMessage("Ear, Nose, and Throat (ENT)"),
+    "experience": MessageLookupByLibrary.simpleMessage("Experience"),
     "failed_to_add_booking": MessageLookupByLibrary.simpleMessage(
       "Failed to add booking",
     ),

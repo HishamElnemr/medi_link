@@ -141,5 +141,7 @@
   "years_of_experience": "سنوات الخبرة",
   "hospital_name": "اسم المستشفى",
   "description": "الوصف",
-  "egp" : "ج"
+  "egp" : "ج",
+  "doctor_details" : "معلومات الطبيب",
+  "experience" : "خبرة"
 }

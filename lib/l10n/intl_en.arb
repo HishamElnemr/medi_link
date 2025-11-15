@@ -140,5 +140,7 @@
   "salary": "Salary",
   "years_of_experience": "Years of Experience",
   "hospital_name": "Hospital Name",
-  "description": "Description"
+  "description": "Description",
+  "doctor_details": "Doctor Details",
+  "experience": "Experience"
 }

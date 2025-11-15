@@ -1108,6 +1108,21 @@ class S {
   String get description {
     return Intl.message('Description', name: 'description', desc: '', args: []);
   }
+
+  /// `Doctor Details`
+  String get doctor_details {
+    return Intl.message(
+      'Doctor Details',
+      name: 'doctor_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Experience`
+  String get experience {
+    return Intl.message('Experience', name: 'experience', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

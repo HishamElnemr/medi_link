@@ -72,7 +72,7 @@ class DoctorAppointmentRow extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 10,
