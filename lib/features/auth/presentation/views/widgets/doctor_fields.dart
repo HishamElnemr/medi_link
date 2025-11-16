@@ -15,6 +15,7 @@ class DoctorFields extends StatelessWidget {
   final void Function(String?) onSalarySaved;
   final void Function(String?) onYearsOfExperienceSaved;
   final void Function(String?) onHospitalNameSaved;
+  final void Function(String?) onDoctorBiographySaved;
   final void Function(File?)? onFileChanged;
   const DoctorFields({
     super.key,
@@ -27,6 +28,7 @@ class DoctorFields extends StatelessWidget {
     required this.onYearsOfExperienceSaved,
     required this.onHospitalNameSaved,
     required this.onFileChanged,
+    required this.onDoctorBiographySaved,
   });
 
   @override
@@ -68,6 +70,14 @@ class DoctorFields extends StatelessWidget {
           hitText: S.of(context).hospital_name,
           keyboardType: TextInputType.text,
           onSaved: onHospitalNameSaved,
+        ),
+        const SizedBox(height: 16),
+        CustomTextFormField(
+          hitText: S.of(context).biography,
+          keyboardType: TextInputType.text,
+          maxLines: 20,
+          minLines: 7,
+          onSaved: onDoctorBiographySaved,
         ),
         const SizedBox(height: 16),
         ImageField(onFileChanged: onFileChanged),

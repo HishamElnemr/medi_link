@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "MediLink": MessageLookupByLibrary.simpleMessage("ميدلينك "),
+    "about": MessageLookupByLibrary.simpleMessage("عن"),
     "account_created_successfully": MessageLookupByLibrary.simpleMessage(
       "تم انشاء الحساب بنجاح",
     ),
@@ -44,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "are_you_sure_to_logout": MessageLookupByLibrary.simpleMessage(
       "هل انت متاكد لتسجيل الخروج",
     ),
+    "biography": MessageLookupByLibrary.simpleMessage("السيرة الذاتية"),
     "book_appointment": MessageLookupByLibrary.simpleMessage("حجز موعد"),
     "book_now": MessageLookupByLibrary.simpleMessage("احجز الان"),
     "booking_failed": MessageLookupByLibrary.simpleMessage("فشل حجز الموعد"),

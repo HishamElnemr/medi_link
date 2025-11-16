@@ -142,5 +142,8 @@
   "hospital_name": "Hospital Name",
   "description": "Description",
   "doctor_details": "Doctor Details",
-  "experience": "Experience"
+  "experience": "Experience",
+  "about" : "About",
+  "biography" : "Biography"
+
 }

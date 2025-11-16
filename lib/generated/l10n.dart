@@ -1123,6 +1123,16 @@ class S {
   String get experience {
     return Intl.message('Experience', name: 'experience', desc: '', args: []);
   }
+
+  /// `About`
+  String get about {
+    return Intl.message('About', name: 'about', desc: '', args: []);
+  }
+
+  /// `Biography`
+  String get biography {
+    return Intl.message('Biography', name: 'biography', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

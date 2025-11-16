@@ -12,6 +12,7 @@ class DoctorModel extends UserModel {
   final String hospitalName;
   final File image;
   String? imageUrl;
+  final String biography;
   DoctorModel({
     required this.speciality,
     required super.id,
@@ -27,6 +28,7 @@ class DoctorModel extends UserModel {
     required this.yearsOfExperience,
     required this.hospitalName,
     this.imageUrl,
+    required this.biography,
   });
 
   DoctorEntity toEntity() => DoctorEntity(
@@ -44,6 +46,7 @@ class DoctorModel extends UserModel {
     hospitalName: hospitalName,
     imageUrl: imageUrl,
     image: image,
+    biography: biography,
   );
 
   factory DoctorModel.fromEntity(DoctorEntity entity) => DoctorModel(
@@ -61,6 +64,7 @@ class DoctorModel extends UserModel {
     sallary: entity.sallary,
     yearsOfExperience: entity.yearsOfExperience,
     hospitalName: entity.hospitalName,
+    biography: entity.biography,
   );
 
   factory DoctorModel.fromJson(Map<String, dynamic> json) => DoctorModel(
@@ -78,6 +82,7 @@ class DoctorModel extends UserModel {
     sallary: json['sallary'],
     yearsOfExperience: json['yearsOfExperience'],
     hospitalName: json['hospitalName'],
+    biography: json['biography'],
   );
 
   Map<String, dynamic> toJson() => {
@@ -94,6 +99,7 @@ class DoctorModel extends UserModel {
     'sallary': sallary,
     'yearsOfExperience': yearsOfExperience,
     'hospitalName': hospitalName,
+    'biography': biography,
   };
 
   Map<String, dynamic> toMap() {
@@ -111,6 +117,7 @@ class DoctorModel extends UserModel {
       'sallary': sallary,
       'yearsOfExperience': yearsOfExperience,
       'hospitalName': hospitalName,
+      'biography': biography,
     };
   }
 }

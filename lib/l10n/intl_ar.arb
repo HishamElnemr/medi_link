@@ -143,5 +143,7 @@
   "description": "الوصف",
   "egp" : "ج",
   "doctor_details" : "معلومات الطبيب",
-  "experience" : "خبرة"
+  "experience" : "خبرة",
+  "about" : "عن",
+  "biography" : "السيرة الذاتية"
 }

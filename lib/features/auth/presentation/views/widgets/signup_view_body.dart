@@ -39,6 +39,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
       chronicDiseases,
       address,
       medicineTaken,
+      biography,
       hospitalName;
   late int age, phoneNumber, salary, yearsOfExperience;
   File? fileImage;
@@ -121,6 +122,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                       yearsOfExperience = int.parse(v ?? '0'),
                   onHospitalNameSaved: (v) => hospitalName = v ?? '',
                   onFileChanged: (v) => fileImage = v,
+                  onDoctorBiographySaved: (v) => biography = v ?? '',
                 ),
               ] else if (selectedType == 'Patient') ...[
                 PatientFields(
@@ -201,6 +203,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
           sallary: salary,
           yearsOfExperience: yearsOfExperience,
           hospitalName: hospitalName,
+          biography: biography,
         );
         await doctorCubit.addDoctorData(doctor);
       }

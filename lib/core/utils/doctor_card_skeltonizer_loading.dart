@@ -18,6 +18,7 @@ class DoctorCardSkeltonizerLoading extends StatelessWidget {
           child: DoctorCard(
             onTap: () {},
             doctorEntity: DoctorEntity(
+              biography: 'text',
               id: '13',
               firstName: 'Ali',
               lastName: 'Mohamed',
