@@ -28,6 +28,7 @@ class _PatientMainViewState extends State<PatientMainView> {
               BookingCubit(bookingRepo: getIt<BookingRepoImpl>())
                 ..getPatientBookings(patientId),
         ),
+        
       ],
       child: Scaffold(
         body: SafeArea(child: MainViewBody(currentViewIndex: currentViewIndex)),

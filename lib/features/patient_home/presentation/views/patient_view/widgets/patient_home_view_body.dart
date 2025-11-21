@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:medi_link/core/utils/constants.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/doctor_list_view_bloc_builder.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/medical_specialties_grid.dart';
-import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/patient_home_app_bar.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/specialities_widget.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/upcoming_appointments.dart';
 
@@ -13,7 +12,6 @@ class PatientHomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        const PatientHomeAppBar(),
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
           sliver: SliverList(

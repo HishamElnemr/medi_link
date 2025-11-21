@@ -23,10 +23,9 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
-      pinned: true,
+    return AppBar(
       automaticallyImplyLeading: false,
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.softBlue5,
       elevation: 2.0,
       title: Row(
         children: [
