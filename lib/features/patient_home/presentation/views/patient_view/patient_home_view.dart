@@ -6,7 +6,6 @@ import 'package:medi_link/features/patient_home/presentation/cubits/get_doctors_
 import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/patient_home_app_bar.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_view/widgets/patient_home_view_body.dart';
 
-
 class PatientHomeView extends StatelessWidget {
   const PatientHomeView({super.key});
 

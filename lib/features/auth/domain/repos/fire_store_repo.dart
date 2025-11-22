@@ -20,4 +20,8 @@ abstract class FireStoreRepo {
     PatientEntity patientEntity,
     String uId,
   );
+  Future<Either<Failure, void>> updateDoctorData(
+    DoctorEntity doctorEntity,
+    String uId,
+  );
 }

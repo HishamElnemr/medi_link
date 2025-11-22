@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/core/widgets/custom_sliver_app_bar.dart';
-import 'package:medi_link/features/patient_home/presentation/views/profile_view/widgets/edit_patient_information_form_bloc_builder.dart';
+import 'package:medi_link/features/patient_home/presentation/views/edit_profile_view/widgets/edit_patient_information_form_bloc_builder.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class PersonalInformationViewBody extends StatelessWidget {

@@ -12,4 +12,5 @@ class RoutesName {
   static const String doctorsBySpecialityView = '/DoctorsBySpecialityView';
   static const String personalInformation = '/PersonalInformation';
   static const String doctorDetailsView = 'DoctorDetailsView';
+  static const String profileView = '/ProfileView';
 }

@@ -161,4 +161,23 @@ class FireStoreRepoImpl implements FireStoreRepo {
       return left(ServerFailure(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, void>> updateDoctorData(
+    DoctorEntity doctorEntity,
+    String uId,
+  ) async {
+    try {
+      await fireStoreServices.updateDoctorData(
+        data: DoctorModel.fromEntity(doctorEntity).toJson(),
+        uId: uId,
+      );
+      await saveDoctorData(doctorEntity);
+      log('Doctor data updated successfully');
+      return const Right(null);
+    } on Exception catch (e) {
+      log('Error updating doctor data: $e');
+      return left(ServerFailure(e.toString()));
+    }
+  }
 }

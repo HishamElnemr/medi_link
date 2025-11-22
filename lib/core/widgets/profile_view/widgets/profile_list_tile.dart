@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
-import 'package:medi_link/features/patient_home/data/models/profile_menu_item.dart';
+import 'package:medi_link/core/models/profile_menu_item.dart';
 
 class ProfileListTile extends StatelessWidget {
   const ProfileListTile({super.key, required this.item, this.onTap});

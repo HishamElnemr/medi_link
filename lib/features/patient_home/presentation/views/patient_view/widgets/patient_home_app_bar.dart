@@ -25,8 +25,8 @@ class PatientHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      backgroundColor: AppColors.softBlue5,
-      elevation: 2.0,
+      backgroundColor: AppColors.white,
+      elevation: 0.0,
       title: Row(
         children: [
           Expanded(

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/core/utils/assets.dart';
-import 'package:medi_link/features/patient_home/data/models/profile_menu_item.dart';
-import 'package:medi_link/features/patient_home/presentation/views/profile_view/widgets/language_change_dialog.dart';
-import 'package:medi_link/features/patient_home/presentation/views/profile_view/widgets/logout_confirmation_dialog.dart';
-import 'package:medi_link/features/patient_home/presentation/views/profile_view/widgets/profile_list_tile.dart';
+import 'package:medi_link/core/models/profile_menu_item.dart';
+import 'package:medi_link/core/widgets/profile_view/widgets/language_change_dialog.dart';
+import 'package:medi_link/core/widgets/profile_view/widgets/logout_confirmation_dialog.dart';
+import 'package:medi_link/core/widgets/profile_view/widgets/profile_list_tile.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class ProfileMenuList extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medi_link/features/patient_home/presentation/views/favorite_view/favorite_view.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_bookings_view/patient_booking_view.dart';
 import 'package:medi_link/features/patient_home/presentation/views/patient_view/patient_home_view.dart';
-import 'package:medi_link/features/patient_home/presentation/views/profile_view/profile_view.dart';
+import 'package:medi_link/core/widgets/profile_view/profile_view.dart';
 
 class MainViewBody extends StatelessWidget {
   const MainViewBody({super.key, required this.currentViewIndex});

@@ -4,6 +4,7 @@ import 'package:medi_link/core/services/storage_services.dart';
 import 'package:medi_link/core/utils/backend_endpoints.dart';
 import 'package:path/path.dart' as path;
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:uuid/uuid.dart';
 
 class SupabaseStorageServices implements StorageServices {
   static late Supabase _supabase;
@@ -30,9 +31,12 @@ class SupabaseStorageServices implements StorageServices {
   }
 
   @override
+  @override
   Future<String> uploadFile(File file, String filePath) async {
     final supabase = Supabase.instance.client;
-    String fileName = path.basename(file.path);
+
+    final uuid = const Uuid();
+    String fileName = '${uuid.v4()}${path.extension(file.path)}';
 
     final String fullPath = '$filePath/$fileName';
 
@@ -44,4 +48,5 @@ class SupabaseStorageServices implements StorageServices {
         .from(BackendEndpoints.supabaseStorageName)
         .getPublicUrl(fullPath);
   }
+
 }

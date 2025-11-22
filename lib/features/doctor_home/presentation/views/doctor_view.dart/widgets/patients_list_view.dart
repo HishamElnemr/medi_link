@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/features/patient_home/domain/entities/booking_entity.dart';
-import 'package:medi_link/features/doctor_home/doctor_view.dart/widgets/patient_card.dart';
+import 'package:medi_link/features/doctor_home/presentation/views/doctor_view.dart/widgets/patient_card.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class PatientsListView extends StatelessWidget {

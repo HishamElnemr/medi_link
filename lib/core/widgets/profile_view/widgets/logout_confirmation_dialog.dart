@@ -7,7 +7,7 @@ import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/core/helper/build_snack_bar.dart';
 import 'package:medi_link/core/routes/routes_name.dart';
 import 'package:medi_link/core/services/shared_preferences_singleton.dart';
-import 'package:medi_link/features/patient_home/presentation/views/profile_view/widgets/custom_rounded_text_button.dart';
+import 'package:medi_link/core/widgets/profile_view/widgets/custom_rounded_text_button.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class LogoutConfirmationDialog extends StatelessWidget {

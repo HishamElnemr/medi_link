@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_link/core/helper/build_snack_bar.dart';
 import 'package:medi_link/features/patient_home/presentation/cubits/update_patient_data/update_patient_data_cubit.dart';
-import 'package:medi_link/features/patient_home/presentation/views/profile_view/widgets/edit_patient_information_form.dart';
+import 'package:medi_link/features/patient_home/presentation/views/edit_profile_view/widgets/edit_patient_information_form.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class EditPatientInformationFormBlocBuilder extends StatelessWidget {
