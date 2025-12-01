@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medi_link/features/patient_home/domain/entities/booking_entity.dart';
-import 'package:medi_link/features/doctor_home/presentation/views/doctor_view.dart/widgets/patient_card.dart';
+import 'package:medi_link/features/doctor_home/presentation/views/doctor_view/widgets/patient_card.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class PatientsListView extends StatelessWidget {
@@ -14,12 +14,14 @@ class PatientsListView extends StatelessWidget {
     }).toList();
 
     if (filteredPatients.isEmpty) {
-      return Center(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Text(
-            S.of(context).no_appointment,
-            style: const TextStyle(fontSize: 16, color: Colors.grey),
+      return Expanded(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Text(
+              S.of(context).no_appointment,
+              style: const TextStyle(fontSize: 16, color: Colors.grey),
+            ),
           ),
         ),
       );

@@ -12,21 +12,36 @@ class CachedNetworkImageWidget extends StatelessWidget {
   });
   final double? height;
   final double? width;
-  final String imageUrl;
+  final String? imageUrl;
 
   @override
   Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl: imageUrl,
+    if (imageUrl == null ) {
+      return Container(
+        width: width ?? 60,
+        height: height ?? 60,
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: AssetImage(
+              Assets.assetsImagesDoctor,
+            ), // fallback for null/empty
+            fit: BoxFit.cover,
+          ),
+        ),
+      );
+    }
 
+    return CachedNetworkImage(
+      imageUrl: imageUrl!,
       placeholder: (context, url) => Container(
         width: width ?? 60,
         height: height ?? 60,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: Colors.grey[300], // لون مؤقت أثناء التحميل
+          color: Colors.grey[300],
         ),
-        child: const Icon(Icons.person, color: Colors.grey), // أيقونة default
+        child: const Icon(Icons.person, color: Colors.grey),
       ),
       errorWidget: (context, url, error) => Container(
         width: width ?? 60,
@@ -34,7 +49,7 @@ class CachedNetworkImageWidget extends StatelessWidget {
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(
-            image: AssetImage(Assets.assetsImagesDoctor), // fallback نهائي
+            image: AssetImage(Assets.assetsImagesDoctor),
             fit: BoxFit.cover,
           ),
         ),

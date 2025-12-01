@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medi_link/features/doctor_home/presentation/views/doctor_view/widgets/patient_card.dart';
 import 'package:medi_link/features/patient_home/domain/entities/booking_entity.dart';
-import 'package:medi_link/features/doctor_home/presentation/views/doctor_view.dart/widgets/patient_card.dart';
 
 class BookingCardSkeltonizerLoadingBody extends StatelessWidget {
   const BookingCardSkeltonizerLoadingBody({super.key});

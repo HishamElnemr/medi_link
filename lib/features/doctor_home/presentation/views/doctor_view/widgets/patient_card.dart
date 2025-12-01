@@ -3,7 +3,7 @@ import 'package:medi_link/core/constants/app_colors.dart';
 import 'package:medi_link/core/constants/font_styles.dart';
 import 'package:medi_link/core/models/booking_status.dart';
 import 'package:medi_link/features/patient_home/domain/entities/booking_entity.dart';
-import 'package:medi_link/features/doctor_home/presentation/views/doctor_view.dart/widgets/status_state.dart';
+import 'package:medi_link/features/doctor_home/presentation/views/doctor_view/widgets/status_state.dart';
 import 'package:medi_link/generated/l10n.dart';
 
 class PatientCard extends StatelessWidget {

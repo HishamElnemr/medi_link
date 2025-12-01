@@ -204,9 +204,7 @@ class StatusState extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 Navigator.of(dialogContext).pop();
-                context.read<BookingCubit>().rejectBooking(
-                  booking.id,
-                );
+                context.read<BookingCubit>().rejectBooking(booking.id);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,

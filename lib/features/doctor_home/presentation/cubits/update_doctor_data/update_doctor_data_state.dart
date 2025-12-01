@@ -1,17 +1,14 @@
 part of 'update_doctor_data_cubit.dart';
 
-sealed class UpdateDoctorDataState extends Equatable {
+sealed class UpdateDoctorDataState  {
   const UpdateDoctorDataState();
 
-  @override
-  List<Object> get props => [];
 }
 
 class UpdateDoctorDataInitial extends UpdateDoctorDataState {}
 class UpdateDoctorDataLoading extends UpdateDoctorDataState {}
 class UpdateDoctorDataSuccess extends UpdateDoctorDataState {
-  final DoctorEntity doctorEntity;
-  const UpdateDoctorDataSuccess(this.doctorEntity);
+  const UpdateDoctorDataSuccess();
 }
 class UpdateDoctorDataFailure extends UpdateDoctorDataState {
   final String message;

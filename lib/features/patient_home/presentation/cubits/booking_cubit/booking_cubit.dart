@@ -7,7 +7,6 @@ import 'package:medi_link/features/patient_home/data/repos/booking_repo_impl.dar
 import 'package:medi_link/features/patient_home/domain/entities/booking_entity.dart';
 import 'package:medi_link/features/patient_home/presentation/cubits/booking_cubit/booking_state.dart';
 
-
 class BookingCubit extends Cubit<BookingState> {
   final BookingRepoImpl bookingRepo;
 
@@ -23,8 +22,10 @@ class BookingCubit extends Cubit<BookingState> {
   }
 
   Future<void> getDoctorBookings(String doctorId) async {
+    if (isClosed) return;
     emit(BookingLoading());
     final result = await bookingRepo.getDoctorBookings(doctorId);
+    if (isClosed) return;
     result.fold(
       (failure) => emit(BookingError(failure)),
       (bookings) => emit(DoctorBookingsLoaded(bookings)),
