@@ -14,8 +14,8 @@ class UpdateDoctorDataCubit extends Cubit<UpdateDoctorDataState> {
   Future<void> updateDoctorData(DoctorEntity doctorEntity, String uId) async {
     emit(UpdateDoctorDataLoading());
 
-    if (doctorEntity.image != null && doctorEntity.image!.path.isNotEmpty) {
-      var imgResult = await imagesRepoImpl.uploadImage(doctorEntity.image!);
+    if (doctorEntity.image.path.isNotEmpty) {
+      var imgResult = await imagesRepoImpl.uploadImage(doctorEntity.image);
       imgResult.fold(
         (failure) {
           emit(UpdateDoctorDataFailure(failure.message));

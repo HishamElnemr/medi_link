@@ -27,9 +27,7 @@ class DoctorAppointmentRow extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(10),
-          child: CachedNetworkImageWidget(
-            imageUrl: booking.doctorImageUrl,
-          ),
+          child: CachedNetworkImageWidget(imageUrl: booking.doctorImageUrl),
         ),
         const SizedBox(width: 12),
         Expanded(
@@ -49,72 +47,79 @@ class DoctorAppointmentRow extends StatelessWidget {
               const SizedBox(height: 3),
               Row(
                 children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8,
-                      vertical: 3,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.softBlue4.withOpacity(0.3),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      AllSpecialtyUtils.getLocalizedSpecialty(
-                        context,
-                        booking.doctorSpeciality,
+                  IntrinsicWidth(
+                    // استخدم IntrinsicWidth بدل Flexible
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 3,
                       ),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                      style: FontStyles.light12.copyWith(
-                        color: AppColors.white,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 11,
+                      decoration: BoxDecoration(
+                        color: AppColors.softBlue4.withOpacity(0.3),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        AllSpecialtyUtils.getLocalizedSpecialty(
+                          context,
+                          booking.doctorSpeciality,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        style: FontStyles.light12.copyWith(
+                          color: AppColors.white,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 11,
+                        ),
                       ),
                     ),
                   ),
-                  const Spacer(),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 5,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.white.withOpacity(0.15),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(
-                          Icons.calendar_today,
-                          color: AppColors.white,
-                          size: 14,
-                        ),
-                        const SizedBox(width: 6),
-                        Text(
-                          _formatDate(booking.date),
-                          style: FontStyles.regular14.copyWith(
+                  const SizedBox(width: 8),
+
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 6,
+                        vertical: 3,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.white.withOpacity(0.15),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          const Icon(
+                            Icons.calendar_today,
                             color: AppColors.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 13,
+                            size: 11,
                           ),
-                        ),
-                        const SizedBox(width: 16),
-                        Container(
-                          width: 1,
-                          height: 16,
-                          color: AppColors.white.withOpacity(0.5),
-                        ),
-                        const SizedBox(width: 16),
-                        Text(
-                          '${booking.sallary} ${S.of(context).egp}',
-                          style: FontStyles.regular14.copyWith(
-                            color: AppColors.softBlue1,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14,
+                          const SizedBox(width: 3),
+                          Text(
+                            _formatDate(booking.date),
+                            style: FontStyles.regular14.copyWith(
+                              color: AppColors.white,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 11,
+                            ),
                           ),
-                        ),
-                      ],
+                          const SizedBox(width: 6),
+                          Container(
+                            width: 1,
+                            height: 14,
+                            color: AppColors.white.withOpacity(0.5),
+                          ),
+                          const SizedBox(width: 6),
+                          Text(
+                            '${booking.sallary} ${S.of(context).egp}',
+                            style: FontStyles.regular14.copyWith(
+                              color: AppColors.softBlue1,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

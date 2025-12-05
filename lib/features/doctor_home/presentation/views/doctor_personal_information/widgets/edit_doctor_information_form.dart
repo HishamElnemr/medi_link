@@ -97,7 +97,7 @@ class _EditDoctorInformationFormState extends State<EditDoctorInformationForm> {
       speciality: doctor.speciality,
       image: (fileImage != null && fileImage!.path.isNotEmpty)
           ? fileImage!
-          : (doctor.image != null ? doctor.image! : File('')),
+          : (doctor.image),
       imageUrl: doctor.imageUrl,
     );
 

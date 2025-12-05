@@ -17,7 +17,7 @@ class UpcomingAppointmentsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.8,
+      width: MediaQuery.of(context).size.width * 0.82,
       height: 140,
       decoration: ShapeDecoration(
         gradient: const LinearGradient(

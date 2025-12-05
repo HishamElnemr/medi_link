@@ -24,7 +24,6 @@ class DoctorInfoCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(100),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
             width: 30,
@@ -55,6 +54,8 @@ class DoctorInfoCard extends StatelessWidget {
               const SizedBox(height: 2),
               Text(
                 description,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: FontStyles.light12.copyWith(
                   color: AppColors.white,
                   fontWeight: FontWeight.w400,

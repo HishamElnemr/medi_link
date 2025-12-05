@@ -38,7 +38,8 @@ class DoctorDetailsCard extends StatelessWidget {
                   children: [
                     DoctorInfoCard(
                       icon: Assets.assetsImagesExperience,
-                      title: args.yearsOfExperience.toString() +
+                      title:
+                          args.yearsOfExperience.toString() +
                           ' ' +
                           S.of(context).years,
                       description: S.of(context).experience,
@@ -55,12 +56,6 @@ class DoctorDetailsCard extends StatelessWidget {
                       title: S.of(context).phone_number,
                       description: args.phoneNumber.toString(),
                     ),
-                    const SizedBox(height: 12),
-                    DoctorInfoCard(
-                      icon: Assets.assetsImagesClinic,
-                      title: S.of(context).hospital_name,
-                      description: args.hospitalName,
-                    ),
                   ],
                 ),
               ),
@@ -70,6 +65,7 @@ class DoctorDetailsCard extends StatelessWidget {
           DoctorNameCard(
             firstName: args.firstName,
             lastName: args.lastName,
+            hospitalName: args.hospitalName,
             speciality: AllSpecialtyUtils.getLocalizedSpecialty(
               context,
               args.speciality,
